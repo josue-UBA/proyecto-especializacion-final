@@ -1,5 +1,9 @@
 
 vivado/vivado.cache/wt/
+vivado/vivado.hw/
+vivado/vivado.runs/impl_1/
+vivado/vivado.runs/synth_1/
+vivado/vivado.runs/.jobs/
 vivado/trabajo/trabajo.cache/wt/
-vivado/vivado.runs/
-vivado/vivado.hw/vivado.lpr
+
+!vivado/vivado.runs/impl_1/top.bit
