@@ -1,0 +1,18 @@
+set COMMENTED_OUT {
+create_project project_1 $env(PWD)/project_1 -part xc7z010clg400-1
+set_property board_part digilentinc.com:arty-z7-10:part0:1.0 [current_project]
+
+# cuando le doy a "Create Block Design" estos comandos se ejecutan:
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+}
+
+
+set f_w [ open creando_hardware.v w ]
+set f_r [ open hardware_1 r ]
+while { ! [eof $f_r ] } {
+	gets $f_r linehttps://www.youtube.com/watch?v=TUuQkj3uf6A
+	puts $f_w $line
+}
+close $f_r
+close $f_w
