@@ -1,5 +1,9 @@
 
-vivado/vivado.cache/wt/
-vivado/vivado.hw/
-vivado/vivado.runs/
-vivado/trabajo/trabajo.cache/wt/
+vivado2/.metadata/
+vivado2/plataforma/export/plataforma/sw/plataforma/standalone_domain/bsplib/lib/
+vivado2/plataforma/ps7_cortexa9_0/
+vivado2/plataforma/zynq_fsbl/
+vivado2/plataforma/export/plataforma/sw/plataforma/
+vivado2/proyecto/proyecto.runs/
+vivado2/proyecto/proyecto.gen/sources_1/bd/design_1/
+vivado2/proyecto/proyecto.cache/ip/2020.2/

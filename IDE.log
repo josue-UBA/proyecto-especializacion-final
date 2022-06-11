@@ -1,0 +1,154 @@
+00:34:55 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\temp_xsdb_launch_script.tcl
+00:34:56 INFO  : Registering command handlers for Vitis TCF services
+00:35:02 INFO  : XSCT server has started successfully.
+00:35:03 INFO  : plnx-install-location is set to ''
+00:35:03 INFO  : Successfully done setting XSCT server connection channel  
+00:35:03 INFO  : Successfully done query RDI_DATADIR 
+00:35:03 INFO  : Successfully done setting workspace for the tool. 
+00:35:04 INFO  : Platform repository initialization has completed.
+00:36:27 INFO  : Result from executing command 'getProjects': plataforma
+00:36:27 INFO  : Result from executing command 'getPlatforms': 
+00:38:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:38:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+00:38:17 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+00:39:12 INFO  : Result from executing command 'getProjects': plataforma
+00:39:12 INFO  : Result from executing command 'getPlatforms': plataforma|C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/plataforma/export/plataforma/plataforma.xpfm
+00:39:12 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+00:41:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:41:21 INFO  : Jtag cable 'Digilent Arty Z7 003017A6B8B9A' is selected.
+00:41:21 INFO  : 'jtag frequency' command is executed.
+00:41:21 INFO  : Context for 'APU' is selected.
+00:41:21 INFO  : System reset is completed.
+00:41:24 INFO  : 'after 3000' command is executed.
+00:41:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+00:41:26 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+00:41:26 INFO  : Context for 'APU' is selected.
+00:41:26 INFO  : Hardware design and registers information is loaded from 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/plataforma/export/plataforma/hw/design_1_wrapper.xsa'.
+00:41:26 INFO  : 'configparams force-mem-access 1' command is executed.
+00:41:26 INFO  : Context for 'APU' is selected.
+00:41:26 INFO  : Sourcing of 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/psinit/ps7_init.tcl' is done.
+00:41:27 INFO  : 'ps7_init' command is executed.
+00:41:27 INFO  : 'ps7_post_config' command is executed.
+00:41:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:41:27 INFO  : The application 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/Debug/aplicacion.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:41:27 INFO  : 'configparams force-mem-access 0' command is executed.
+00:41:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}
+fpga -file C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/plataforma/export/plataforma/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/Debug/aplicacion.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:41:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:41:27 INFO  : 'con' command is executed.
+00:41:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:41:27 INFO  : Launch script is exported to file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\aplicacion_system\_ide\scripts\systemdebugger_aplicacion_system_standalone.tcl'
+00:45:05 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+00:45:11 INFO  : Disconnected from the channel tcfchan#1.
+00:45:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:45:12 INFO  : Jtag cable 'Digilent Arty Z7 003017A6B8B9A' is selected.
+00:45:12 INFO  : 'jtag frequency' command is executed.
+00:45:12 INFO  : Context for 'APU' is selected.
+00:45:12 INFO  : System reset is completed.
+00:45:15 INFO  : 'after 3000' command is executed.
+00:45:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+00:45:17 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+00:45:17 INFO  : Context for 'APU' is selected.
+00:45:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/plataforma/export/plataforma/hw/design_1_wrapper.xsa'.
+00:45:17 INFO  : 'configparams force-mem-access 1' command is executed.
+00:45:17 INFO  : Context for 'APU' is selected.
+00:45:17 INFO  : Sourcing of 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/psinit/ps7_init.tcl' is done.
+00:45:17 INFO  : 'ps7_init' command is executed.
+00:45:17 INFO  : 'ps7_post_config' command is executed.
+00:45:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:45:18 INFO  : The application 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/Debug/aplicacion.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:45:18 INFO  : 'configparams force-mem-access 0' command is executed.
+00:45:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}
+fpga -file C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/plataforma/export/plataforma/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/Debug/aplicacion.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:45:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:45:18 INFO  : 'con' command is executed.
+00:45:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:45:18 INFO  : Launch script is exported to file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\aplicacion_system\_ide\scripts\systemdebugger_aplicacion_system_standalone.tcl'
+00:45:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:45:19 INFO  : Jtag cable 'Digilent Arty Z7 003017A6B8B9A' is selected.
+00:45:19 INFO  : 'jtag frequency' command is executed.
+00:45:19 INFO  : Context for 'APU' is selected.
+00:45:19 INFO  : System reset is completed.
+00:45:22 INFO  : 'after 3000' command is executed.
+00:45:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+00:45:23 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+00:45:23 INFO  : Context for 'APU' is selected.
+00:45:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/plataforma/export/plataforma/hw/design_1_wrapper.xsa'.
+00:45:23 INFO  : 'configparams force-mem-access 1' command is executed.
+00:45:23 INFO  : Context for 'APU' is selected.
+00:45:23 INFO  : Sourcing of 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/psinit/ps7_init.tcl' is done.
+00:45:24 INFO  : 'ps7_init' command is executed.
+00:45:24 INFO  : 'ps7_post_config' command is executed.
+00:45:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:45:24 INFO  : The application 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/Debug/aplicacion.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:45:24 INFO  : 'configparams force-mem-access 0' command is executed.
+00:45:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}
+fpga -file C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/plataforma/export/plataforma/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/aplicacion/Debug/aplicacion.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:45:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:45:25 INFO  : 'con' command is executed.
+00:45:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:45:25 INFO  : Launch script is exported to file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\aplicacion_system\_ide\scripts\systemdebugger_aplicacion_system_standalone.tcl'
+00:46:19 INFO  : Disconnected from the channel tcfchan#4.
