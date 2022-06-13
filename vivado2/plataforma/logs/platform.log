@@ -2323,3 +2323,797 @@ TRACE::2022-06-11.02:07:11::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documen
 C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
 
 TRACE::2022-06-11.02:07:11::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:02:58::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:02:58::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:02:58::SCWPlatform:: Platform location is C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa
+TRACE::2022-06-11.03:02:58::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:02:58::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:04::SCWMssOS::Doing hw sync for the mss in domain: zynq_fsbl
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:04::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:04::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:04::SCWPlatform::update - Opened existing hwdb design_1_wrapper_4
+TRACE::2022-06-11.03:03:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:04::SCWMssOS::Doing hw sync for the mss in domain: standalone_domain
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2022-06-11.03:03:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:04::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:04::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:04::SCWPlatform::update - Opened existing hwdb design_1_wrapper_4
+TRACE::2022-06-11.03:03:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:04::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:03:04::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:03:04::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:03:04::SCWMssOS::Completed hw sync for the mss in domain: zynq_fsbl
+TRACE::2022-06-11.03:03:04::SCWMssOS::Removing the swdes entry for  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:03:04::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:03:04::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:03:04::SCWMssOS::Completed hw sync for the mss in domain: standalone_domain
+TRACE::2022-06-11.03:03:04::SCWMssOS::Removing the swdes entry for  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:04::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:04::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:05::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:05::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:05::SCWPlatform::Do not have an existing db opened. 
+TRACE::2022-06-11.03:03:09::SCWPlatform::Opened new HwDB with name design_1_wrapper_5
+TRACE::2022-06-11.03:03:09::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name system
+TRACE::2022-06-11.03:03:09::SCWMssOS::Writing the mss file completed C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:03:09::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss with des name system_0
+TRACE::2022-06-11.03:03:09::SCWMssOS::Writing the mss file completed C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:03:09::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:09::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_5
+TRACE::2022-06-11.03:03:09::SCWPlatform::Opened existing hwdb design_1_wrapper_5
+TRACE::2022-06-11.03:03:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:09::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:09::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:09::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_5
+TRACE::2022-06-11.03:03:09::SCWPlatform::Opened existing hwdb design_1_wrapper_5
+TRACE::2022-06-11.03:03:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:09::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:09::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWWriter::formatted JSON is {
+	"platformName":	"plataforma",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"plataforma",
+	"platHandOff":	"C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_1_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"plataforma",
+	"systems":	[{
+			"systemName":	"plataforma",
+			"systemDesc":	"plataforma",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"plataforma",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.3",
+					"mssFile":	"",
+					"md5Digest":	"b7fa32b24ed478503694d8655ba30e2a",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.4", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on ps7_cortexa9_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.3",
+					"mssFile":	"",
+					"md5Digest":	"a2175d90188bcf735e8c23399dee2187",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-06-11.03:03:09::SCWPlatform::Clearing the existing platform
+TRACE::2022-06-11.03:03:09::SCWSystem::Clearing the existing sysconfig
+TRACE::2022-06-11.03:03:09::SCWBDomain::clearing the fsbl build
+TRACE::2022-06-11.03:03:09::SCWMssOS::Removing the swdes entry for  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWMssOS::Removing the swdes entry for  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:09::SCWSystem::Clearing the domains completed.
+TRACE::2022-06-11.03:03:09::SCWPlatform::Clearing the opened hw db.
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Platform location is C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:09::SCWPlatform::Removing the HwDB with name C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:09::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:09::SCWPlatform::Do not have an existing db opened. 
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened new HwDB with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWReader::Active system found as  plataforma
+TRACE::2022-06-11.03:03:13::SCWReader::Handling sysconfig plataforma
+TRACE::2022-06-11.03:03:13::SCWDomain::checking for install qemu data   : 
+TRACE::2022-06-11.03:03:13::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-06-11.03:03:13::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWReader::Boot application domain added for zynq_fsbl
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2022-06-11.03:03:13::SCWMssOS::No sw design opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::mss exists loading the mss file  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::Opened the sw design from mss  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::Adding the swdes entry C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name system
+TRACE::2022-06-11.03:03:13::SCWMssOS::updating the scw layer about changes
+TRACE::2022-06-11.03:03:13::SCWMssOS::Opened the sw design.  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:13::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS:: library already available in sw design:  xilffs:4.4
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:13::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS:: library already available in sw design:  xilrsa:1.6
+TRACE::2022-06-11.03:03:13::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:03:13::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:03:13::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:03:13::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2022-06-11.03:03:13::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:13::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWReader::No isolation master present  
+TRACE::2022-06-11.03:03:13::SCWDomain::checking for install qemu data   : 
+TRACE::2022-06-11.03:03:13::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-06-11.03:03:13::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:13::SCWMssOS::No sw design opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::mss exists loading the mss file  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::Opened the sw design from mss  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::Adding the swdes entry C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss with des name system_0
+TRACE::2022-06-11.03:03:13::SCWMssOS::updating the scw layer about changes
+TRACE::2022-06-11.03:03:13::SCWMssOS::Opened the sw design.  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:03:13::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:03:13::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:03:13::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2022-06-11.03:03:13::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:03:13::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:03:13::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:03:13::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:03:13::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:03:13::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:03:13::SCWReader::No isolation master present  
+TRACE::2022-06-11.03:04:31::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:31::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:31::SCWPlatform:: Platform location is C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa
+TRACE::2022-06-11.03:04:31::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:31::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:35::SCWMssOS::Doing hw sync for the mss in domain: zynq_fsbl
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:35::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:04:35::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::update - Opened existing hwdb design_1_wrapper_7
+TRACE::2022-06-11.03:04:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:35::SCWMssOS::Doing hw sync for the mss in domain: standalone_domain
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Opened existing hwdb design_1_wrapper_6
+TRACE::2022-06-11.03:04:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:35::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:04:35::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/tempdsa/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::update - Opened existing hwdb design_1_wrapper_7
+TRACE::2022-06-11.03:04:35::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:35::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:04:35::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:04:35::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:04:35::SCWMssOS::Completed hw sync for the mss in domain: zynq_fsbl
+TRACE::2022-06-11.03:04:35::SCWMssOS::Removing the swdes entry for  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:04:35::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:04:35::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:04:35::SCWMssOS::Completed hw sync for the mss in domain: standalone_domain
+TRACE::2022-06-11.03:04:35::SCWMssOS::Removing the swdes entry for  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:35::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:35::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:35::SCWPlatform::Do not have an existing db opened. 
+TRACE::2022-06-11.03:04:39::SCWPlatform::Opened new HwDB with name design_1_wrapper_8
+TRACE::2022-06-11.03:04:39::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name system
+TRACE::2022-06-11.03:04:39::SCWMssOS::Writing the mss file completed C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:04:39::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss with des name system_0
+TRACE::2022-06-11.03:04:39::SCWMssOS::Writing the mss file completed C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:04:39::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:04:39::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:39::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_8
+TRACE::2022-06-11.03:04:39::SCWPlatform::Opened existing hwdb design_1_wrapper_8
+TRACE::2022-06-11.03:04:39::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:39::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:04:39::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:04:39::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:04:39::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:04:39::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_8
+TRACE::2022-06-11.03:04:39::SCWPlatform::Opened existing hwdb design_1_wrapper_8
+TRACE::2022-06-11.03:04:39::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:04:39::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:04:39::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:04:39::SCWWriter::formatted JSON is {
+	"platformName":	"plataforma",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"plataforma",
+	"platHandOff":	"C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_1_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"plataforma",
+	"systems":	[{
+			"systemName":	"plataforma",
+			"systemDesc":	"plataforma",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"plataforma",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.3",
+					"mssFile":	"",
+					"md5Digest":	"b7fa32b24ed478503694d8655ba30e2a",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.4", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on ps7_cortexa9_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.3",
+					"mssFile":	"",
+					"md5Digest":	"a2175d90188bcf735e8c23399dee2187",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2022-06-11.03:05:29::SCWPlatform::Started generating the artifacts platform plataforma
+TRACE::2022-06-11.03:05:29::SCWPlatform::Sanity checking of platform is completed
+LOG::2022-06-11.03:05:30::SCWPlatform::Started generating the artifacts for system configuration plataforma
+LOG::2022-06-11.03:05:30::SCWSystem::Checking the domain zynq_fsbl
+LOG::2022-06-11.03:05:30::SCWSystem::Doing application build for :  zynq_fsbl
+TRACE::2022-06-11.03:05:30::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2022-06-11.03:05:30::SCWDomain::Skipping the build for domain :  zynq_fsbl
+LOG::2022-06-11.03:05:30::SCWSystem::Checking the domain standalone_domain
+LOG::2022-06-11.03:05:30::SCWSystem::Not a boot domain 
+LOG::2022-06-11.03:05:30::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2022-06-11.03:05:30::SCWDomain::Generating domain artifcats
+TRACE::2022-06-11.03:05:30::SCWMssOS::Generating standalone artifcats
+TRACE::2022-06-11.03:05:30::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt To C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/export/plataforma/sw/plataforma/qemu/
+TRACE::2022-06-11.03:05:30::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt To C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/export/plataforma/sw/plataforma/standalone_domain/qemu/
+TRACE::2022-06-11.03:05:30::SCWMssOS:: Copying the user libraries. 
+TRACE::2022-06-11.03:05:30::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:30::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:30::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:30::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:05:30::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:30::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:05:30::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_8
+TRACE::2022-06-11.03:05:30::SCWPlatform::Opened existing hwdb design_1_wrapper_8
+TRACE::2022-06-11.03:05:30::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:05:30::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:05:30::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:05:30::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:05:30::SCWMssOS::Completed writing the mss file at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp
+TRACE::2022-06-11.03:05:30::SCWMssOS::Mss edits present, copying mssfile into export location C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:05:30::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2022-06-11.03:05:30::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2022-06-11.03:05:30::SCWDomain::Skipping the build for domain :  standalone_domain
+TRACE::2022-06-11.03:05:30::SCWMssOS::skipping the bsp build ... 
+TRACE::2022-06-11.03:05:30::SCWMssOS::Copying to export directory.
+TRACE::2022-06-11.03:05:33::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2022-06-11.03:05:33::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2022-06-11.03:05:33::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2022-06-11.03:05:33::SCWSystem::Completed Processing the sysconfig plataforma
+LOG::2022-06-11.03:05:33::SCWPlatform::Completed generating the artifacts for system configuration plataforma
+TRACE::2022-06-11.03:05:33::SCWPlatform::Started preparing the platform 
+TRACE::2022-06-11.03:05:33::SCWSystem::Writing the bif file for system config plataforma
+TRACE::2022-06-11.03:05:33::SCWSystem::dir created 
+TRACE::2022-06-11.03:05:33::SCWSystem::Writing the bif 
+TRACE::2022-06-11.03:05:33::SCWPlatform::Started writing the spfm file 
+TRACE::2022-06-11.03:05:33::SCWPlatform::Started writing the xpfm file 
+TRACE::2022-06-11.03:05:33::SCWPlatform::Completed generating the platform
+TRACE::2022-06-11.03:05:33::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:05:33::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:05:33::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:05:33::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:05:33::SCWMssOS::Saving the mss changes C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:05:33::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-06-11.03:05:33::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-06-11.03:05:33::SCWMssOS::Commit changes completed.
+TRACE::2022-06-11.03:05:33::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:05:33::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:05:33::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_8
+TRACE::2022-06-11.03:05:33::SCWPlatform::Opened existing hwdb design_1_wrapper_8
+TRACE::2022-06-11.03:05:33::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:05:33::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:05:33::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:05:33::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-06-11.03:05:33::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:05:33::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:05:33::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_8
+TRACE::2022-06-11.03:05:33::SCWPlatform::Opened existing hwdb design_1_wrapper_8
+TRACE::2022-06-11.03:05:33::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:05:33::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:05:33::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:05:33::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:05:33::SCWWriter::formatted JSON is {
+	"platformName":	"plataforma",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"plataforma",
+	"platHandOff":	"C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_1_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"plataforma",
+	"systems":	[{
+			"systemName":	"plataforma",
+			"systemDesc":	"plataforma",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"plataforma",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.3",
+					"mssFile":	"",
+					"md5Digest":	"b7fa32b24ed478503694d8655ba30e2a",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.4", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on ps7_cortexa9_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2020.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.3",
+					"mssFile":	"",
+					"md5Digest":	"a2175d90188bcf735e8c23399dee2187",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2022-06-11.03:05:33::SCWPlatform::updated the xpfm file.
+TRACE::2022-06-11.03:05:33::SCWPlatform::Trying to open the hw design at C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA given C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA absoulate path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform::DSA directory C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw
+TRACE::2022-06-11.03:05:33::SCWPlatform:: Platform Path C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/hw/design_1_wrapper.xsa
+TRACE::2022-06-11.03:05:33::SCWPlatform:: Unique name xilinx:arty-z7-10::0.0
+TRACE::2022-06-11.03:05:33::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_8
+TRACE::2022-06-11.03:05:33::SCWPlatform::Opened existing hwdb design_1_wrapper_8
+TRACE::2022-06-11.03:05:33::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-06-11.03:05:33::SCWMssOS::Checking the sw design at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-06-11.03:05:33::SCWMssOS::DEBUG:  swdes dump  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-06-11.03:05:33::SCWMssOS::Sw design exists and opened at  C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/ps7_cortexa9_0/standalone_domain/bsp/system.mss

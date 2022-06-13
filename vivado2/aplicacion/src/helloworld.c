@@ -51,13 +51,19 @@
 #include "xil_io.h"
 #include "sleep.h"
 
+void hardware_1(u32 value){
+	printf("inicio de hardware 1");
+	Xil_Out32(0x43C00000, value);
+	int retorno = (int)Xil_In32(0x43C0000C);
+	printf("fin de hardware %d",retorno);
+}
+
 int main()
 {
     init_platform();
+	hardware_1(1);
 
-	print("Hello World\n\r");
-	print("Successfully ran Hello World application");
-
+	/*
 	int entrada = 0;
 	for (u32 i = 0;; i++) {
 
@@ -67,6 +73,7 @@ int main()
 
 		sleep(1);
 	}
+	*/
 	cleanup_platform();
 	return 0;
 }

@@ -16,3 +16,6 @@ platform write
 platform generate -domains 
 platform active {plataforma}
 platform generate
+platform config -updatehw {C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa}
+platform config -updatehw {C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa}
+platform generate -domains 

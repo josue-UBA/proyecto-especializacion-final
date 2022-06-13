@@ -4,6 +4,9 @@ vivado2/plataforma/export/plataforma/sw/plataforma/standalone_domain/bsplib/lib/
 vivado2/plataforma/ps7_cortexa9_0/
 vivado2/plataforma/zynq_fsbl/
 vivado2/plataforma/export/plataforma/sw/plataforma/
+vivado2/plataforma/tempdsa/
+vivado2/proyecto/proyecto.cache/
+vivado2/proyecto/proyecto.gen/
 vivado2/proyecto/proyecto.runs/
-vivado2/proyecto/proyecto.gen/sources_1/bd/design_1/
-vivado2/proyecto/proyecto.cache/ip/2020.2/
+vivado2/project_1/project_1.sim/sim_1/behav/
+vivado2/project_1/project_1.cache/

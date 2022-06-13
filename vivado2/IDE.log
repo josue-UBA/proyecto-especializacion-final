@@ -104,3 +104,116 @@ con
 ----------------End of Script----------------
 
 02:08:06 INFO  : Launch script is exported to file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\vivado2\aplicacion_system\_ide\scripts\systemdebugger_aplicacion_system_standalone.tcl'
+03:04:40 INFO  : Hardware specification for platform project 'plataforma' is updated.
+03:05:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:05:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+03:05:06 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+03:05:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:05:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+03:05:23 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+03:05:33 INFO  : Result from executing command 'getProjects': plataforma
+03:05:33 INFO  : Result from executing command 'getPlatforms': plataforma|C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/export/plataforma/plataforma.xpfm
+03:05:34 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+03:05:42 INFO  : The hardware specfication used by project 'aplicacion' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+03:05:42 INFO  : The file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\vivado2\aplicacion\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+03:05:42 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\vivado2\aplicacion\_ide\bitstream' in project 'aplicacion'.
+03:05:42 INFO  : The file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\vivado2\aplicacion\_ide\psinit\ps7_init.tcl' stored in project is removed.
+03:05:54 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\vivado2\aplicacion\_ide\psinit' in project 'aplicacion'.
+06:49:47 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+06:50:11 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+06:50:17 INFO  : Disconnected from the channel tcfchan#1.
+06:50:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:50:18 INFO  : Jtag cable 'Digilent Arty Z7 003017A6B8B9A' is selected.
+06:50:18 INFO  : 'jtag frequency' command is executed.
+06:50:18 INFO  : Context for 'APU' is selected.
+06:50:18 INFO  : System reset is completed.
+06:50:21 INFO  : 'after 3000' command is executed.
+06:50:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+06:50:22 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+06:50:23 INFO  : Context for 'APU' is selected.
+06:50:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/export/plataforma/hw/design_1_wrapper.xsa'.
+06:50:23 INFO  : 'configparams force-mem-access 1' command is executed.
+06:50:23 INFO  : Context for 'APU' is selected.
+06:50:23 INFO  : Sourcing of 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/psinit/ps7_init.tcl' is done.
+06:50:24 INFO  : 'ps7_init' command is executed.
+06:50:24 INFO  : 'ps7_post_config' command is executed.
+06:50:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:50:25 INFO  : The application 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/Debug/aplicacion.elf' is downloaded to processor 'ps7_cortexa9_0'.
+06:50:25 INFO  : 'configparams force-mem-access 0' command is executed.
+06:50:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}
+fpga -file C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/export/plataforma/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/Debug/aplicacion.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+06:50:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:50:25 INFO  : 'con' command is executed.
+06:50:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+06:50:25 INFO  : Launch script is exported to file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\vivado2\aplicacion_system\_ide\scripts\systemdebugger_aplicacion_system_standalone.tcl'
+06:53:01 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+06:54:27 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+06:54:41 INFO  : Checking for BSP changes to sync application flags for project 'aplicacion'...
+06:54:49 INFO  : Disconnected from the channel tcfchan#6.
+06:54:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+06:54:49 INFO  : Jtag cable 'Digilent Arty Z7 003017A6B8B9A' is selected.
+06:54:49 INFO  : 'jtag frequency' command is executed.
+06:54:50 INFO  : Context for 'APU' is selected.
+06:54:50 INFO  : System reset is completed.
+06:54:53 INFO  : 'after 3000' command is executed.
+06:54:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}' command is executed.
+06:54:54 INFO  : Device configured successfully with "C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/bitstream/design_1_wrapper.bit"
+06:54:54 INFO  : Context for 'APU' is selected.
+06:54:54 INFO  : Hardware design and registers information is loaded from 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/export/plataforma/hw/design_1_wrapper.xsa'.
+06:54:54 INFO  : 'configparams force-mem-access 1' command is executed.
+06:54:54 INFO  : Context for 'APU' is selected.
+06:54:54 INFO  : Sourcing of 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/psinit/ps7_init.tcl' is done.
+06:54:55 INFO  : 'ps7_init' command is executed.
+06:54:55 INFO  : 'ps7_post_config' command is executed.
+06:54:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:54:55 INFO  : The application 'C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/Debug/aplicacion.elf' is downloaded to processor 'ps7_cortexa9_0'.
+06:54:55 INFO  : 'configparams force-mem-access 0' command is executed.
+06:54:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A6B8B9A" && level==0 && jtag_device_ctx=="jsn-Arty Z7-003017A6B8B9A-13722093-0"}
+fpga -file C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/plataforma/export/plataforma/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/aplicacion/Debug/aplicacion.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+06:54:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+06:54:55 INFO  : 'con' command is executed.
+06:54:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+06:54:55 INFO  : Launch script is exported to file 'C:\Users\josue\Documents\GitHub\proyecto-especializacion-final\vivado2\aplicacion_system\_ide\scripts\systemdebugger_aplicacion_system_standalone.tcl'
+07:22:10 INFO  : Disconnected from the channel tcfchan#7.
