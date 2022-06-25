@@ -1,214 +1,132 @@
-ns impl_1 -to_step write_bitstream -jobs 2
+# - Acelerador de Algoritmos de IA
+- __Universidad__: Universidad de Buenos Aires (UBA).
+- __Curso__: Microarquitectura y softcore.
+- __Proyecto__: Sistema acelerador de algoritmo de inteligencia articial. Como premisa se tiene que los datos deben ser obtenidos del exterior. Para este proyecto se uso los botones para simular sensores.
+- __Materiales__: ArtyZ7-10, laptop y cable micro-usb.
+- __entorno__: Vivado 2020.2 y Vitis 2022.2.
+- __hardware description lenguaje__: Verilog.
 
-# __exportando hardware__
-write_hw_platform -fixed -include_bit -force -file C:/Users/josue/project_1/design_1_wrapper.xsa
-como deberia quedar el diseño
+![](./imagenes/sw_tarjeta.jpg)
 
-
-
-# __tutoriales__
-## __PS + PL super básico (no oficial)__
-link: https://www.youtube.com/watch?v=_odNhKOZjEo
-      
-### __comandos iniciales (TCL)__
+# - Estructura del repositorio
 ```
-# cuando creas un proyecto estos comandos se ejecutan:
-start_gui
-create_project project_1 C:/Users/josue/project_1 -part xc7z010clg400-1
-set_property board_part digilentinc.com:arty-z7-10:part0:1.0 [current_project]
-
-# cuando le doy a "Create Block Design" estos comandos se ejecutan:
-create_bd_design "design_1"
-update_compile_order -fileset sources_1
-
-# cuando agrego "design sources" para crear el hardware se ejecutan estos comandos:
-file mkdir C:/Users/josue/project_1/project_1.srcs/sources_1/new
-close [ open C:/Users/josue/project_1/project_1.srcs/sources_1/new/creando_hardware.v w ]
-add_files C:/Users/josue/project_1/project_1.srcs/sources_1/new/creando_hardware.v
-update_compile_order -fileset sources_1
-
-# editar y guardar el archivo verilog en la siguiente ubicación
-# C:\Users\josue\project_1\project_1.srcs\sources_1\new
-
+|-- proyecto-especiaizacion-final
+    |-- README.md (documentacion del repositorio)
+    |-- imagenes (imagenes para el archivo README.md)
+    |-- vitis
+        |-- xgpio_example_1
+            |-- src
+                |-- xgpio_example.c (archivo C para el microcontrolador)
+    |-- vivado
+        |-- project_1
+            |-- project_1.srcs
+            |-- sources_1
+                |-- bd 
+                    |-- design_1
+                        |-- design_1.bd (archivo del diseño del hardware)
+                |-- new
+                    |-- red.v (archivo verilog con la implementacion de la red neuronal)
 ```
 
-### __edición del PL (edit file)__
-```
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 03.01.2022 13:58:18
-// Design Name: 
-// Module Name: creando_hardware
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+# - Diseño
+- primero realizamos el diagrama de bloques desde un punto de vista general. Para este caso los pesos son precargados en el hardware.
+
+![](./imagenes/d_diseño.png)
+
+- la red neuronal tendra la siguiente forma. Por simplicidad no se agrego funcion de activacion pero esto puede ser agregado facilmente.
+
+![](./imagenes/d_red.png)
+
+# - Implementacion en Vivado
+
+## -- Red neuronal
+nuestra red neuronal consta de tres bloques de hardware: 
+
+![](./imagenes/hw_red_axi_4_lite.png)
+
+### --- deco
+se usa para poder cargar de forma serial los datos en la capa 1 de la red
+
+![](./imagenes/hw_deco.png)
+
+### --- memoria
+contiene la representacion en hardware de las 3 capas.
+
+![](./imagenes/hw_red_hw.png)
+
+### --- axi_4_lite_inst
+es la interfaz AXI4LITE del hardare. Nos sive para comunicar nuestra red con el procesador. Para poder crearlo usamos el archivo proveido por Vivado y hacemos modificaciones para permitir datos de entrada y salida.
+  - Tools
+  - Create and Package New IP
+  - Next
+  - Create a new AXI4 peripheral
+  - Next 
+  - Next (completar campos de ser necesario)
+  - Next
+  - Edit IP
+  - Finish
+
+Comparto el codigo para que se tenga como referencia.
+
+![](./imagenes/hw_axi4lite.png)
+
+## -- AXI GPIO button
+
+Se configura el bloque __AXI GPIO__ de la siguiente forma. Al conectarlo al __ZYNQ7__ automaticamente se le asigna la direccion __0x4120_0000__ 
+
+![](./imagenes/hw_button_gpio.png)
+
+## -- Bloque completo
+Se usan los siguientes bloques en la vista diseño de Vivado:
+
+- ZYNQ7 Processing System (del IP catalog)
+- AXI GPIO (del IP catalog para los leds)
+- AXI GPIO (del IP catalog para los botones)
+- red (diseño propio)
+- AXI interconect (creado de manera automatica)
+- Processor System Reset (creado de manera automatica)
+
+Dejar que VIvado haga todas las conexiones automaticamente.
+
+![](./imagenes/hw_hardware.png)
+
+Considerar el siguiente direccionamiento AXI4 lite
+
+![](./imagenes/hw_direccionamiento.png)
+
+# - Implementacion en Vitis
+Crear una plataforma y llamarle __plataforma__. Luego crear una desde la plataforma creada y ponerle __aplicacion__
+
+Se usa como proyecto base el brindado por __Vitis__. Seguir la siguiente ruta para crearlo:
+- __platform.spr__
+- __Board Support Package__ (dentro de folder __standalone on ps7_cortexa9_0__)
+- __Import Examples__ (al costado de __axi_gpio_0__)
 
 
-module creando_hardware(
-	input a,b,
-	output y
-	);
-	assign y = a & b;
-endmodule
+El software consiste de tres etapas:
+- __primera etapa__: se obtiene los datos del exterior. Para este proyecto se uso los botones de la placa para simular un sensor exterior. Se usa a funcion __XGpio_DiscreateRead__ para obtener los datos externos.
 
-```
+![](./imagenes/sw_input.png)
+- __segunda etapa__: los datos obtenidos desde el exterior son cargados a un arreglo logico para poder cargarlos a posterior en la red.
 
+![](./imagenes/sw_memoria.png)
+- __Tercera etapa__: Se realiza la alimentacion de la red. Para ello hay que brindarle a la red dos datos: __direccion__ y __dato__.
 
-### __actualización del archivo verilog (TCL)__
-```
-# después de editar el archivo “creando_hardware.v” ejecutar los siguientes comandos
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-```
-### __crear contraints (TCL)__
-```
-file mkdir C:/Users/josue/project_1/project_1.srcs/constrs_1
-file mkdir C:/Users/josue/project_1/project_1.srcs/constrs_1/new
-close [ open C:/Users/josue/project_1/project_1.srcs/constrs_1/new/archivo_const.xdc w ]
-add_files -fileset constrs_1 C:/Users/josue/project_1/project_1.srcs/constrs_1/new/archivo_const.xdc
-```
-### __edición de constraint (edit file)__
-
-Copiar https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Arty-Z7-10-Master.xdc en el archivo 
-```
-C:/Users/josue/project_1/project_1.srcs/constrs_1/new/archivo_const.xdc y editar lo siguiente:
-
-de…
-## Switches
-#set_property -dict { PACKAGE_PIN M20  IOSTANDARD LVCMOS33 } [get_ports { sw[0] }]; #IO_L7N_T1_AD2N_35 Sch=SW0
-#set_property -dict { PACKAGE_PIN M19  IOSTANDARD LVCMOS33 } [get_ports { sw[1] }]; #IO_L7P_T1_AD2P_35 Sch=SW1
-
-a
-## Switches
-#set_property -dict { PACKAGE_PIN M20  IOSTANDARD LVCMOS33 } [get_ports { sw0 }]; #IO_L7N_T1_AD2N_35 Sch=SW0
-#set_property -dict { PACKAGE_PIN M19  IOSTANDARD LVCMOS33 } [get_ports { sw1 }]; #IO_L7P_T1_AD2P_35 Sch=SW1
-
-y de…
-## RGB LEDs
-#set_property -dict { PACKAGE_PIN L15    IOSTANDARD LVCMOS33 } [get_ports { led4_b }]; #IO_L22N_T3_AD7P_35 Sch=LED4_B
-
-a…
-## RGB LEDs
-#set_property -dict { PACKAGE_PIN L15    IOSTANDARD LVCMOS33 } [get_ports { LED }]; #IO_L22N_T3_AD7P_35 Sch=LED4_B
-```
-### __haciendo diseño (TCL)__
-```
-########################################################## 
-# preparando HW
-##########################################################
-
-# crear zynq 7000
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
-endgroup
-
-# run block automation para zynq
-apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
-
-# agregando primer AXI GPIO (identificador: “axi_gpio_0”)
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
-endgroup
-# agregando segundo AXI GPIO (identidicador: “axi_gpio_1”)
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
-endgroup
-
-# configurando “axi_gpio_0”: todos los pines como input y cambiando el tamaño del bus a 1 bit
-startgroup
-set_property -dict [list CONFIG.C_GPIO_WIDTH {1} CONFIG.C_ALL_INPUTS {1}] [get_bd_cells axi_gpio_0]
-endgroup
-
-# configurando “axi_gpio_1”: todos los pines como output y cambiando el tamaño del bus a 1 bit
-set_property -dict [list CONFIG.C_GPIO_WIDTH {1} CONFIG.C_ALL_OUTPUTS {1}] [get_bd_cells axi_gpio_1]
-
-########################################################## 
-# A partir de aquí se requiere el diseño hecho. “creando_hardware” es el nombre del hardware creado
-########################################################## 
-
-# creando diseño del archivo verilog creado
-create_bd_cell -type module -reference creando_hardware creando_hardware_0
-
-# conexiones externas
-startgroup
-make_bd_pins_external  [get_bd_pins creando_hardware_0/a]
-endgroup
-startgroup
-make_bd_pins_external  [get_bd_pins creando_hardware_0/b]
-endgroup
-startgroup
-make_bd_pins_external  [get_bd_pins axi_gpio_1/gpio_io_o]
-endgroup
-
-# conexiones internas (AND con GPIO)
-connect_bd_net [get_bd_pins axi_gpio_0/gpio_io_i] [get_bd_pins creando_hardware_0/y]
+![](./imagenes/sw_red.png)
 
 
-# cambiando los nombres de los puertos
-set_property name sw0 [get_bd_ports a_0]
-set_property name sw1 [get_bd_ports b_0]
-set_property name LED [get_bd_ports gpio_io_o_0]
+# - Uso
 
-# aplicamos run block automation
-startgroup
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_1/S_AXI} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_1/S_AXI]
-endgroup
+Ingresar al entorno de Vitis. Abrir una terminal serial.
 
-# validando diseño
-validate_bd_design
+![](./imagenes/sw_serial.png)
 
-# ordenando diseño
-regenerate_bd_layout
+Abrir una terminal. Presionar los botones de la tarjeta ArtyZ7-10
 
-# guardando diseño
-save_bd_design
+![](./imagenes/sw_resultado.png)
 
-# creando wrapper
-make_wrapper -files [get_files C:/Users/josue/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
-add_files -norecurse c:/Users/josue/project_1/project_1.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+Presionar los botones y veremos que se modica el resultado.
 
-# generate bitstream
-```
-### __funciones__
-```
-XGpio input, output;
-int a;
-XGpio_Initialize(&input, XPAR_AXI_GPIO_0_DEVICE_ID);
-XGpio_Initialize(&output, XPAR_AXI_GPIO_1_DEVICE_ID);
+![](./imagenes/sw_tarjeta.jpg)
 
-XGpio_SetDataDirection(&input, 1, 1);
-XGpio_SetDataDirection(&output, 1, 0);
 
-while (1) {
-a = XGpio_DiscreteRead(&input, 1);
-	if (a == 1) {
-		y = 0;
-	} else {
-		y = 1;
-	}
-	XGpio_DiscreteWrite(&output, 1, y);
-}
-```
-
-# asd
-https://www.avnet.com/wps/wcm/connect/onesite/557e3453-20d7-4737-b2a8-8afc404dc81e/designing_a_custom_axi_slave_rev1.pdf?MOD=AJPERES&CVID=nxFlYvm&CVID=nxFlYvm&CVID=nxFlYvm&CVID=nxFlYvm
-
-# intento de conexion mediante axi lite 4
-- crear proyecto
-- crear bloque diseño

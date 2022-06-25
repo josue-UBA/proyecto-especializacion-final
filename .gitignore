@@ -1,12 +1,12 @@
 
-vivado2/.metadata/
-vivado2/plataforma/export/plataforma/sw/plataforma/standalone_domain/bsplib/lib/
-vivado2/plataforma/ps7_cortexa9_0/
-vivado2/plataforma/zynq_fsbl/
-vivado2/plataforma/export/plataforma/sw/plataforma/
-vivado2/plataforma/tempdsa/
-vivado2/proyecto/proyecto.cache/
-vivado2/proyecto/proyecto.gen/
-vivado2/proyecto/proyecto.runs/
-vivado2/project_1/project_1.sim/sim_1/behav/
-vivado2/project_1/project_1.cache/
+vivado/.metadata/
+vivado/plataforma/export/plataforma/sw/plataforma/standalone_domain/bsplib/lib/
+vivado/plataforma/ps7_cortexa9_0/
+vivado/plataforma/zynq_fsbl/
+vivado/plataforma/export/plataforma/sw/plataforma/
+vivado/plataforma/tempdsa/
+vivado/proyecto/proyecto.cache/
+vivado/proyecto/proyecto.gen/
+vivado/proyecto/proyecto.runs/
+vivado/project_1/project_1.sim/sim_1/behav/
+vivado/project_1/project_1.cache/
