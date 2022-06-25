@@ -19,3 +19,26 @@ platform generate
 platform config -updatehw {C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa}
 platform config -updatehw {C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa}
 platform generate -domains 
+platform active {plataforma}
+platform config -updatehw {C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa}
+platform generate -domains 
+platform active {plataforma}
+platform config -updatehw {C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa}
+platform generate -domains 
+platform active {plataforma}
+bsp reload
+domain active {zynq_fsbl}
+bsp reload
+bsp reload
+domain active {zynq_fsbl}
+bsp reload
+platform active {plataforma}
+bsp reload
+platform active {plataforma}
+bsp reload
+domain active {zynq_fsbl}
+bsp reload
+platform config -updatehw {C:/Users/josue/Documents/GitHub/proyecto-especializacion-final/vivado2/proyecto/design_1_wrapper.xsa}
+domain active {standalone_domain}
+bsp reload
+platform generate

@@ -15,7 +15,8 @@
 	)
 	(
 		// Users to add ports here
-        output wire [C_S_AXI_DATA_WIDTH-1:0]salida_hw,
+        output wire [C_S_AXI_DATA_WIDTH-1:0]salida_dato,
+        output wire [C_S_AXI_DATA_WIDTH-1:0]salida_direccion,
         input wire [C_S_AXI_DATA_WIDTH-1:0]entrada_hw,
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -391,7 +392,8 @@
 	end    
 
 	// Add user logic here
-	assign salida_hw = slv_reg0;
+	assign salida_dato = slv_reg0;
+	assign salida_direccion = slv_reg1;
 	
 	always @( posedge S_AXI_ACLK )
 	begin

@@ -61,7 +61,43 @@ void hardware_1(u32 value){
 int main()
 {
     init_platform();
-	hardware_1(1);
+	//hardware_1(1);
+
+    u32 dato;
+	u32 direccion;
+
+	/* **************** */
+    direccion = 0;
+    Xil_Out32(0x43C00004, direccion);//direccion
+
+    dato = 21;
+    direccion = 1;
+    Xil_Out32(0x43C00004, direccion);//direccion
+    Xil_Out32(0x43C00000, dato);//dato
+    printf("el resultado es %d", (int)Xil_In32(0x43C0000C));
+    sleep(10);
+    /* **************** */
+    direccion = 0;
+    Xil_Out32(0x43C00004, direccion);//direccion
+
+    dato = 7;
+	direccion = 2;
+	Xil_Out32(0x43C00004, direccion);//direccion
+	Xil_Out32(0x43C00000, dato);//dato
+    printf("el resultado es %d", (int)Xil_In32(0x43C0000C));
+    sleep(10);
+	/* **************** */
+    direccion = 0;
+    Xil_Out32(0x43C00004, direccion);//direccion
+
+    dato = 2;
+	direccion = 3;
+	Xil_Out32(0x43C00004, direccion);//direccion
+	Xil_Out32(0x43C00000, dato);//dato
+    printf("el resultado es %d", (int)Xil_In32(0x43C0000C));
+    sleep(10);
+    /* **************** */
+
 
 	/*
 	int entrada = 0;
