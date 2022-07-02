@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,6 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import Button from 'react-bootstrap/Button';
+
 
 function App() {
   return (
@@ -26,42 +27,86 @@ function AutoLayoutExample() {
         <MiNav />
       </Row>
       <Row>
-        <Col><BasicExample /></Col>
-        <Col><h1>configuracion de salida</h1></Col>
+        <Col><HorizontalExample /></Col>
+        <Col><h2>configuracion de salida</h2></Col>
       </Row>
       <Row>
-        <Col><h1>configuracion de control</h1></Col>
-        <Col><h1>general</h1></Col>
+        <Col><h2>configuracion de control</h2></Col>
+        <Col><h2>general</h2></Col>
       </Row>
     </Container>
   );
 }
 
-function BasicExample() {
+
+function HorizontalExample() {
+  function hola(){
+    console.log("dentro de hola!!");
+  }
   return (
-    <Form>
-      <h1>configuracion de entrada</h1>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+    <Container>
+      <h2>Configuración de interfaces de entrada</h2>
+    <Form onSubmit={hola()}>
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
+        <Form.Label column sm={10}>
+          Emailas adas das 
+        </Form.Label>
+        <Col sm={2}>
+          <Form.Control type="email" placeholder="Email" />
+        </Col>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+        <Form.Label column sm={10}>
+          Password
+        </Form.Label>
+        <Col sm={2}>
+          <Form.Control type="password" placeholder="Password" />
+        </Col>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+      <fieldset>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label as="legend" column sm={10}>
+            Radios
+          </Form.Label>
+          <Col sm={2}>
+            <Form.Check
+              type="radio"
+              label="first radio"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios1"
+            />
+            <Form.Check
+              type="radio"
+              label="second radio"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios2"
+            />
+            <Form.Check
+              type="radio"
+              label="third radio"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios3"
+            />
+          </Col>
+        </Form.Group>
+      </fieldset>
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
+        <Col sm={{ span: 10, offset: 2 }}>
+          <Form.Check label="Remember me" />
+        </Col>
       </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+
+      <Form.Group as={Row} className="mb-3">
+        <Col sm={{ span: 10, offset: 2 }}>
+          <Button type="submit">Sign in</Button>
+        </Col>
+      </Form.Group>
     </Form>
+    </Container>
   );
 }
+
 
 
 function MiNav() {
