@@ -6,7 +6,7 @@
 <Project Version="7" Minor="54" Path="/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1/project_1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="b040c33f99094e61ba4ac7485940aa9e"/>
+    <Option Name="Id" Val="f52bf7b8c3fc43029cf6c7c3181a558a"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
