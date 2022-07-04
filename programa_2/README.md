@@ -5,8 +5,7 @@
     |-- archivos
         |-- project_1_1.tcl
         |-- project_1_2.tcl
-        |-- project_1_3.tcl
-        |-- project_1_4.tcl
+        |-- ...
     |-- imagenes
     |-- vivado
     |-- vivado2
@@ -44,7 +43,11 @@ set origin_dir "/home/josue/Documentos/GitHub/proyecto-especializacion-final/pro
 - el script __primero.sh__ se encagarga de borrar y crear nuevamente la carpeta __vivado__, asi que no nos preocupemos de eso. Ejecutar estos comandos para que se genere el proyecto en __Vivado__:
 ```bash
 cd (ruta del repo)/programa_2
-./primero.sh
+./primero.sh <nombre_archivo>
+# ejemplo de <nombre_archivo>:
+# project_1_1.tcl (red 1) 
+# project_1_2.tcl (red 2)
+# ...
 ```
 - en caso quiera usar la GUI, ejecutar los siguientes comandos:
 ```bash
