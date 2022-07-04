@@ -36,3 +36,17 @@ apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/process
 endgroup
 regenerate_bd_layout
 write_project_tcl -use_bd_files {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl}
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M01_AXI] [get_bd_intf_nets axi_gpio_1_GPIO] [get_bd_cells axi_gpio_1]
+delete_bd_objs [get_bd_intf_ports btns_4bits_0]
+regenerate_bd_layout
+write_project_tcl {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_4bits ( 4 Buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_1/GPIO]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_1/S_AXI} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_1/S_AXI]
+endgroup
+regenerate_bd_layout
+save_bd_design
+write_project_tcl {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl}
