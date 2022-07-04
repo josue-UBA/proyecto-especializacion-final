@@ -2,7 +2,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module red #
+	module red_1 #
 	(
 		// Users to add parameters here
 

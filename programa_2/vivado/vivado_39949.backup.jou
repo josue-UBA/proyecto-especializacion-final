@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Jul  4 07:03:50 2022
+# Process ID: 39949
+# Current directory: /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado
+# Command line: vivado -mode batch -source ../archivos/project_1_1.tcl
+# Log file: /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/vivado.log
+# Journal file: /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/vivado.jou
+#-----------------------------------------------------------
+source ../archivos/project_1_1.tcl
