@@ -1,0 +1,475 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:47 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 7949
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Jul 04 03:39:41 PET 2022
+Time zone: 	Peru Standard Time (America/Lima)
+
+OS: Ubuntu
+OS Version: 5.13.0-52-generic
+OS Architecture: amd64
+Available processors (cores): 8
+
+Display: 0
+Screen size: 1366x768
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	/tools/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2
+Java executable location: 	/tools/Xilinx/Vivado/2020.2/tps/lnx64/jre11.0.2/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	josue
+User home directory: /home/josue
+User working directory: /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado
+User country: 	PE
+User language: 	es
+User locale: 	es_PE
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2020.2
+RDI_DATADIR: /tools/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: /home/josue/.Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: /home/josue/.Xilinx/Vivado/2020.2/
+Vivado layouts directory: /home/josue/.Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	/tools/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/vivado.log
+Vivado journal file location: 	/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-7949-josue-Latitude-5490
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /tools/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2020.2
+XILINX_SDK: /tools/Xilinx/Vitis/2020.2
+XILINX_VITIS: /tools/Xilinx/Vitis/2020.2
+XILINX_VIVADO: /tools/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,566 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// HMemoryUtils.trashcanNow. Engine heap size: 1,566 MB. GUI used memory: 61 MB. Current time: 7/4/22, 3:39:42 AM PET
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // y
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+// [GUI Memory]: 75 MB (+75976kb) [00:00:26]
+// [Engine Memory]: 1,569 MB (+1493858kb) [00:00:26]
+// [GUI Memory]: 89 MB (+10801kb) [00:00:28]
+// [GUI Memory]: 103 MB (+10449kb) [00:00:28]
+// [GUI Memory]: 117 MB (+9237kb) [00:00:28]
+// f (cr): New Project: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  2095 ms.
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i
+// WARNING: HEventQueue.dispatchEvent() is taking  3253 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,628 MB. GUI used memory: 65 MB. Current time: 7/4/22, 3:40:10 AM PET
+selectTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Arty Z7-10 ; Arty Z7-10 ; digilentinc.com ; 1.0 ; xc7z010clg400-1 ; 400 ; A.0 ; 100 ; 17600 ; 35200 ; 60 ; 0 ; 80 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 2 ;  ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 1, "Arty Z7-10", 0); // d
+selectButton("NEXT", "Next >"); // JButton
+// bz (cr):  Create Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project project_1 /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1 -part xc7z010clg400-1 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,651 MB (+3276kb) [00:00:44]
+// WARNING: HEventQueue.dispatchEvent() is taking  3513 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 7359.438 ; gain = 48.031 ; free physical = 217 ; free virtual = 5854 
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part digilentinc.com:arty-z7-10:part0:1.0 [current_project] 
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 22 seconds
+dismissDialog("Create Project"); // bz
+dismissDialog("New Project"); // f
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Create Block Design]", 6, false); // u
+// Run Command: PAResourceCommand.PACommandNames_CREATE_NEW_DIAGRAM
+// bq (cr): Create Block Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Block Design"); // bq
+// TclEventType: LOAD_FEATURE
+// bz (cr):  Create Block Design : addNotify
+// Tcl Message: create_bd_design "design_1" 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Wrote  : </home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd>  
+// TclEventType: RSB_OPEN_DIAGRAM
+// [GUI Memory]: 136 MB (+13160kb) [00:01:06]
+// WARNING: HEventQueue.dispatchEvent() is taking  1672 ms.
+// Elapsed time: 11 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// Tcl Message: create_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 7405.250 ; gain = 27.805 ; free physical = 117 ; free virtual = 5775 
+dismissDialog("Create Block Design"); // bz
+// [Engine Memory]: 1,751 MB (+18585kb) [00:01:08]
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceQtoS.SystemBuilderView_ADD_IP, "System_RSB_ADD_IP"); // E
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "zy"); // OverlayTextField
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ZYNQ7 Processing System", 0, "ZYNQ7 Processing System", 0, false); // L
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ZYNQ7 Processing System", 0); // L
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "ZYNQ7 Processing System", 0, "ZYNQ7 Processing System", 0, false, false, false, false, false, true); // L - Double Click
+// Tcl Message: startgroup 
+// Tcl Message: create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 
+// bz (cr):  Add IP : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// WARNING: HEventQueue.dispatchEvent() is taking  1658 ms.
+// Tcl Message: endgroup 
+selectButton(PAResourceQtoS.SystemBuilderView_ADD_IP, "System_RSB_ADD_IP"); // E
+// HMemoryUtils.trashcanNow. Engine heap size: 1,928 MB. GUI used memory: 81 MB. Current time: 7/4/22, 3:40:52 AM PET
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "gpio"); // OverlayTextField
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI GPIO", 0, "AXI GPIO", 0, false); // L
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI GPIO", 0); // L
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI GPIO", 0, "AXI GPIO", 0, false, false, false, false, false, true); // L - Double Click
+// [Engine Memory]: 1,953 MB (+120208kb) [00:01:25]
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 143 MB (+631kb) [00:01:25]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: startgroup 
+// Tcl Message: create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 
+// Tcl Message: endgroup 
+selectButton(PAResourceQtoS.RSBApplyAutomationBar_RUN_BLOCK_AUTOMATION, "Run Block Automation"); // h
+// ah (cr): Run Block Automation: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: RSB_SCRIPT_TASK
+dismissDialog("Run Block Automation"); // ah
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0] 
+// bz (cr):  Run Block Automation : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+dismissDialog("Run Block Automation"); // bz
+selectButton(PAResourceQtoS.RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION, "Run Connection Automation"); // h
+// ah (cr): Run Connection Automation: addNotify
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (2 out of 2 selected)]", 0, true, true, ui.utils.collection.couples.TriState.True); // av - Node
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Run Connection Automation"); // ah
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_CONNECTION_CHANGE
+// bz (cr):  Run Connection Automation : addNotify
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// Tcl Message: startgroup 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_4bits ( 4 Buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO] 
+// Tcl Message: INFO: [board_rule 100-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells /axi_gpio_0] INFO: [board_rule 100-100] set_property CONFIG.GPIO_BOARD_INTERFACE btns_4bits [get_bd_cells /axi_gpio_0] INFO: [BoardRule 102-8] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_4bits INFO: [BoardRule 102-9] connect_bd_intf_net /btns_4bits /axi_gpio_0/GPIO 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI] 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// [GUI Memory]: 154 MB (+4067kb) [00:01:39]
+// TclEventType: XGUI_RESET_GUI_ELEMENT
+// Tcl Message: INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI 
+// Tcl Message: Slave segment '/axi_gpio_0/S_AXI/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4120_0000 [ 64K ]>. 
+// Tcl Message: endgroup 
+dismissDialog("Run Connection Automation"); // bz
+selectButton(PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, "System_regenerate_rsb_layout"); // E
+// Run Command: PAResourceCommand.PACommandNames_REGENERATE_LAYOUT
+// Tcl Command: 'regenerate_bd_layout'
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: RSB_REGENERATE_LAYOUT
+// Tcl Message: regenerate_bd_layout 
+selectButton(PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN, "save_rsb_design"); // E
+// Run Command: PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: save_bd_design 
+// Tcl Message: Wrote  : </home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd>  Wrote  : </home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1/project_1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui>  
+// Elapsed time: 11 seconds
+selectButton(PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, "System_regenerate_rsb_layout"); // E
+// Run Command: PAResourceCommand.PACommandNames_REGENERATE_LAYOUT
+// Tcl Command: 'regenerate_bd_layout'
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: RSB_REGENERATE_LAYOUT
+// Tcl Message: regenerate_bd_layout 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_WRITE_PROJECT_TCL, "Write Tcl..."); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+// Run Command: PAResourceCommand.PACommandNames_WRITE_PROJECT_TCL
+// aL (cr): Write Project to Tcl: addNotify
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_WRITE_ALL_PROPERTIES, "Write all properties", true); // g: TRUE
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_COPY_SOURCES_TO_NEW_PROJECT, "Copy sources to new project", false); // g: FALSE
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_RECREATE_BLOCK_DESIGNS_USING_TCL, "Recreate Block Designs using Tcl", true); // g: TRUE
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_COPY_SOURCES_TO_NEW_PROJECT, "Copy sources to new project", true); // g: TRUE
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_WRITE_OBJECT_VALUES, "Write object values", true); // g: TRUE
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_IGNORE_COMMAND_ERRORS, "Ignore command errors", true); // g: TRUE
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_SUSPEND_MESSAGE_LIMITS_DURING_COMMAND, "Suspend message limits during command execution", true); // g: TRUE
+// Elapsed time: 18 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Tcl Command: 'write_project_tcl -all_properties -use_bd_files -dump_project_info -quiet -verbose {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl}'
+// 'q' command handler elapsed time: 28 seconds
+dismissDialog("Write Project to Tcl"); // aL
+// TclEventType: MSGMGR_REFRESH_MSG
+// Tcl Message: write_project_tcl -all_properties -use_bd_files -dump_project_info -quiet -verbose {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl} 
+// bz (cr):  Write Project to Tcl : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: MSGMGR_REFRESH_MSG
+dismissDialog("Write Project to Tcl"); // bz
+// Elapsed time: 54 seconds
+selectButton(PAResourceQtoS.SystemBuilderView_ADD_IP, "System_RSB_ADD_IP"); // E
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "gpio"); // OverlayTextField
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI GPIO", 0, "AXI GPIO", 0, false); // L
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI GPIO", 0); // L
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI GPIO", 0, "AXI GPIO", 0, false, false, false, false, false, true); // L - Double Click
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: startgroup 
+// Tcl Message: create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1 
+// Tcl Message: endgroup 
+selectButton(PAResourceQtoS.RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION, "Run Connection Automation"); // h
+// ah (cr): Run Connection Automation: addNotify
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (2 out of 2 selected)]", 0, true, true, ui.utils.collection.couples.TriState.True); // av - Node
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Run Connection Automation"); // ah
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// bz (cr):  Run Connection Automation : addNotify
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// Tcl Message: startgroup 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_4bits ( 4 Buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_1/GPIO] 
+// Tcl Message: INFO: [board_rule 100-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells /axi_gpio_1] INFO: [board_rule 100-100] set_property CONFIG.GPIO_BOARD_INTERFACE btns_4bits [get_bd_cells /axi_gpio_1] INFO: [BoardRule 102-8] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_4bits_0 INFO: [BoardRule 102-9] connect_bd_intf_net /btns_4bits_0 /axi_gpio_1/GPIO 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_1/S_AXI} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_1/S_AXI] 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,028 MB. GUI used memory: 96 MB. Current time: 7/4/22, 3:43:07 AM PET
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: XGUI_RESET_GUI_ELEMENT
+// Tcl Message: Slave segment '/axi_gpio_1/S_AXI/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4121_0000 [ 64K ]>. 
+// Tcl Message: endgroup 
+dismissDialog("Run Connection Automation"); // bz
+selectButton(PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, "System_regenerate_rsb_layout"); // E
+// Run Command: PAResourceCommand.PACommandNames_REGENERATE_LAYOUT
+// Tcl Command: 'regenerate_bd_layout'
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: RSB_REGENERATE_LAYOUT
+// Tcl Message: regenerate_bd_layout 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ah
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_WRITE_PROJECT_TCL, "Write Tcl..."); // ak
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ac
+// Run Command: PAResourceCommand.PACommandNames_WRITE_PROJECT_TCL
+// aL (cr): Write Project to Tcl: addNotify
+selectCheckBox(PAResourceTtoZ.WriteProjectTclDialog_RECREATE_BLOCK_DESIGNS_USING_TCL, "Recreate Block Designs using Tcl", true); // g: TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Tcl Command: 'write_project_tcl -all_properties -dump_project_info -quiet -verbose {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl}'
+// 'q' command handler elapsed time: 3 seconds
+// TclEventType: MSGMGR_REFRESH_MSG
+dismissDialog("Write Project to Tcl"); // aL
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: write_project_tcl -all_properties -dump_project_info -quiet -verbose {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl} 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// bz (cr):  Write Project to Tcl : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: MSGMGR_REFRESH_MSG
+// Tcl Message: INFO: [BD 5-453] Writing out BD creation steps for design_1 as a TCL proc 
+dismissDialog("Write Project to Tcl"); // bz
+unMinimizeFrame(PAResourceOtoP.PAViews_TCL_CONSOLE, "Tcl Console"); // az

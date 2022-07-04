@@ -2,11 +2,39 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Jul  2 16:09:19 2022
-# Process ID: 34612
+# Start of session at: Mon Jul  4 03:39:18 2022
+# Process ID: 7949
 # Current directory: /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado
-# Command line: vivado -mode batch -source ../archivos/project_1.tcl
+# Command line: vivado
 # Log file: /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/vivado.log
 # Journal file: /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/vivado.jou
 #-----------------------------------------------------------
-source ../archivos/project_1.tcl
+start_gui
+create_project project_1 /home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1 -part xc7z010clg400-1
+set_property board_part digilentinc.com:arty-z7-10:part0:1.0 [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_4bits ( 4 Buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_0/S_AXI} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
+endgroup
+regenerate_bd_layout
+save_bd_design
+regenerate_bd_layout
+write_project_tcl -all_properties -use_bd_files -dump_project_info -quiet -verbose {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_4bits ( 4 Buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_1/GPIO]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_1/S_AXI} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_1/S_AXI]
+endgroup
+regenerate_bd_layout
+write_project_tcl -all_properties -dump_project_info -quiet -verbose {/home/josue/Documentos/GitHub/proyecto-especializacion-final/programa_2/vivado/project_1.tcl}
