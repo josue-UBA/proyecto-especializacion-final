@@ -4,10 +4,10 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button';
 import React from 'react';
 
+import MiNav from './components/miNav';
 import CompCallToApi from './components/compCallToApi'
 
 function App() {
@@ -72,15 +72,3 @@ function HorizontalExample() {
   );
 }
 
-
-
-function MiNav() {
-  return <Container className="p-3 m-3">
-  <Navbar bg="light" expand="lg">
-    <Container>
-      <Navbar.Brand href="#home">Plataforma para Aceleradores de Inteligencia Artificial - UBA</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    </Container>
-  </Navbar>
-  </Container>
-}

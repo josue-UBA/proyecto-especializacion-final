@@ -21,34 +21,41 @@ class CompCallToApi extends React.Component {
 
     async function postapi() {
 
-      let mi_json = {
-        info: "enviado desde el frontend",
-        entrada: {
-          dato_1: event.target[0].checked,
-          dato_2: event.target[1].checked,
-          dato_3: event.target[2].checked,
-          dato_4: event.target[3].checked
-        },
-        red: {
-          dato_1: event.target[4].checked,
-          dato_2: event.target[5].checked,
-          dato_3: event.target[6].checked
-        },
-        general: {
-          dato_1: event.target[7].value,
-          dato_2: event.target[8].value
+      try {
+        let mi_json = {
+          info: "enviado desde el frontend",
+          entrada: {
+            dato_1: event.target[0].checked,
+            dato_2: event.target[1].checked,
+            dato_3: event.target[2].checked,
+            dato_4: event.target[3].checked
+          },
+          red: {
+            dato_1: event.target[4].checked,
+            dato_2: event.target[5].checked,
+            dato_3: event.target[6].checked
+          },
+          general: {
+            dato_1: event.target[7].value,
+            dato_2: event.target[8].value
+          }
         }
+
+        let postRequest = {
+          method: 'post',
+          body: JSON.stringify(mi_json)
+        }
+        let respo = await fetch("http://localhost:8000/app", postRequest);
+        let data_json = await respo.json();
+        console.log(data_json) // borrar esta linea despues
+        alert("Se enviaron los datos al servidor!");
+
+      } catch (error) {
+        console.log(error);
+        alert("Revisa el servidor. Parece que esta caido.");
       }
 
-      let postRequest = {
-        method: 'post',
-        body: JSON.stringify(mi_json)
-      }
-      let respo = await fetch("http://localhost:8000/app", postRequest);
-      let data_json = await respo.json();
-      console.log(data_json) // borrar esta linea despues
     }
-
     postapi();
   }
 
