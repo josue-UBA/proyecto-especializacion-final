@@ -16,7 +16,11 @@
 	)
 	(
 		// Users to add ports here
-
+  input [31:0] s_tdata, // Transfer Data (optional)
+  input [3:0] s_tkeep, // Transfer Null Byte Indicators (optional)
+  input s_tlast, // Packet Boundary Indicator (optional)
+  input s_tvalid, // Transfer valid (required)
+  output s_tready, // Transfer ready (optional)
 		// User ports ends
 		// Do not modify the ports beyond this line
 
