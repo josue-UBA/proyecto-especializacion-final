@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-07-05T04:53:24.144Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="APf2YwcT6q02m5YCXzUP" version="21.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-05T05:07:40.365Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="6tqZo51Hzzixn1z0kR6H" version="21.5.2" type="github">
   <diagram name="Página-1" id="68-ri3t_62zrD-WDxQXu">
-    <mxGraphModel dx="1447" dy="1395" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2394" dy="1741" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1223,13 +1223,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-6" value="S1: add 1 to pointer" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-520" y="460" width="120" height="80" as="geometry" />
+          <mxGeometry x="-520" y="460" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="NHjjjnDl3UXlkUb6KNAD-10" target="NHjjjnDl3UXlkUb6KNAD-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-10" value="S2: enable read&lt;br&gt;en. read = 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-360" y="550" width="120" height="80" as="geometry" />
+          <mxGeometry x="-360" y="550" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="NHjjjnDl3UXlkUb6KNAD-12" target="NHjjjnDl3UXlkUb6KNAD-15">
           <mxGeometry relative="1" as="geometry">
@@ -1239,7 +1239,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-12" value="S3: finish&lt;br&gt;getWeightFinished = 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-520" y="660" width="120" height="100" as="geometry" />
+          <mxGeometry x="-520" y="660" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-16" value="getWeight = 1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="NHjjjnDl3UXlkUb6KNAD-15" target="NHjjjnDl3UXlkUb6KNAD-6">
           <mxGeometry relative="1" as="geometry" />
@@ -1365,11 +1365,17 @@
         <mxCell id="8xFIW8AcWVv0tGsdDjNo-4" value="" style="line;strokeWidth=4;direction=south;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="90" y="80" width="10" height="440" as="geometry" />
         </mxCell>
-        <mxCell id="NHjjjnDl3UXlkUb6KNAD-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NHjjjnDl3UXlkUb6KNAD-74" target="NHjjjnDl3UXlkUb6KNAD-15">
+        <mxCell id="NHjjjnDl3UXlkUb6KNAD-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="NHjjjnDl3UXlkUb6KNAD-74" target="NHjjjnDl3UXlkUb6KNAD-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NHjjjnDl3UXlkUb6KNAD-74" value="S0: reset&lt;br&gt;en. read = 0&lt;br&gt;getWeightFinished&amp;nbsp; = 0" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-720" y="340" width="120" height="80" as="geometry" />
+        <mxCell id="NHjjjnDl3UXlkUb6KNAD-74" value="S0: reset&lt;br&gt;en. read = 0&lt;br&gt;getWeightFinished&amp;nbsp; = 0&lt;br&gt;w pointer = input pointer" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-660" y="340" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NHjjjnDl3UXlkUb6KNAD-78" value="reset" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="NHjjjnDl3UXlkUb6KNAD-74">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-720" y="370" as="sourcePoint" />
+            <mxPoint x="-670" y="400" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
