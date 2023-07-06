@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-07-06T14:11:44.470Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="ny48vI4BA26ueiKwDE9f" version="21.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-06T16:51:20.027Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="_2kwQKzdSXD7S2On1Sc1" version="21.5.2" type="github">
   <diagram name="Página-1" id="68-ri3t_62zrD-WDxQXu">
-    <mxGraphModel dx="3497" dy="2871" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3794" dy="2636" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -566,6 +566,11 @@
               <mxPoint x="940" y="60" />
             </Array>
             <mxPoint x="710" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-48" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="j_RhVMx-HsZgqAVWS6TV-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-110" y="400" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z2SttC8pkeUnPTJP8_GX-3" value="control" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
@@ -1241,7 +1246,7 @@
           <mxGeometry x="-220" y="900" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-30" value="&lt;h1&gt;Calculate weight&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="1560" y="-440" width="190" height="120" as="geometry" />
+          <mxGeometry x="1560" y="-410" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-33" value="pre-charged data. For that reason, need to be a set of registers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-130" y="580" width="140" height="30" as="geometry" />
@@ -1300,13 +1305,13 @@
             <mxPoint x="190" y="160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="NHjjjnDl3UXlkUb6KNAD-63" value="m" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+        <mxCell id="NHjjjnDl3UXlkUb6KNAD-63" value="m" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1" target="j_RhVMx-HsZgqAVWS6TV-47">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-40" y="340" as="sourcePoint" />
             <mxPoint x="190" y="340" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="NHjjjnDl3UXlkUb6KNAD-64" value="n" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+        <mxCell id="NHjjjnDl3UXlkUb6KNAD-64" value="n" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1" target="j_RhVMx-HsZgqAVWS6TV-47">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-40" y="360" as="sourcePoint" />
             <mxPoint x="190" y="360" as="targetPoint" />
@@ -1790,12 +1795,12 @@
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;exitX=1.006;exitY=0.607;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-20" target="j_RhVMx-HsZgqAVWS6TV-21">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1341" y="-700" />
+              <mxPoint x="1361" y="-700" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-20" value="S: begin&lt;br&gt;endLayer = 0&lt;br&gt;endNeuron = 0" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1220" y="-770" width="120" height="80" as="geometry" />
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-20" value="S2: reset output flags&lt;br&gt;endLayer = 0&lt;br&gt;endNeuron = 0" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="-770" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-24" value="previusYCount = m" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-21" target="j_RhVMx-HsZgqAVWS6TV-23">
           <mxGeometry relative="1" as="geometry">
@@ -1804,31 +1809,32 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-34" value="previusYCount != m" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-21" target="j_RhVMx-HsZgqAVWS6TV-35">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-34" value="previusYCount != m" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-21" target="j_RhVMx-HsZgqAVWS6TV-35">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1498" y="-800" />
               <mxPoint x="1140" y="-800" />
+              <mxPoint x="1140" y="-728" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-21" value="S: add&lt;br&gt;previousYCount = previousYCount&amp;nbsp;+ 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-21" value="S3: add&lt;br&gt;previousYCount = previousYCount&amp;nbsp;+ 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1480" y="-750" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-26" value="yCount = n" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-29" target="j_RhVMx-HsZgqAVWS6TV-35">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-30" value="YCount = n" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-42" target="j_RhVMx-HsZgqAVWS6TV-35">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-30" value="yCount != n" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-42" target="j_RhVMx-HsZgqAVWS6TV-35">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1070" y="-500" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-23" target="j_RhVMx-HsZgqAVWS6TV-42">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-23" target="j_RhVMx-HsZgqAVWS6TV-42">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-23" value="S: endNeuron&lt;br&gt;endNeuron = 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-23" value="S4: endNeuron&lt;br&gt;endNeuron = 1&lt;br&gt;previousCount = 0" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1480" y="-590" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-25" value="m = totalPreviusY = inputLayer&lt;br&gt;n = totalY = outputLayer" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -1840,20 +1846,25 @@
             <mxPoint x="1117.5735931288218" y="-858.2842712474525" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-29" value="S: end layer&lt;br&gt;endLayer = 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-29" value="S6: end layer&lt;br&gt;endLayer = 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1160" y="-650" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-38" value="start = 1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-35" target="j_RhVMx-HsZgqAVWS6TV-20">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-35" value="S: waiting" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-35" value="S1: waiting" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1020" y="-740" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-39" target="j_RhVMx-HsZgqAVWS6TV-35">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="-770" />
+              <mxPoint x="1090" y="-770" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-39" value="S: begin&lt;br&gt;endLayer = 0&lt;br&gt;endNeuron = 0&lt;br&gt;previousYCount&amp;nbsp; = 0&lt;br&gt;yCount = 0" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="-880" width="120" height="80" as="geometry" />
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-39" value="S0: begin&lt;br&gt;endLayer = 0&lt;br&gt;endNeuron = 0&lt;br&gt;previousYCount&amp;nbsp; = 0&lt;br&gt;yCount = 0" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="-880" width="120" height="90" as="geometry" />
         </mxCell>
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-41" value="start = 0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;entryX=0.054;entryY=0.809;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-35" target="j_RhVMx-HsZgqAVWS6TV-35">
           <mxGeometry relative="1" as="geometry">
@@ -1863,14 +1874,17 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-44" value="YCount != n" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-42" target="j_RhVMx-HsZgqAVWS6TV-29">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-44" value="yCount = n" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j_RhVMx-HsZgqAVWS6TV-42" target="j_RhVMx-HsZgqAVWS6TV-29">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="j_RhVMx-HsZgqAVWS6TV-42" value="S: add&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;YCount = YCount&amp;nbsp;+ 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-42" value="S5: add&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;YCount = YCount&amp;nbsp;+ 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1260" y="-530" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="j_RhVMx-HsZgqAVWS6TV-45" value="&lt;h1&gt;mxn&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1270" y="-930" width="190" height="120" as="geometry" />
+          <mxGeometry x="1250" y="-870" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="j_RhVMx-HsZgqAVWS6TV-47" value="mxn controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="80" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
