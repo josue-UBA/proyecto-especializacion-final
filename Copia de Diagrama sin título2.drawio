@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-07-08T13:19:28.320Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="lmOrAN962srMAEqIBXEh" version="21.6.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-08T19:09:36.349Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="mqxhX-29NLfl04VXRspi" version="21.6.1" type="github">
   <diagram name="Página-1" id="68-ri3t_62zrD-WDxQXu">
-    <mxGraphModel dx="2202" dy="1703" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2730" dy="1782" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1740,14 +1740,14 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-8" value="S: start mxn controller&lt;br&gt;enableMemory = 0&lt;br&gt;mxnControllerStart = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ol625469mGtvV0Z9UcoN-8" value="S1: start mxn controller&lt;br&gt;enableMemory = 0&lt;br&gt;mxnControllerStart = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1680.02" y="580" width="159.98" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ol625469mGtvV0Z9UcoN-13" value="mxnControllerEnd&amp;nbsp;= 1&lt;br&gt;endNeuron = 0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" parent="1" source="ol625469mGtvV0Z9UcoN-35" target="ol625469mGtvV0Z9UcoN-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1977.5935931288075" y="858.2842712474621" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="2300" y="810" />
+              <mxPoint x="2380" y="810" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -1763,11 +1763,11 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="U7OZezu96vLxZYOazE27-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ol625469mGtvV0Z9UcoN-12" target="U7OZezu96vLxZYOazE27-9">
+        <mxCell id="U7OZezu96vLxZYOazE27-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ol625469mGtvV0Z9UcoN-12" target="U7OZezu96vLxZYOazE27-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-12" value="S: start weight and previous y controller&lt;br&gt;weightPointerControllerStart = 1&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;previousYControllerStart = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1960.0000000000002" y="790" width="200" height="80" as="geometry" />
+        <mxCell id="ol625469mGtvV0Z9UcoN-12" value="S4: start weight and previous y controller&lt;br&gt;weightPointerControllerStart = 1&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;previousYControllerStart = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2040" y="780" width="200" height="100" as="geometry" />
         </mxCell>
         <mxCell id="ol625469mGtvV0Z9UcoN-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" parent="1" source="ol625469mGtvV0Z9UcoN-16" target="ol625469mGtvV0Z9UcoN-8" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -1776,7 +1776,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-16" value="S: Enable memory&lt;br&gt;enableMemory = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ol625469mGtvV0Z9UcoN-16" value="S7: Enable memory&lt;br&gt;enableMemory = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1320.0000000000002" y="790" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ol625469mGtvV0Z9UcoN-23" value="yPointerControllerEnd = 1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" parent="1" source="ol625469mGtvV0Z9UcoN-41" target="ol625469mGtvV0Z9UcoN-22" edge="1">
@@ -1787,8 +1787,8 @@
             <mxPoint x="1680.0200000000002" y="880" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-20" value="S: start y pointer controller&lt;br&gt;yPointerControllerStart&amp;nbsp;= 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1960.0000000000002" y="960" width="160" height="80" as="geometry" />
+        <mxCell id="ol625469mGtvV0Z9UcoN-20" value="S8: start y pointer controller&lt;br&gt;yPointerControllerStart&amp;nbsp;= 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2040" y="960" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ol625469mGtvV0Z9UcoN-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" parent="1" source="ol625469mGtvV0Z9UcoN-22" target="ol625469mGtvV0Z9UcoN-8" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -1798,7 +1798,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-22" value="S: reset previous y controller&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ol625469mGtvV0Z9UcoN-22" value="S11: reset previous y controller&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1320.0000000000002" y="960" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ol625469mGtvV0Z9UcoN-24" value="&lt;h1&gt;Heading&lt;/h1&gt;&lt;p&gt;endNeuron&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;endLayer&lt;/p&gt;&lt;p&gt;0&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;0&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;e&lt;/span&gt;nable eight and y previus&lt;/p&gt;&lt;p&gt;0&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;1&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;0&lt;/p&gt;&lt;p&gt;1&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
@@ -1828,10 +1828,10 @@
         <mxCell id="ol625469mGtvV0Z9UcoN-31" value="mxnControllerEnd&amp;nbsp;= 0" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.944;exitY=0.229;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.961;entryY=0.762;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;curved=1;" parent="1" source="ol625469mGtvV0Z9UcoN-35" target="ol625469mGtvV0Z9UcoN-35" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="2393" y="870" />
-              <mxPoint x="2470" y="870" />
-              <mxPoint x="2470" y="950" />
-              <mxPoint x="2395" y="950" />
+              <mxPoint x="2433" y="870" />
+              <mxPoint x="2530" y="870" />
+              <mxPoint x="2530" y="950" />
+              <mxPoint x="2435" y="950" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -1844,23 +1844,23 @@
         <mxCell id="ol625469mGtvV0Z9UcoN-34" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ol625469mGtvV0Z9UcoN-33" target="ol625469mGtvV0Z9UcoN-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-33" value="finishFlag = 0&lt;br&gt;weightPointerControllerStart = 0&lt;br&gt;previousYControllerStart = 0&lt;br&gt;yPointerControllerStart = 0&lt;br&gt;mxnControllerStart = 0" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1640.02" y="430" width="200" height="90" as="geometry" />
+        <mxCell id="ol625469mGtvV0Z9UcoN-33" value="S0: reset&lt;br&gt;finishFlag = 0&lt;br&gt;weightPointerControllerStart = 0&lt;br&gt;previousYControllerStart = 0&lt;br&gt;yPointerControllerStart = 0&lt;br&gt;mxnControllerStart = 0" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1640.02" y="430" width="200" height="100" as="geometry" />
         </mxCell>
         <mxCell id="ol625469mGtvV0Z9UcoN-44" value="mxnControllerEnd&amp;nbsp;= 1&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;endLayer= 1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ol625469mGtvV0Z9UcoN-35" target="ol625469mGtvV0Z9UcoN-43" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-35" value="S: wait" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="2280" y="870" width="120" height="80" as="geometry" />
+        <mxCell id="ol625469mGtvV0Z9UcoN-35" value="S3: wait" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2320" y="880" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-38" value="wait" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ol625469mGtvV0Z9UcoN-38" value="S6: wait" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1640.0000000000002" y="790" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-41" value="wait" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ol625469mGtvV0Z9UcoN-41" value="S10: wait" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1640.0000000000002" y="960" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="ol625469mGtvV0Z9UcoN-43" value="S: finish layer&lt;br&gt;finishFlag = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="2240" y="1100" width="120" height="80" as="geometry" />
+        <mxCell id="ol625469mGtvV0Z9UcoN-43" value="S12: finish layer&lt;br&gt;finishFlag = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2440" y="1070" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ol625469mGtvV0Z9UcoN-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" parent="1" source="ol625469mGtvV0Z9UcoN-45" target="j_RhVMx-HsZgqAVWS6TV-35" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -1868,23 +1868,26 @@
         <mxCell id="ol625469mGtvV0Z9UcoN-45" value="S7: finish controller&lt;br&gt;mxnControllerEnd = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1380" y="-320" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="U7OZezu96vLxZYOazE27-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="U7OZezu96vLxZYOazE27-1">
+        <mxCell id="U7OZezu96vLxZYOazE27-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;entryX=0.676;entryY=0.054;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="U7OZezu96vLxZYOazE27-1" edge="1" target="ol625469mGtvV0Z9UcoN-35">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="2130" y="680" as="sourcePoint" />
-            <mxPoint x="2350" y="870" as="targetPoint" />
+            <mxPoint x="2078.0947501931114" y="650" as="sourcePoint" />
+            <mxPoint x="2407.7200000000003" y="865.9200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2401" y="650" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="U7OZezu96vLxZYOazE27-1" value="S: wait for flag resets" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="U7OZezu96vLxZYOazE27-1" value="S2: wait for flag resets" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1960" y="640" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="U7OZezu96vLxZYOazE27-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ol625469mGtvV0Z9UcoN-20" target="U7OZezu96vLxZYOazE27-7">
+        <mxCell id="U7OZezu96vLxZYOazE27-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ol625469mGtvV0Z9UcoN-20" target="U7OZezu96vLxZYOazE27-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="U7OZezu96vLxZYOazE27-7" value="S: wait for flag resets" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1800" y="960" width="120" height="80" as="geometry" />
+        <mxCell id="U7OZezu96vLxZYOazE27-7" value="S9: wait for flag resets&lt;br&gt;yPointerControllerStart&amp;nbsp;= 0" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1800" y="960" width="160" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="U7OZezu96vLxZYOazE27-9" value="S: wait for flag resets" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1800" y="790" width="120" height="80" as="geometry" />
+        <mxCell id="U7OZezu96vLxZYOazE27-9" value="S5: wait for flag resets&lt;br&gt;weightPointerControllerStart = 0&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;previousYControllerStart = 0" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1800" y="790" width="200" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
