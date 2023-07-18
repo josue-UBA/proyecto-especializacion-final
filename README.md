@@ -8,10 +8,36 @@
 # - ``Estructura del repositorio``
 ```.
 ├── README.md
-├── diagrams.drawio (diagramas usados en este README)
+├── diagrams.drawio                       (diagramas usados en este README)
 ├── imagenes
-└── vivado
-    ├── p_memory_design (proyecto en vivado con la implementacion de los bloques en verilog)
+└── vivado  
+    ├── p_memory_design                   (proyecto en vivado con la implementacion de los bloques en verilog)
+    │   ├── project_8.srcs
+    │   │   ├── sim_1                     (simulaciones)
+    │   │   │   └── new
+    │   │   │       ├── calculateWeight2_tb.v
+    │   │   │       ├── calculateWeight_tb.v
+    │   │   │       ├── calculateY_tb.v
+    │   │   │       ├── mxn_tb.v
+    │   │   │       ├── qqq.v
+    │   │   │       ├── t_mainController.v
+    │   │   │       └── weight2.v
+    │   │   └── sources_1
+    │   │       ├── bd
+    │   │       │   └── design_1
+    │   │       │       ├── design_1.bd
+    │   │       │       ├── design_1.bda
+    │   │       │       ├── ip
+    │   │       │       └── ui
+    │   │       │           └── bd_1f5defd0.ui
+    │   │       └── new                   (hardware)
+    │   │           ├── calculateY.v
+    │   │           ├── datapath.v
+    │   │           ├── eeeee.v
+    │   │           ├── mainController.v
+    │   │           ├── mxn.v
+    │   │           ├── weight3.v
+    │   │           └── weightPointer.v
 ```
 # - `Alcance`
 ## -- _`no es parte del alcance`_ 
@@ -57,6 +83,23 @@ El __main controller__ sera el encargado de gestionar todo el proceso interno de
 ![](./imagenes/n_red_completa.jpg)
 
 La forma en la que activara las capas estara definida por la arquitectora pipeline que se esta siguiendo
+
+## -- `arquitectura de capa`
+Para poder habilitar el pipeline, cada capa tendra que tener su propio juego de punteros 
+- weight pointer
+- previous y pointer
+- y pointer
+
+![](./imagenes/n_layer_arch.jpg)
+
+El funcionamiento de la capa estara definido por su unidad de control (__layer controller__):
+- la capa estara en estado __waiting__ mientras espera la señal de inicio. 
+- una vez se de inicio a la capa, se resetearan todas las flags internas.
+- se pedira al controlador __mxn controller__ informacion si es que la neurona o si la capa ha llegado a su fin. 
+- en base a la respuesta del __mxn controller__, se activaran los controladores __weight pointer controller__, __y pointer controller__ y __previous y pointer controller__.
+- el __layer controller__ tambien gestionara cuando se active o se desactive el acumulador.
+
+![](./imagenes/n_main_controller.jpg)
 
 ## -- `pipeline`
 - Nuestra arquitetura sera basada en pipeline para mejorar el tiempo de procesasamiento de la red. 
