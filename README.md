@@ -1,41 +1,84 @@
-# - Acelerador de Algoritmos de IA
+# - `Implementacion de una Red Neuronal Densa en FPGA`
 - __Universidad__: Universidad de Buenos Aires (UBA).
-- __Curso__: Microarquitectura y softcore.
-- __Proyecto__: Sistema acelerador de algoritmo de inteligencia articial. Como premisa se tiene que los datos deben ser obtenidos del exterior. Para este proyecto se uso los botones para simular sensores.
+- __Proyecto__: Implementacion en FPGA de un acelerador de una red neuronal densa.
 - __Materiales__: ArtyZ7-10, laptop y cable micro-usb.
-- __entorno__: Vivado 2020.2 y Vitis 2022.2.
+- __entorno__: Vivado 2023 y Vitis 2023.
 - __hardware description lenguaje__: Verilog.
 
-![](./imagenes/sw_tarjeta.jpg)
-
-# - Estructura del repositorio
+# - ``Estructura del repositorio``
+```.
+├── README.md
+├── diagrams.drawio (diagramas usados en este README)
+├── imagenes
+└── vivado
+    ├── p_memory_design (proyecto en vivado con la implementacion de los bloques en verilog)
 ```
-|-- proyecto-especiaizacion-final
-    |-- README.md (documentacion del repositorio)
-    |-- imagenes (imagenes para el archivo README.md)
-    |-- vitis
-        |-- xgpio_example_1
-            |-- src
-                |-- xgpio_example.c (archivo C para el microcontrolador)
-    |-- vivado
-        |-- project_1
-            |-- project_1.srcs
-            |-- sources_1
-                |-- bd 
-                    |-- design_1
-                        |-- design_1.bd (archivo del diseño del hardware)
-                |-- new
-                    |-- red.v (archivo verilog con la implementacion de la red neuronal)
-```
+# - `Alcance`
+## -- _`no es parte del alcance`_ 
+- optimamente los datos de entrada deberian almacenarce en una memoria y ser consumidas directamente. Esto evitaria que tengamos que cargar dato por dato desde el microcontrolador. Esto no se contemplo por ser algo complejo.
+# - `Background y notacion`
+This is the notation that we are going to follow for this project 
+- __x<sub>D</sub>__ is the input layer
+- __y<sup>(2)</sup><sub>4</sub>__ is the fourth neuron of the second layer
+- __w<sup>(3)</sup><sub>ij</sub>__ is the weight that conects the neorun of __y<sup>(2)</sup><sub>i</sub>__ and __y<sup>(3)</sup><sub>j</sub>__
 
-# - Diseño
-- primero realizamos el diagrama de bloques desde un punto de vista general. Para este caso los pesos son precargados en el hardware.
+![](./imagenes/n_network_notation.jpg)
+![](./imagenes/n_network_notation_2.jpg)
+# - `Diseño y funcionamiento`
 
-![](./imagenes/d_diseño.png)
+## -- `Vista general`
 
-- la red neuronal tendra la siguiente forma. Por simplicidad no se agrego funcion de activacion pero esto puede ser agregado facilmente.
+el FPGA interactuara con el microcontrolador a traves de 4 medios: 
+  - __address__
+  - __enableWrite__
+  - __input data__
+  - __output data__
+  - __networkEnd__
+  - __networkStart__
 
-![](./imagenes/d_red.png)
+Las señales __enableWrite__, __address__ e __input data__ trabajaran en conjunto para cargar los datos de la capa input de la red. Una vez cargada, se dara inicio al proceso con la señal __networkStart__. Cuando finalice el proceso, el FPGA activara el flag __networkEnd__ y el dato de salida estara listo en el bus __output data__.
+
+![](./imagenes/n_macro_2.jpg)
+
+## -- `registers`
+los datos seran almancenados principalmente en dos bloques de registros:
+- registros de pesos
+- registros de neuronas
+
+La siguiente imagen muestra como estarian cargados los pesos y la salida de cada neurona en una red de dimensiones 3x3x2x1.
+
+Un punto de mejora es tener los pesos en memoria en vez de registros debido a la cantidad de registros que se necesitarian pero esto no se contempla por el momento en el alcance.
+
+![](./imagenes/n_register_arch.jpg)
+
+## -- `main controller`
+El __main controller__ sera el encargado de gestionar todo el proceso interno del FPGA. Se encargada de activar capa por capa. 
+
+![](./imagenes/n_red_completa.jpg)
+
+La forma en la que activara las capas estara definida por la arquitectora pipeline que se esta siguiendo
+
+## -- `pipeline`
+- Nuestra arquitetura sera basada en pipeline para mejorar el tiempo de procesasamiento de la red. 
+- El tiempo maximo para obtener un resultado es la suma de las dos capas que le toma el mayor tiempo de procesamiento individual. 
+
+![](./imagenes/n_pipeline.jpg)
+
+- El pipeline tendra en un desfase de 2 para evitar el over write de las capas
+
+![](./imagenes/n_pipeline_flux.jpg)
+
+
+## -- `layer controller`
+
+- el __layer controller__ se encargara de orquestar otros tres controladores
+  - __weight pointer controller__
+  - __previous y pointer controller__
+  - __y pointer controller__
+  - __mxn controller__
+- el orden en que llamara a estos controlladores estara definido por el flujo de su FSM.
+
+![](./imagenes/n_main_controller.jpg)
 
 # - Implementacion en Vivado
 
@@ -130,3 +173,6 @@ Presionar los botones y veremos que se modica el resultado.
 ![](./imagenes/sw_tarjeta.jpg)
 
 
+
+# - Referente
+- Network notation, https://deeplearning.cs.cmu.edu/F22/document/slides/lec5.learning.pdf
