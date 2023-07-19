@@ -1,6 +1,6 @@
 # - `Implementacion de una Red Neuronal Densa en FPGA`
 - __Universidad__: Universidad de Buenos Aires (UBA).
-- __Proyecto__: Implementacion en FPGA de un acelerador de una red neuronal densa.
+- __Proyecto__: _Implementacion de una Red Densa en FPGA_.
 - __Materiales__: ArtyZ7-10, laptop y cable micro-usb.
 - __entorno__: Vivado 2023 y Vitis 2023.
 - __hardware description lenguaje__: Verilog.
@@ -39,14 +39,14 @@
     │   │           ├── weight3.v
     │   │           └── weightPointer.v
 ```
-# - `Alcance`
-## -- _`no es parte del alcance`_ 
-- optimamente los datos de entrada deberian almacenarce en una memoria y ser consumidas directamente. Esto evitaria que tengamos que cargar dato por dato desde el microcontrolador. Esto no se contemplo por ser algo complejo.
+# - `Puntos de mejora` 
+- optimamente los datos de entrada deberian almacenarce en una memoria y ser consumidas directamente. Esto evitaria que tengamos que cargar dato por dato desde el microcontrolador.
+- los pesos deberian estar almacenados en memoria debido a la cantidad que registros que serian necesarios de nos ser asi y a la cantidad limidad de los mismos que la tarjeta Arty zy tiene. 
 # - `Background y notacion`
-This is the notation that we are going to follow for this project 
-- __x<sub>D</sub>__ is the input layer
-- __y<sup>(2)</sup><sub>4</sub>__ is the fourth neuron of the second layer
-- __w<sup>(3)</sup><sub>ij</sub>__ is the weight that conects the neorun of __y<sup>(2)</sup><sub>i</sub>__ and __y<sup>(3)</sup><sub>j</sub>__
+Esta es la notacion que seguiremos a lo largo del proyecto:
+- __x<sub>4</sub>__ es la cuarta neurona de la capa de entrada
+- __y<sup>(2)</sup><sub>4</sub>__ es la curta neurona de la capa dos de la red
+- __w<sup>(3)</sup><sub>ij</sub>__ es el peso que conecta a la neurona __y<sup>(2)</sup><sub>i</sub>__ con __y<sup>(3)</sup><sub>j</sub>__
 
 ![](./imagenes/n_network_notation.jpg)
 ![](./imagenes/n_network_notation_2.jpg)
@@ -67,20 +67,21 @@ Las señales __enableWrite__, __address__ e __input data__ trabajaran en conjunt
 ![](./imagenes/n_macro_2.jpg)
 
 ## -- `registers`
-los datos seran almancenados principalmente en dos bloques de registros:
-- registros de pesos
-- registros de neuronas
+Los datos seran almancenados principalmente en los siguientes bloques de registros:
+- __weight global registers__ 
+- __neuron global registers__
+- __layer registers__ (one by layer)
+
+Los __global registers__ son accedidos por todas las capas. Los __layer registers__ son accedidos solo por la capa que lo contiene. 
 
 La siguiente imagen muestra como estarian cargados los pesos y la salida de cada neurona en una red de dimensiones 3x3x2x1.
 
-Un punto de mejora es tener los pesos en memoria en vez de registros debido a la cantidad de registros que se necesitarian pero esto no se contempla por el momento en el alcance.
-
-![](./imagenes/n_register_arch.jpg)
+![](./imagenes/n_registers_arch.jpg)
 
 ## -- `main controller`
-El __main controller__ sera el encargado de gestionar todo el proceso interno del FPGA. Se encargada de activar capa por capa. 
+El __main controller__ sera el encargado de gestionar todo el proceso interno de de la red. Se encargada de activar capa por capa de acuerdo a la arquitectura pipeline que se esta siguiendo. 
 
-![](./imagenes/n_red_completa.jpg)
+![](./imagenes/n_red_completa_2.jpg)
 
 La forma en la que activara las capas estara definida por la arquitectora pipeline que se esta siguiendo
 
@@ -107,21 +108,11 @@ El funcionamiento de la capa estara definido por su unidad de control (__layer c
 
 ![](./imagenes/n_pipeline.jpg)
 
-- El pipeline tendra en un desfase de 2 para evitar el over write de las capas
+- El pipeline tendra en un desfase de 2 para evitar el overwriting de los __y__.
 
 ![](./imagenes/n_pipeline_flux.jpg)
 
 
-## -- `layer controller`
-
-- el __layer controller__ se encargara de orquestar otros tres controladores
-  - __weight pointer controller__
-  - __previous y pointer controller__
-  - __y pointer controller__
-  - __mxn controller__
-- el orden en que llamara a estos controlladores estara definido por el flujo de su FSM.
-
-![](./imagenes/n_main_controller.jpg)
 
 # - Implementacion en Vivado
 
@@ -217,5 +208,5 @@ Presionar los botones y veremos que se modica el resultado.
 
 
 
-# - Referente
+# - Referencia
 - Network notation, https://deeplearning.cs.cmu.edu/F22/document/slides/lec5.learning.pdf
