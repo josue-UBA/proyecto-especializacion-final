@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-19T21:41:24.833Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="7PlUJYkpaqM0qCRpq3ar" version="21.6.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-19T23:01:42.836Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="Z6ZS9jvJe97YhEcTsD4h" version="21.6.3" type="github">
   <diagram name="Página-1" id="68-ri3t_62zrD-WDxQXu">
     <mxGraphModel dx="1985" dy="1592" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1028,7 +1028,7 @@
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-33" value="layer register bank: pre-charged data. For that reason, need to be a set of registers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-130" y="580" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NHjjjnDl3UXlkUb6KNAD-34" value="global register bank" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="NHjjjnDl3UXlkUb6KNAD-34" value="memory" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="490" y="570" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="NHjjjnDl3UXlkUb6KNAD-35" value="n" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -2199,8 +2199,8 @@
         <mxCell id="YNiBTsIQjZvawGt5ZkYZ-117" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iPageControl;fillColor=#666666;strokeColor=#cccccc;sketch=0;" parent="1" vertex="1">
           <mxGeometry x="1630" y="2170" width="20" height="5" as="geometry" />
         </mxCell>
-        <mxCell id="UTux0E4-04XoOEizq_TA-2" value="&lt;h1&gt;Global register bank&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Layer register bank&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="430" y="1290" width="740" height="120" as="geometry" />
+        <mxCell id="UTux0E4-04XoOEizq_TA-2" value="&lt;h1&gt;memory&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;layer register bank&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="490" y="1290" width="740" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
