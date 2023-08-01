@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-08-01T16:26:47.640Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="qodvQ1ECwKXK21o1UWer" version="21.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-01T16:39:12.442Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="-K0k3_75KV5bIpQX4I3M" version="21.6.6" type="github">
   <diagram name="Página-1" id="gQT6w9QHkvldpJlVvD48">
-    <mxGraphModel dx="2029" dy="1749" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2830" dy="1926" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -508,19 +508,19 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="4v2-iDDyODPuYY8NRB9o-8" value="S0: store data&lt;br&gt;b_ready = 1&lt;br&gt;i_ready = 1&lt;br&gt;k_ready = 1&lt;br&gt;r_enable = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="4v2-iDDyODPuYY8NRB9o-8" value="S2: store data&lt;br&gt;b_ready = 1&lt;br&gt;i_ready = 1&lt;br&gt;k_ready = 1&lt;br&gt;r_enable = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1440" y="410" width="120" height="100" as="geometry" />
         </mxCell>
         <mxCell id="UwviWmnbazoHItDZS8j5-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4v2-iDDyODPuYY8NRB9o-10" target="4v2-iDDyODPuYY8NRB9o-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4v2-iDDyODPuYY8NRB9o-10" value="S0: acumulate&lt;br&gt;a_enable = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="4v2-iDDyODPuYY8NRB9o-10" value="S3: acumulate&lt;br&gt;a_enable = 1" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1199" y="420" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="UwviWmnbazoHItDZS8j5-7" value="g_enable = 0" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4v2-iDDyODPuYY8NRB9o-12" target="UwviWmnbazoHItDZS8j5-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4v2-iDDyODPuYY8NRB9o-12" value="S0: wait for providers" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="4v2-iDDyODPuYY8NRB9o-12" value="S1: wait for providers" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1361" y="300" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="4v2-iDDyODPuYY8NRB9o-16" value="k&lt;sub&gt;21&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
@@ -1452,7 +1452,7 @@
             <mxPoint x="420" y="280" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UwviWmnbazoHItDZS8j5-6" value="S0: inform output receiver&lt;br&gt;o_valid = 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="UwviWmnbazoHItDZS8j5-6" value="S4: inform output receiver&lt;br&gt;o_valid = 1" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1520" y="200" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="UwviWmnbazoHItDZS8j5-8" value="reset" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="4v2-iDDyODPuYY8NRB9o-2">
