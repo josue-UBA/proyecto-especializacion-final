@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-08-01T16:39:12.442Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="-K0k3_75KV5bIpQX4I3M" version="21.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-01T16:52:18.544Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="rbfVZ3p0XU-vmBk3zlqB" version="21.6.6" type="github">
   <diagram name="Página-1" id="gQT6w9QHkvldpJlVvD48">
-    <mxGraphModel dx="2830" dy="1926" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2329" dy="1737" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1393,35 +1393,28 @@
         <mxCell id="KQOE3VYbHCf_xD0nERhC-312" value="g_enable" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="500" y="-160" as="sourcePoint" />
-            <mxPoint x="500" y="-90" as="targetPoint" />
+            <mxPoint x="500" y="-80" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQOE3VYbHCf_xD0nERhC-313" value="clock" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="420" y="-160" as="sourcePoint" />
-            <mxPoint x="420" y="-90" as="targetPoint" />
+            <mxPoint x="420" y="-80" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQOE3VYbHCf_xD0nERhC-316" value="reset" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="459.62" y="-160" as="sourcePoint" />
-            <mxPoint x="460" y="-90" as="targetPoint" />
+            <mxPoint x="460" y="-80" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KQOE3VYbHCf_xD0nERhC-318" value="&lt;font style=&quot;&quot;&gt;&lt;br&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;ab&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 12px; border-color: var(--border-color);&quot;&gt;&amp;nbsp;&lt;/span&gt;2&lt;span style=&quot;font-size: 12px; border-color: var(--border-color);&quot;&gt;&lt;sup&gt;33&lt;/sup&gt;&lt;/span&gt;&lt;sup style=&quot;font-size: 12px; border-color: var(--border-color);&quot;&gt;&amp;nbsp;&lt;/sup&gt;+ cd 2&lt;span style=&quot;font-size: 12px; border-color: var(--border-color);&quot;&gt;&lt;sup&gt;22&lt;/sup&gt;&lt;/span&gt;&lt;sup style=&quot;font-size: 12px; border-color: var(--border-color);&quot;&gt; &lt;/sup&gt;&lt;span style=&quot;font-size: 12px; border-color: var(--border-color);&quot;&gt;+ ef 2&lt;sup&gt;11&lt;/sup&gt;&lt;sup style=&quot;&quot;&gt;&amp;nbsp; &lt;/sup&gt;+ gh&lt;br&gt;ij 2&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;sup&gt;33&lt;/sup&gt;&lt;/span&gt;&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;&lt;/sup&gt;+ kl 2&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;22&amp;nbsp;&lt;/sup&gt;+ mn 2&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;11&amp;nbsp;&amp;nbsp;&lt;/sup&gt;+ op&lt;sub style=&quot;border-color: var(--border-color);&quot;&gt;&lt;br&gt;&lt;/sub&gt;&lt;sub&gt;...&lt;br&gt;_______________________________________&lt;br&gt;&lt;/sub&gt;(ab+ij+...) 2&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;33&amp;nbsp;&lt;/sup&gt;+ (cd+kl+...) 2&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;22&amp;nbsp;&lt;/sup&gt;+ (ef+mn+...) 2&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;11&amp;nbsp;&amp;nbsp;&lt;/sup&gt;+ (gh+op+...)&lt;sub&gt;&lt;br&gt;&lt;/sub&gt;&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="521" y="320" width="360" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="5FUhokVurfCvQ48SuoKd-1" value="a_enable" style="endArrow=classic;html=1;rounded=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1" target="95_640N-l1k5PT5QR-BK-34">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="749.62" y="-160" as="sourcePoint" />
-            <mxPoint x="749.62" y="-110" as="targetPoint" />
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5FUhokVurfCvQ48SuoKd-2" value="a_enable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+        <mxCell id="5FUhokVurfCvQ48SuoKd-2" value="a_enable" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1" source="95_640N-l1k5PT5QR-BK-94">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="740" y="200" as="targetPoint" />
+            <mxPoint x="750" y="160" as="targetPoint" />
             <mxPoint x="740" y="280" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
