@@ -10,6 +10,11 @@ vivado/proyecto/proyecto.gen/
 vivado/proyecto/proyecto.runs/
 vivado/project_1/project_1.sim/sim_1/behav/
 vivado/project_1/project_1.cache/
+vivado/p_first_approach/project_8.sim
+vivado/p_first_approach/project_8.gen/sources_1/
+vivado/p_first_approach/project_8.ip_user_files/
+vivado/p_first_approach/project_8.cache
+
 programa_2/vivado/project_1/project_1.gen/
 programa_2/vivado/project_1/project_1.cache/
 programa_2/vivado/project_1/project_1.runs/
@@ -17,19 +22,17 @@ programa_2/vivado/project_1/project_1.srcs/sources_1/bd/design_1/
 programa_2/vivado/*.str
 programa_2/vivado/*.jou
 programa_2/vivado/*.log
+
 programa/project_1/project_1.cache/
+
 fullstack/backend/env
 fullstack/backend/app/__pycache__/
 fullstack/backend/app/migrations/
 fullstack/backend/backend/__pycache__/
-vivado/p_first_approach/project_8.sim
-vivado/p_first_approach/project_8.gen/sources_1/
-vivado/p_first_approach/project_8.ip_user_files/
-vivado/p_first_approach/project_8.cache
-carpeta compartida con Fede/projecto/project_1/project_1.sim/
-carpeta compartida con Fede/projecto/project_1/project_1.cache/
-carpeta compartida con Fede/projecto/ip_repo/
-carpeta compartida con Fede/projecto/project_1/project_1.gen/
-carpeta compartida con Fede/projecto/project_1/project_1.hw/
-carpeta compartida con Fede/projecto/project_1/project_1.ip_user_files/
-carpeta compartida con Fede/projecto/project_1/project_1.xpr
+
+carpeta_fede/project_1/project_1.sim/
+carpeta_fede/project_1/project_1.cache/
+carpeta_fede/project_1/project_1.hw/
+carpeta_fede/project_1/project_1.ip_user_files/
+carpeta_fede/project_1/project_1.gen/
+carpeta_fede/project_1/project_1.xpr
