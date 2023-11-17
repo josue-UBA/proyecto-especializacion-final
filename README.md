@@ -208,5 +208,7 @@ Presionar los botones y veremos que se modica el resultado.
 
 
 
-# - Referencia
-- Network notation, https://deeplearning.cs.cmu.edu/F22/document/slides/lec5.learning.pdf
+# - Referencia (what, where, who)
+- Network notation, __https://deeplearning.cs.cmu.edu/F22/document/slides/lec5.learning.pdf__, _Carnegie Mellon University_
+- Verilog code for diferent hardware implementations, __ISBN 10: 1-292-23116-5 ISBN 13: 978-1-292-23116-7__, _Digital Design book_
+- Pipeline, __ISBN: 978-0-12-800056-4__, _Digital Design and Computer Arquitecture book_
