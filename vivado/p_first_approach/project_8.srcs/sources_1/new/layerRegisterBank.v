@@ -20,8 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module layerRegisetBank(
-    input [0:15]D_D,
-    output [0:15]D_Q_1,
+    input [0:15]D_D,output [0:15]D_Q_1,
     output [0:15]D_Q_2,
     output [0:15]D_Q_3,
     
@@ -45,9 +44,9 @@ endmodule
 
 
 module decoder (D, A, B, enable);
-    output [0: 3] D;
-    input A, B;
-    input enable;
+output [0: 3] D;
+input A, B;
+input enable;
     wire A_not, B_not, enable_not;
     not
     G1 (A_not, A), // Comma-separated list of primitives
