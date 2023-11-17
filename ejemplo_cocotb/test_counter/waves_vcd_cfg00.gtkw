@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Fri Nov 17 02:09:58 2023
+[*]
+[dumpfile] "/home/fzacchigna/repos/josue-UBA-proyecto-especializacion-final/ejemplo_cocotb/ejemplo_counter/dump.vcd"
+[dumpfile_mtime] "Fri Nov 17 02:08:56 2023"
+[dumpfile_size] 2012
+[savefile] "/home/fzacchigna/repos/josue-UBA-proyecto-especializacion-final/ejemplo_cocotb/ejemplo_counter/waves_vcd_cfg0.gtkw"
+[timestart] 0
+[size] 1920 1001
+[pos] -51 -51
+*-12.738124 3140 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 273
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@28
+count_up.clk
+count_up.reset
+@200
+-
+@23
+[color] 1
+count_up.count[3:0]
+[color] 1
+count_up.counter[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

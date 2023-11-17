@@ -1,0 +1,48 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Fri Nov 17 06:02:52 2023
+[*]
+[dumpfile] "/home/fzacchigna/repos/josue-UBA-proyecto-especializacion-final/ejemplo_cocotb/ejemplo_sif/waves.vcd"
+[dumpfile_mtime] "Fri Nov 17 06:01:49 2023"
+[dumpfile_size] 111888
+[savefile] "/home/fzacchigna/repos/josue-UBA-proyecto-especializacion-final/ejemplo_cocotb/ejemplo_sif/waves_vcd_cfg00.gtkw"
+[timestart] 0
+[size] 1920 1001
+[pos] -51 -51
+*-21.637062 3370000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 273
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@28
+sif_driver_test.clk_i
+sif_driver_test.srst_i
+sif_driver_test.en_i
+@200
+-
+@28
+sif_driver_test.ien_s
+@22
+sif_driver_test.counter_s[15:0]
+@200
+-
+@421
+[color] 3
+sif_driver_test.i_data_i[9:0]
+@28
+[color] 3
+sif_driver_test.i_valid_i
+[color] 3
+sif_driver_test.i_ready_o
+@200
+-
+@421
+[color] 1
+sif_driver_test.o_data_o[9:0]
+@28
+[color] 1
+sif_driver_test.o_ready_i
+[color] 1
+sif_driver_test.o_valid_o
+[pattern_trace] 1
+[pattern_trace] 0
