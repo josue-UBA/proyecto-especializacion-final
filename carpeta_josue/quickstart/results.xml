@@ -1,0 +1,8 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1711380697" />
+    <testcase name="test_my_design" classname="test_my_design" file="/home/josue/proyecto-especializacion-final/carpeta_josue/quickstart/test_my_design.py" lineno="13" time="0.003939151763916016" sim_time_ns="6.001" ratio_time="1523.4244222249124">
+      <failure message="Test failed with RANDOM_SEED=1711380697" />
+    </testcase>
+  </testsuite>
+</testsuites>
