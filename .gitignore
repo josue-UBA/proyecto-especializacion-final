@@ -36,9 +36,10 @@ carpeta_fede/project_1/project_1.hw/
 carpeta_fede/project_1/project_1.ip_user_files/
 carpeta_fede/project_1/project_1.gen/
 carpeta_fede/project_1/project_1.xpr
-carpeta_josue/venv/
 
 /carpeta_josue/cocotb/
 carpeta_josue/quickstart/__pycache__/test_my_design.cpython-310.pyc
 carpeta_josue/quickstart/sim_build/sim.vvp
 carpeta_josue/quickstart/results.xml
+
+venv
