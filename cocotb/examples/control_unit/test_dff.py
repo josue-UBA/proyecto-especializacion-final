@@ -10,7 +10,7 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
 from cocotb.types import LogicArray
 from cocotb_tools.runner import get_runner
-
+from control_unit import dff_inst
 LANGUAGE = os.environ["TOPLEVEL_LANG"].lower().strip()
 
 
@@ -43,14 +43,17 @@ async def dff_simple_test(dut):
 
     # Synchronize with the clock. This will regisiter the initial `d` value
     await RisingEdge(dut.clk)
+    dff_inst.transition(1,0,0,0,0,0)
     expected_val = 0  # Matches initial input value
     for i in range(100):
+        reset = 0
         i_TVALID = random.randint(0,1)
         k_TVALID = random.randint(0,1)
         b_TVALID = random.randint(0,1)
         o_TREADY = random.randint(0,1)
         new_i = random.randint(0,1)
-        dut.reset.value = 0
+
+        dut.reset.value = reset
         dut.i_TVALID.value = i_TVALID
         dut.k_TVALID.value = k_TVALID
         dut.b_TVALID.value = b_TVALID
@@ -59,7 +62,13 @@ async def dff_simple_test(dut):
 
         await RisingEdge(dut.clk)
         print("======================================")
-        print(dut.state.value)
+        print("state: ",dut.state.value)
+        print("i_TVALID: ",dut.i_TVALID.value)
+        print("k_TVALID: ",dut.k_TVALID.value)
+        print("b_TVALID: ",dut.b_TVALID.value)
+        print("o_TREADY: ",dut.o_TREADY.value)
+        print("new_i: ",dut.new_i.value)
+        print("dff: ",dff_inst.transition(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i))
         print("======================================")
         # assert dut.q.value == expected_val, f"output q was incorrect on the {i}th cycle"
         # expected_val = val  # Save random value for next RisingEdge
