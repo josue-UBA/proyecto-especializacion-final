@@ -12,7 +12,7 @@ from cocotb.types import LogicArray
 from cocotb_tools.runner import get_runner
 
 LANGUAGE = os.environ["TOPLEVEL_LANG"].lower().strip()
-from accumulator import accumulator
+
 
 @cocotb.test()
 async def dff_simple_test(dut):
@@ -21,16 +21,21 @@ async def dff_simple_test(dut):
     # Assert initial output is unknown
     # verilator does not support 4-state signals
     # see https://veripool.org/guide/latest/languages.html#unknown-states
-
-    # assert LogicArray(dut.q.value) == 0
+    initial = (
+        LogicArray(0)
+        if cocotb.SIM_NAME.lower().startswith("verilator")
+        else (
+            LogicArray("U") if LANGUAGE.lower().startswith("vhdl") else LogicArray("X")
+        )
+    )
+    # assert LogicArray(dut.q.value) == initial
     # Set initial input value to prevent it from floating
-    dut.i_TDATA.value = 0
-    dut.k_TDATA.value = 0
-    dut.b_TDATA.value = 0
-    dut.reset.value = 0
-    dut.a_enable.value = 1
-    dut.b_enable.value = 0
-    dut.r_enable.value = 1
+    dut.reset.value = 1
+    dut.i_TVALID.value = initial
+    dut.k_TVALID.value = initial
+    dut.b_TVALID.value = initial
+    dut.o_TREADY.value = initial
+    dut.new_i.value = initial
 
     clock = Clock(dut.clk, 10, units="us")  # Create a 10us period clock on port clk
     # Start the clock. Start it low to avoid issues on the first RisingEdge
@@ -38,29 +43,30 @@ async def dff_simple_test(dut):
 
     # Synchronize with the clock. This will regisiter the initial `d` value
     await RisingEdge(dut.clk)
-    accumulator.accumulate(0,0)
-    accumulator.accumulate(0,0)
     expected_val = 0  # Matches initial input value
-    for i in range(10):
-        val1 = random.randint(1,5)
-        val2 = random.randint(1,5)
+    for i in range(100):
+        i_TVALID = random.randint(0,1)
+        k_TVALID = random.randint(0,1)
+        b_TVALID = random.randint(0,1)
+        o_TREADY = random.randint(0,1)
+        new_i = random.randint(0,1)
+        dut.reset.value = 0
+        dut.i_TVALID.value = i_TVALID
+        dut.k_TVALID.value = k_TVALID
+        dut.b_TVALID.value = b_TVALID
+        dut.o_TREADY.value = o_TREADY
+        dut.new_i.value = new_i
 
-        # dut.d.value = val  # Assign the random value val to the input port d
-        dut.i_TDATA.value = val1
-        dut.k_TDATA.value = val2
-        dut.reset.value = 1
         await RisingEdge(dut.clk)
-        print("============================================")
-        print("valores",val1, " -- ", val2)
-        # print("python function",accumulator.accumulate(val1,val2))
-        print("verilog",dut.o_TDATA.value)
-        print("============================================")
-        assert dut.o_TDATA.value == accumulator.accumulate(val1,val2), f"output q was incorrect on the {i}th cycle"
-        expected_val = val1 * val2  # Save random value for next RisingEdge
+        print("======================================")
+        print(dut.state.value)
+        print("======================================")
+        # assert dut.q.value == expected_val, f"output q was incorrect on the {i}th cycle"
+        # expected_val = val  # Save random value for next RisingEdge
 
     # Check the final input on the next clock
     await RisingEdge(dut.clk)
-    # assert dut.o_TDATA.value == expected_val, "output q was incorrect on the last cycle"
+    # assert dut.q.value == expected_val, "output q was incorrect on the last cycle"
 
 
 def test_simple_dff_runner():
