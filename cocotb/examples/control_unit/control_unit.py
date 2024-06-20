@@ -10,23 +10,26 @@ class Statetype(Enum):
 
 class DFF:
     def __init__(self):
+        # input
         self.reset = 0
         self.i_TVALID = 0
         self.k_TVALID = 0
         self.b_TVALID = 0
         self.o_TREADY = 0
         self.new_i = 0
-
+        # output
+        self.i_TREADY = 0
+        self.k_TREADY = 0
+        self.b_TREADY = 0
+        self.o_TVALID = 0
+        self.r_enable = 0
+        self.a_enable = 0
+        self.b_enable = 0
+        # states
         self.state = Statetype.S0
         self.nextstate = Statetype.S0
 
     def transition(self, reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i):
-        self.reset = reset 
-        self.i_TVALID = i_TVALID 
-        self.k_TVALID = k_TVALID 
-        self.b_TVALID = b_TVALID 
-        self.o_TREADY = o_TREADY 
-        self.new_i = new_i
 
         self.state = self.nextstate
 
@@ -69,18 +72,16 @@ class DFF:
                 self.nextstate = Statetype.S5
             else:
                 self.nextstate = Statetype.S1
-
-        return self.state
+        self.output_logic()
 
     def output_logic(self):
-        i_TREADY = 1 if self.state in {Statetype.S2, Statetype.S3, Statetype.S4, Statetype.S5} else 0
-        k_TREADY = 1 if self.state in {Statetype.S2, Statetype.S3, Statetype.S4, Statetype.S5} else 0
-        b_TREADY = 1 if self.state == Statetype.S2 else 0
-        o_TVALID = 1 if self.state == Statetype.S5 else 0
-        r_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3} else 0
-        a_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3, Statetype.S5} else 0
-        b_enable = 1 if self.state in {Statetype.S0, Statetype.S1} else 0
-        return i_TREADY, k_TREADY, b_TREADY, o_TVALID, r_enable, a_enable, b_enable
+        self.i_TREADY = 1 if self.state in {Statetype.S2, Statetype.S3, Statetype.S4, Statetype.S5} else 0
+        self.k_TREADY = 1 if self.state in {Statetype.S2, Statetype.S3, Statetype.S4, Statetype.S5} else 0
+        self.b_TREADY = 1 if self.state == Statetype.S2 else 0
+        self.o_TVALID = 1 if self.state == Statetype.S5 else 0
+        self.r_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3} else 0
+        self.a_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3, Statetype.S5} else 0
+        self.b_enable = 1 if self.state in {Statetype.S0, Statetype.S1} else 0
 
 # Ejemplo de uso
 dff_inst = DFF()

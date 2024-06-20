@@ -61,17 +61,22 @@ async def dff_simple_test(dut):
         dut.new_i.value = new_i
 
         await RisingEdge(dut.clk)
-        print("======================================")
-        print("state: ",dut.state.value)
-        print("i_TVALID: ",dut.i_TVALID.value)
-        print("k_TVALID: ",dut.k_TVALID.value)
-        print("b_TVALID: ",dut.b_TVALID.value)
-        print("o_TREADY: ",dut.o_TREADY.value)
-        print("new_i: ",dut.new_i.value)
-        print("dff: ",dff_inst.transition(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i))
-        print("======================================")
-        # assert dut.q.value == expected_val, f"output q was incorrect on the {i}th cycle"
-        # expected_val = val  # Save random value for next RisingEdge
+        # print("======================================")
+        # print("state: ",dut.state.value)
+        # print("i_TVALID: ",dut.i_TVALID.value)
+        # print("k_TVALID: ",dut.k_TVALID.value)
+        # print("b_TVALID: ",dut.b_TVALID.value)
+        # print("o_TREADY: ",dut.o_TREADY.value)
+        # print("new_i: ",dut.new_i.value)
+        dff_inst.transition(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i)
+        # print("======================================")
+        assert dut.i_TREADY.value == dff_inst.i_TREADY, f"output q was incorrect on the {i}th cycle"
+        assert dut.k_TREADY.value == dff_inst.k_TREADY, f"output q was incorrect on the {i}th cycle"
+        assert dut.b_TREADY.value == dff_inst.b_TREADY, f"output q was incorrect on the {i}th cycle"
+        assert dut.o_TVALID.value == dff_inst.o_TVALID, f"output q was incorrect on the {i}th cycle"
+        assert dut.r_enable.value == dff_inst.r_enable, f"output q was incorrect on the {i}th cycle"
+        assert dut.a_enable.value == dff_inst.a_enable, f"output q was incorrect on the {i}th cycle"
+        assert dut.b_enable.value == dff_inst.b_enable, f"output q was incorrect on the {i}th cycle"
 
     # Check the final input on the next clock
     await RisingEdge(dut.clk)
