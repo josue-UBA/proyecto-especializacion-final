@@ -5,6 +5,12 @@ import os
 import random
 from pathlib import Path
 
+import sys
+# sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+ruta_modulo = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
+sys.path.append(ruta_modulo)
+
+
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
