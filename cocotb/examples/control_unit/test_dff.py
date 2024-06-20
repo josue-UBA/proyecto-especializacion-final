@@ -6,7 +6,6 @@ import random
 from pathlib import Path
 
 import sys
-# sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 ruta_modulo = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 sys.path.append(ruta_modulo)
 
@@ -16,7 +15,7 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
 from cocotb.types import LogicArray
 from cocotb_tools.runner import get_runner
-from control_unit import dff_inst
+from control_unit import controlUnit
 LANGUAGE = os.environ["TOPLEVEL_LANG"].lower().strip()
 
 
@@ -49,7 +48,7 @@ async def dff_simple_test(dut):
 
     # Synchronize with the clock. This will regisiter the initial `d` value
     await RisingEdge(dut.clk)
-    dff_inst.transition(1,0,0,0,0,0)
+    controlUnit.transition(1,0,0,0,0,0)
     expected_val = 0  # Matches initial input value
     for i in range(100):
         reset = 0
@@ -67,22 +66,14 @@ async def dff_simple_test(dut):
         dut.new_i.value = new_i
 
         await RisingEdge(dut.clk)
-        # print("======================================")
-        # print("state: ",dut.state.value)
-        # print("i_TVALID: ",dut.i_TVALID.value)
-        # print("k_TVALID: ",dut.k_TVALID.value)
-        # print("b_TVALID: ",dut.b_TVALID.value)
-        # print("o_TREADY: ",dut.o_TREADY.value)
-        # print("new_i: ",dut.new_i.value)
-        dff_inst.transition(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i)
-        # print("======================================")
-        assert dut.i_TREADY.value == dff_inst.i_TREADY, f"output q was incorrect on the {i}th cycle"
-        assert dut.k_TREADY.value == dff_inst.k_TREADY, f"output q was incorrect on the {i}th cycle"
-        assert dut.b_TREADY.value == dff_inst.b_TREADY, f"output q was incorrect on the {i}th cycle"
-        assert dut.o_TVALID.value == dff_inst.o_TVALID, f"output q was incorrect on the {i}th cycle"
-        assert dut.r_enable.value == dff_inst.r_enable, f"output q was incorrect on the {i}th cycle"
-        assert dut.a_enable.value == dff_inst.a_enable, f"output q was incorrect on the {i}th cycle"
-        assert dut.b_enable.value == dff_inst.b_enable, f"output q was incorrect on the {i}th cycle"
+        controlUnit.transition(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i)
+        assert dut.i_TREADY.value == controlUnit.i_TREADY, f"output q was incorrect on the {i}th cycle"
+        assert dut.k_TREADY.value == controlUnit.k_TREADY, f"output q was incorrect on the {i}th cycle"
+        assert dut.b_TREADY.value == controlUnit.b_TREADY, f"output q was incorrect on the {i}th cycle"
+        assert dut.o_TVALID.value == controlUnit.o_TVALID, f"output q was incorrect on the {i}th cycle"
+        assert dut.r_enable.value == controlUnit.r_enable, f"output q was incorrect on the {i}th cycle"
+        assert dut.a_enable.value == controlUnit.a_enable, f"output q was incorrect on the {i}th cycle"
+        assert dut.b_enable.value == controlUnit.b_enable, f"output q was incorrect on the {i}th cycle"
 
     # Check the final input on the next clock
     await RisingEdge(dut.clk)

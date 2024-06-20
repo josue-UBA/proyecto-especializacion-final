@@ -8,7 +8,7 @@ class Statetype(Enum):
     S4 = 4
     S5 = 5
 
-class DFF:
+class ControlUnit:
     def __init__(self):
         # input
         self.reset = 0
@@ -84,5 +84,4 @@ class DFF:
         self.b_enable = 1 if self.state in {Statetype.S0, Statetype.S1} else 0
 
 # Ejemplo de uso
-dff_inst = DFF()
-# outputs = dff_inst.output_logic()
+controlUnit = ControlUnit()

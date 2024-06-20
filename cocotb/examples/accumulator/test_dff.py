@@ -7,7 +7,6 @@ from pathlib import Path
 
 
 import sys
-# sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 ruta_modulo = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 sys.path.append(ruta_modulo)
 
@@ -46,24 +45,18 @@ async def dff_simple_test(dut):
     # Synchronize with the clock. This will regisiter the initial `d` value
     await RisingEdge(dut.clk)
     accumulator.accumulate(0,0)
-    accumulator.accumulate(0,0)
     expected_val = 0  # Matches initial input value
     for i in range(10):
-        val1 = random.randint(1,5)
-        val2 = random.randint(1,5)
+        k_TDATA = random.randint(1,5)
+        i_TDATA = random.randint(1,5)
 
         # dut.d.value = val  # Assign the random value val to the input port d
-        dut.i_TDATA.value = val1
-        dut.k_TDATA.value = val2
+        dut.i_TDATA.value = i_TDATA
+        dut.k_TDATA.value = k_TDATA
         dut.reset.value = 1
         await RisingEdge(dut.clk)
-        print("============================================")
-        print("valores",val1, " -- ", val2)
-        # print("python function",accumulator.accumulate(val1,val2))
-        print("verilog",dut.o_TDATA.value)
-        print("============================================")
-        assert dut.o_TDATA.value == accumulator.accumulate(val1,val2), f"output q was incorrect on the {i}th cycle"
-        expected_val = val1 * val2  # Save random value for next RisingEdge
+        assert dut.o_TDATA.value == accumulator.accumulate(k_TDATA,i_TDATA), f"output q was incorrect on the {i}th cycle"
+        expected_val = k_TDATA * i_TDATA  # Save random value for next RisingEdge
 
     # Check the final input on the next clock
     await RisingEdge(dut.clk)
