@@ -10,8 +10,13 @@ class Accumulator:
         # output
         self.o_TDATA = 0
 
-    def accumulate(self, k_TDATA, i_TDATA,b_TDATA,m_enable):
-        
+    def accumulate(
+            self,
+            m_enable,
+            i_TDATA,
+            k_TDATA,
+            b_TDATA,
+        ):
         if self.state == "S0":
             self.a = self.mult
 

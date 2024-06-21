@@ -27,11 +27,15 @@ async def dff_simple_test(dut):
     # Assert initial output is unknown
     # verilator does not support 4-state signals
     # see https://veripool.org/guide/latest/languages.html#unknown-states
-
-    # assert LogicArray(dut.q.value) == 0
+    initial = (
+        LogicArray(0)
+        if cocotb.SIM_NAME.lower().startswith("verilator")
+        else (
+            LogicArray("U") if LANGUAGE.lower().startswith("vhdl") else LogicArray("X")
+        )
+    )
+    # assert LogicArray(dut.o_TDATA.value) == initial
     # Set initial input value to prevent it from floating
-
-
     i_TDATA = 0
     k_TDATA = 0
     b_TDATA = 0
@@ -40,13 +44,13 @@ async def dff_simple_test(dut):
     m_enable = 0
     r1_enable = 1
 
+    dut.reset.value = reset
+    dut.r2_enable.value = r2_enable
+    dut.r1_enable.value = r1_enable
+    dut.m_enable.value = m_enable
     dut.i_TDATA.value = i_TDATA
     dut.k_TDATA.value = k_TDATA
     dut.b_TDATA.value = b_TDATA
-    dut.reset.value = reset
-    dut.r2_enable.value = r2_enable
-    dut.m_enable.value = m_enable
-    dut.r1_enable.value = r1_enable
 
     clock = Clock(dut.clk, 10, units="us")  # Create a 10us period clock on port clk
     # Start the clock. Start it low to avoid issues on the first RisingEdge
@@ -56,20 +60,26 @@ async def dff_simple_test(dut):
     await RisingEdge(dut.clk)
     accumulator.accumulate(k_TDATA, i_TDATA,b_TDATA,m_enable)
     expected_val = 0  # Matches initial input value
-    for i in range(10):
-        k_TDATA = random.randint(1,5)
-        i_TDATA = random.randint(1,5)
-        b_TDATA = random.randint(1,5)
+    for i in range(100):
         m_enable = random.randint(0,1)
+        i_TDATA = random.randint(1,5)
+        k_TDATA = random.randint(1,5)
+        b_TDATA = random.randint(1,5)
 
         # dut.d.value = val  # Assign the random value val to the input port d
-        dut.k_TDATA.value = k_TDATA
-        dut.i_TDATA.value = i_TDATA
-        dut.b_TDATA.value = b_TDATA
         dut.m_enable.value = m_enable
+        dut.i_TDATA.value = i_TDATA
+        dut.k_TDATA.value = k_TDATA
+        dut.b_TDATA.value = b_TDATA
         dut.reset.value = 1
         await RisingEdge(dut.clk)
-        accumulator.accumulate(k_TDATA,i_TDATA,b_TDATA,m_enable)
+        accumulator.accumulate(
+            m_enable,
+            i_TDATA,
+            k_TDATA,
+            b_TDATA,
+        )
+
         assert dut.o_TDATA.value == accumulator.o_TDATA, f"output q was incorrect on the {i}th cycle"        
         
         expected_val = k_TDATA * i_TDATA  # Save random value for next RisingEdge
