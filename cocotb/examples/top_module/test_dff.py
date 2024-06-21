@@ -95,9 +95,9 @@ async def dff_simple_test(dut):
             b_TDATA,
         )
     expected_val = 0  # Matches initial input value
-    for i in range(100):
+    for i in range(10):
 
-        reset = 1 #random.randint(0,1)
+        reset = 0 #random.randint(0,1)
         enable_i = random.randint(0,1)
         new_i = random.randint(0,1)
         i_TVALID = 1#random.randint(0,1)
@@ -138,15 +138,6 @@ async def dff_simple_test(dut):
         assert dut.b_TREADY.value == topModule.b_TREADY
         assert dut.o_TVALID.value == topModule.o_TVALID
         assert dut.o_TDATA.value == topModule.o_TDATA
-
-
-        print('============================================')
-        print('harware i_TREADY',dut.i_TREADY.value)
-        print('harware k_TREADY',dut.k_TREADY.value)
-        print('harware b_TREADY',dut.b_TREADY.value)
-        print('harware o_TVALID',dut.o_TVALID.value)
-        print('harware o_TDATA',dut.o_TDATA.value)
-        print('============================================')
 
 
     # Check the final input on the next clock

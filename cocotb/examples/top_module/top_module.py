@@ -173,7 +173,13 @@ class TopModule:
             b_TDATA,
             )
         
+        self.i_TREADY = controlUnit.i_TREADY
+        self.k_TREADY = controlUnit.k_TREADY
+        self.b_TREADY = controlUnit.b_TREADY
+        self.o_TVALID = controlUnit.o_TVALID
         self.o_TDATA = accumulator.o_TDATA
+
+
 
 topModule = TopModule()
 
