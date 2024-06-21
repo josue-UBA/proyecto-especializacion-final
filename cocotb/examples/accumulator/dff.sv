@@ -14,12 +14,12 @@ module dff (
   output logic [7:0]o_TDATA
 );
 
-wire [7:0]b,salida;
+wire [7:0]b,mult;
 reg [7:0]c,a;
 
 always @(posedge clk or negedge reset)
   if(!reset) a <= 0;
-  else if(r_enable) a <= salida;
+  else if(r_enable) a <= mult;
 
 always@(posedge clk or negedge reset)
   if(!reset) o_TDATA <= 0;
@@ -32,7 +32,7 @@ always @(b_enable or o_TDATA or b_TDATA) begin
 endcase
 end
 
-assign salida = i_TDATA*k_TDATA;
+assign mult = i_TDATA * k_TDATA;
 assign b = a + c;
 
 endmodule
