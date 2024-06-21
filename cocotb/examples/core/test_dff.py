@@ -18,7 +18,7 @@ from cocotb.types import LogicArray
 from cocotb_tools.runner import get_runner
 
 LANGUAGE = os.environ["TOPLEVEL_LANG"].lower().strip()
-from top_module import topModule
+from core import core
 
 
 @cocotb.test()
@@ -82,7 +82,7 @@ async def dff_simple_test(dut):
 
     # Synchronize with the clock. This will regisiter the initial `d` value
     await RisingEdge(dut.clk)
-    topModule.do_something(    
+    core.do_something(    
             reset,
             enable_i,
             new_i,
@@ -120,7 +120,7 @@ async def dff_simple_test(dut):
         dut.b_TDATA.value = b_TDATA
 
         await RisingEdge(dut.clk)
-        topModule.do_something(    
+        core.do_something(    
             reset,
             enable_i,
             new_i,
@@ -133,11 +133,11 @@ async def dff_simple_test(dut):
             b_TDATA,
         )
 
-        assert dut.i_TREADY.value == topModule.i_TREADY
-        assert dut.k_TREADY.value == topModule.k_TREADY
-        assert dut.b_TREADY.value == topModule.b_TREADY
-        assert dut.o_TVALID.value == topModule.o_TVALID
-        assert dut.o_TDATA.value == topModule.o_TDATA
+        assert dut.i_TREADY.value == core.i_TREADY
+        assert dut.k_TREADY.value == core.k_TREADY
+        assert dut.b_TREADY.value == core.b_TREADY
+        assert dut.o_TVALID.value == core.o_TVALID
+        assert dut.o_TDATA.value == core.o_TDATA
 
 
     # Check the final input on the next clock

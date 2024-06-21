@@ -130,7 +130,7 @@ class Accumulator:
 accumulator = Accumulator()
 
 
-class TopModule:
+class Core:
     def __init__(self) -> None:
         # output
         self.i_TREADY =  0
@@ -181,7 +181,7 @@ class TopModule:
 
 
 
-topModule = TopModule()
+core = Core()
 
 
 
