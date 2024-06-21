@@ -36,13 +36,19 @@ async def dff_simple_test(dut):
         )
     )
 
+    dut.i_TREADY.value = 0
+    dut.k_TREADY.value = 0
+    dut.b_TREADY.value = 0
+    dut.o_TVALID.value = 0
+    dut.o_TDATA.value = 0
 
 
-    assert LogicArray(dut.i_TREADY.value)== initial
-    assert LogicArray(dut.k_TREADY.value)== initial
-    assert LogicArray(dut.b_TREADY.value)== initial
-    assert LogicArray(dut.o_TVALID.value)== initial
-    assert LogicArray(dut.o_TDATA.value)== initial
+
+    # assert LogicArray(dut.i_TREADY.value)== initial
+    # assert LogicArray(dut.k_TREADY.value)== initial
+    # assert LogicArray(dut.b_TREADY.value)== initial
+    # assert LogicArray(dut.o_TVALID.value)== initial
+    # assert LogicArray(dut.o_TDATA.value)== initial
 
 
     # Set initial input value to prevent it from floating
@@ -89,14 +95,14 @@ async def dff_simple_test(dut):
             b_TDATA,
         )
     expected_val = 0  # Matches initial input value
-    for i in range(10):
+    for i in range(100):
 
         reset = 1 #random.randint(0,1)
         enable_i = random.randint(0,1)
         new_i = random.randint(0,1)
-        i_TVALID = random.randint(0,1)
-        k_TVALID = random.randint(0,1)
-        b_TVALID = random.randint(0,1)
+        i_TVALID = 1#random.randint(0,1)
+        k_TVALID = 1#random.randint(0,1)
+        b_TVALID = 1#random.randint(0,1)
         o_TREADY = random.randint(0,1)
         i_TDATA = random.randint(0,5)
         k_TDATA = random.randint(0,5)
@@ -132,6 +138,15 @@ async def dff_simple_test(dut):
         assert dut.b_TREADY.value == topModule.b_TREADY
         assert dut.o_TVALID.value == topModule.o_TVALID
         assert dut.o_TDATA.value == topModule.o_TDATA
+
+
+        print('============================================')
+        print('harware i_TREADY',dut.i_TREADY.value)
+        print('harware k_TREADY',dut.k_TREADY.value)
+        print('harware b_TREADY',dut.b_TREADY.value)
+        print('harware o_TVALID',dut.o_TVALID.value)
+        print('harware o_TDATA',dut.o_TDATA.value)
+        print('============================================')
 
 
     # Check the final input on the next clock

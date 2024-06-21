@@ -1,3 +1,4 @@
+# deploy
 
 - install dependancies
 ```bash
@@ -16,12 +17,17 @@ make
 cd PATH/TO/REPOSITORY/cocotb/examples/control_unit
 make
 ```
+- test complete module 
+```bash
+cd PATH/TO/REPOSITORY/cocotb/examples/top_module
+make
+```
 
-
+# info
+need to add this code on your test in order to use `coco_tools` library
 ```bash
 export PYTHONPATH := $(PYTHONPATH):/home/josue/workdir/proyecto-especializacion-final
 ```
-
 
 ```python
 import sys

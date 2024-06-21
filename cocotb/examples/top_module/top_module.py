@@ -140,7 +140,8 @@ class TopModule:
         self.o_TDATA =  0
 
     
-    def do_something(    
+    def do_something(
+        self,
         reset,
         enable_i,
         new_i,
@@ -171,7 +172,8 @@ class TopModule:
             k_TDATA,
             b_TDATA,
             )
-        return 0
+        
+        self.o_TDATA = accumulator.o_TDATA
 
 topModule = TopModule()
 
