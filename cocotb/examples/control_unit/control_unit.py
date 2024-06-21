@@ -10,6 +10,10 @@ class Statetype(Enum):
 
 class ControlUnit:
     def __init__(self):
+        # states
+        self.state = Statetype.S0
+        self.nextstate = Statetype.S0
+
         # output
         self.i_TREADY = 0
         self.k_TREADY = 0
@@ -18,11 +22,14 @@ class ControlUnit:
         self.r1_enable = 0
         self.r2_enable = 0
         self.m_enable = 0
-        # states
-        self.state = Statetype.S0
-        self.nextstate = Statetype.S0
 
-    def transition(self, reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i):
+    def transition(self, 
+        reset, 
+        i_TVALID, 
+        k_TVALID, 
+        b_TVALID, 
+        o_TREADY, 
+        new_i):
 
         self.state = self.nextstate
 
