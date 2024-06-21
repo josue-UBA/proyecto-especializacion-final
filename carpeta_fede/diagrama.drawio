@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-21T12:08:03.811Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="iQM4y9_x2VpYYN2ziT9U" version="24.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-21T12:09:59.376Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="Ja7nvQg2spO_LB5hbTTh" version="24.6.0" type="github">
   <diagram name="Página-1" id="gQT6w9QHkvldpJlVvD48">
-    <mxGraphModel dx="2754" dy="1723" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2994" dy="1833" grid="0" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2079,7 +2079,7 @@
         <mxCell id="IWRcB-t1JIcUyc6bwuAs-44" value="&lt;div&gt;new_i = 1 &amp;amp;&amp;amp;&lt;/div&gt;&lt;div&gt;i_TVALID = 1 &amp;amp;&amp;amp;&lt;/div&gt;&lt;div&gt;k_TVALID = 1 &amp;amp;&amp;amp;&lt;/div&gt;&lt;div&gt;b_TVALID = 1&lt;/div&gt;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IWRcB-t1JIcUyc6bwuAs-26" target="IWRcB-t1JIcUyc6bwuAs-29" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="IWRcB-t1JIcUyc6bwuAs-26" value="S0: Reset&lt;br&gt;accumulator = 0&lt;br&gt;i_TREADY = 0&lt;br&gt;k_TREADY = 0&lt;br&gt;o_TVALID&amp;nbsp; = 0&lt;br&gt;b_TREADY = 0&lt;div&gt;&lt;div&gt;r_enable = 1&lt;/div&gt;&lt;div&gt;a_enable = 1&lt;/div&gt;&lt;div&gt;b_enable = 1&lt;/div&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="IWRcB-t1JIcUyc6bwuAs-26" value="S0: Reset&lt;br&gt;accumulator = 0&lt;br&gt;i_TREADY = 0&lt;br&gt;k_TREADY = 0&lt;br&gt;o_TVALID&amp;nbsp; = 0&lt;br&gt;b_TREADY = 0&lt;div&gt;&lt;div&gt;r1_enable = 1&lt;/div&gt;&lt;div&gt;r2_enable = 1&lt;/div&gt;&lt;div&gt;m_enable = 1&lt;/div&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-760" y="480" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="IWRcB-t1JIcUyc6bwuAs-27" value="srst_i" style="endArrow=classic;html=1;rounded=0;" parent="1" target="IWRcB-t1JIcUyc6bwuAs-26" edge="1">
@@ -2093,7 +2093,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="IWRcB-t1JIcUyc6bwuAs-29" value="S2: Start process&lt;br&gt;i_TREADY = 1&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;k_TREADY = 1&lt;br&gt;b_TREADY = 1&lt;div&gt;b_enable = 0&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="IWRcB-t1JIcUyc6bwuAs-29" value="S2: Start process&lt;br&gt;i_TREADY = 1&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;k_TREADY = 1&lt;br&gt;b_TREADY = 1&lt;div&gt;m_enable = 0&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-340" y="650" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="IWRcB-t1JIcUyc6bwuAs-30" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;i_TVALID = 0 ||&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;k_TVALID = 0&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" parent="1" source="IWRcB-t1JIcUyc6bwuAs-32" target="IWRcB-t1JIcUyc6bwuAs-35" edge="1">
@@ -2126,7 +2126,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="IWRcB-t1JIcUyc6bwuAs-35" value="S4: Hold&lt;div&gt;r_enable = 0&lt;br&gt;&lt;div&gt;a_enable = 0&lt;/div&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="IWRcB-t1JIcUyc6bwuAs-35" value="S4: Hold&lt;div&gt;r1_enable = 0&lt;br&gt;&lt;div&gt;r2_enable = 0&lt;/div&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-620" y="810" width="160" height="90" as="geometry" />
         </mxCell>
         <mxCell id="IWRcB-t1JIcUyc6bwuAs-36" value="o_TREADY = 1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IWRcB-t1JIcUyc6bwuAs-37" target="IWRcB-t1JIcUyc6bwuAs-26" edge="1">
