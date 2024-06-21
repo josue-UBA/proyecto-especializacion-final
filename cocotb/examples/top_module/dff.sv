@@ -3,16 +3,19 @@ module top_module (
   input logic srst_i,
   input logic enable_i,
   input logic new_i,
+  input logic i_TVALID,
+  input logic k_TVALID,
+  input logic b_TVALID,
+  input logic o_TREADY,
   input logic [7:0] i_TDATA,
   input logic [7:0] k_TDATA,
   input logic [7:0] b_TDATA,
-  
-  output logic o_TREADY,
-  output logic o_TVALID,
-  output logic [7:0] o_TDATA,
+
   output logic i_TREADY,
   output logic k_TREADY,
-  output logic b_TREADY
+  output logic b_TREADY,
+  output logic o_TVALID,
+  output logic [7:0] o_TDATA
 );
 
   // Interconexiones entre los módulos
@@ -20,11 +23,11 @@ module top_module (
 
   // Instanciación del módulo dff
   control_unit cu (
-    .clk(clk_i),
-    .reset(srst_i),
-    .i_TVALID(enable_i),
-    .k_TVALID(enable_i),
-    .b_TVALID(enable_i),
+    .clk(clk),
+    .reset(reset),
+    .i_TVALID(i_TVALID),
+    .k_TVALID(k_TVALID),
+    .b_TVALID(b_TVALID),
     .o_TREADY(o_TREADY),
     .new_i(new_i),
     .i_TREADY(i_TREADY),
@@ -38,10 +41,10 @@ module top_module (
 
   // Instanciación del módulo accumulator
   accumulator acc (
-    .clk(clk_i),
-    .reset(srst_i),
-    .r2_enable(r2_enable),
-    .r1_enable(r1_enable),
+    .clk(clk), 
+    .reset(reset),
+    .r2_enable(r2_enable), 
+    .r1_enable(r1_enable), 
     .m_enable(m_enable),
     .i_TDATA(i_TDATA),
     .k_TDATA(k_TDATA),

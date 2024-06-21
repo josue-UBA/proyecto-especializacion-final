@@ -1,4 +1,6 @@
 
+from ..accumulator.accumulator import accumulator
+from ..control_unit.control_unit import controlUnit
 
 class TopModule:
     def __init__(self) -> None:
@@ -8,6 +10,8 @@ class TopModule:
         self.i_TREADY =  0
         self.k_TREADY =  0
         self.b_TREADY =  0
+
+        
     
     def do_something(    
         srst_i,
@@ -17,6 +21,9 @@ class TopModule:
         k_TDATA,
         b_TDATA,
     ):
+        controlUnit.transition(i_TVALID,k_TVALID,b_TVALID)
+        accumulator.accumulate()
+        
         return 0
 
 topModule = TopModule()
