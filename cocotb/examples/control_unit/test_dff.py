@@ -71,9 +71,9 @@ async def dff_simple_test(dut):
         assert dut.k_TREADY.value == controlUnit.k_TREADY, f"output q was incorrect on the {i}th cycle"
         assert dut.b_TREADY.value == controlUnit.b_TREADY, f"output q was incorrect on the {i}th cycle"
         assert dut.o_TVALID.value == controlUnit.o_TVALID, f"output q was incorrect on the {i}th cycle"
-        assert dut.r_enable.value == controlUnit.r_enable, f"output q was incorrect on the {i}th cycle"
-        assert dut.a_enable.value == controlUnit.a_enable, f"output q was incorrect on the {i}th cycle"
-        assert dut.b_enable.value == controlUnit.b_enable, f"output q was incorrect on the {i}th cycle"
+        assert dut.r1_enable.value == controlUnit.r1_enable, f"output q was incorrect on the {i}th cycle"
+        assert dut.r2_enable.value == controlUnit.r2_enable, f"output q was incorrect on the {i}th cycle"
+        assert dut.m_enable.value == controlUnit.m_enable, f"output q was incorrect on the {i}th cycle"
 
     # Check the final input on the next clock
     await RisingEdge(dut.clk)

@@ -15,9 +15,9 @@ class ControlUnit:
         self.k_TREADY = 0
         self.b_TREADY = 0
         self.o_TVALID = 0
-        self.r_enable = 0
-        self.a_enable = 0
-        self.b_enable = 0
+        self.r1_enable = 0
+        self.r2_enable = 0
+        self.m_enable = 0
         # states
         self.state = Statetype.S0
         self.nextstate = Statetype.S0
@@ -72,9 +72,9 @@ class ControlUnit:
         self.k_TREADY = 1 if self.state in {Statetype.S2, Statetype.S3, Statetype.S4, Statetype.S5} else 0
         self.b_TREADY = 1 if self.state == Statetype.S2 else 0
         self.o_TVALID = 1 if self.state == Statetype.S5 else 0
-        self.r_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3} else 0
-        self.a_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3, Statetype.S5} else 0
-        self.b_enable = 1 if self.state in {Statetype.S0, Statetype.S1} else 0
+        self.r1_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3} else 0
+        self.r2_enable = 1 if self.state in {Statetype.S0, Statetype.S1, Statetype.S2, Statetype.S3, Statetype.S5} else 0
+        self.m_enable = 1 if self.state in {Statetype.S0, Statetype.S1} else 0
 
 # Ejemplo de uso
 controlUnit = ControlUnit()

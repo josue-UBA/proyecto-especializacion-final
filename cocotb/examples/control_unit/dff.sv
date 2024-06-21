@@ -11,9 +11,9 @@ module dff(
   output logic k_TREADY,
   output logic b_TREADY,
   output logic o_TVALID,
-  output logic r_enable,
-  output logic a_enable,
-  output logic b_enable);
+  output logic r1_enable,
+  output logic r2_enable,
+  output logic m_enable);
 
   typedef enum logic [3:0] {S0, S1, S2, S3, S4, S5} statetype;
   statetype state, nextstate;
@@ -51,8 +51,8 @@ module dff(
   assign k_TREADY = (state == S2 || state == S3 || state == S4 || state == S5) ? 1 : 0;
   assign b_TREADY = (state == S2) ? 1 : 0;
   assign o_TVALID = (state == S5) ? 1 : 0;
-  assign r_enable = (state == S0 || state == S1 || state == S2 || state == S3) ? 1 : 0;
-  assign a_enable = (state == S0 || state == S1 || state == S2 || state == S3 || state == S5) ? 1 : 0;
-  assign b_enable = (state == S0 || state == S1) ? 1 : 0;
+  assign r1_enable = (state == S0 || state == S1 || state == S2 || state == S3) ? 1 : 0;
+  assign r2_enable = (state == S0 || state == S1 || state == S2 || state == S3 || state == S5) ? 1 : 0;
+  assign m_enable = (state == S0 || state == S1) ? 1 : 0;
 
 endmodule
