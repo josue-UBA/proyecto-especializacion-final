@@ -10,7 +10,7 @@ class Accumulator:
         # output
         self.o_TDATA = 0
 
-    def accumulate(self, k_TDATA, i_TDATA,b_TDATA,b_enable):
+    def accumulate(self, k_TDATA, i_TDATA,b_TDATA,m_enable):
         
         if self.state == "S0":
             self.a = self.mult
@@ -24,7 +24,7 @@ class Accumulator:
             self.a = self.mult
             
             
-            self.c = b_TDATA if b_enable else self.o_TDATA
+            self.c = b_TDATA if m_enable else self.o_TDATA
             
             self.b = self.a + self.c
             self.mult = k_TDATA * i_TDATA

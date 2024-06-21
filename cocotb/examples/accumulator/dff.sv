@@ -6,7 +6,7 @@
 module dff (
   input logic clk, 
   input logic reset,
-  input logic a_enable,r_enable,b_enable,
+  input logic r2_enable,r1_enable,m_enable,
   input logic [7:0]i_TDATA,
   input logic [7:0]k_TDATA,
   input logic [7:0]b_TDATA,
@@ -19,14 +19,14 @@ reg [7:0]c,a;
 
 always @(posedge clk or negedge reset)
   if(!reset) a <= 0;
-  else if(r_enable) a <= mult;
+  else if(r1_enable) a <= mult;
 
 always@(posedge clk or negedge reset)
   if(!reset) o_TDATA <= 0;
-  else if(a_enable)o_TDATA <= b;
+  else if(r2_enable)o_TDATA <= b;
 
-always @(b_enable or o_TDATA or b_TDATA) begin
-    case (b_enable)
+always @(m_enable or o_TDATA or b_TDATA) begin
+    case (m_enable)
     1'b0: c <= o_TDATA;
     1'b1: c <= b_TDATA;
 endcase
