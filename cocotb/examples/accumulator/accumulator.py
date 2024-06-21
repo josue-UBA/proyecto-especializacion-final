@@ -5,6 +5,7 @@ class Accumulator:
         self.b = 0
         self.c = 0
         self.state = "S0"
+        
         self.o_TDATA = 0
 
     def accumulate(self, k_TDATA, i_TDATA):

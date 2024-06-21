@@ -10,13 +10,6 @@ class Statetype(Enum):
 
 class ControlUnit:
     def __init__(self):
-        # input
-        self.reset = 0
-        self.i_TVALID = 0
-        self.k_TVALID = 0
-        self.b_TVALID = 0
-        self.o_TREADY = 0
-        self.new_i = 0
         # output
         self.i_TREADY = 0
         self.k_TREADY = 0

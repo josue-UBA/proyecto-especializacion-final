@@ -10,6 +10,7 @@ module dff (
   input logic [7:0]i_TDATA,
   input logic [7:0]k_TDATA,
   input logic [7:0]b_TDATA,
+  
   output logic [7:0]o_TDATA
 );
 

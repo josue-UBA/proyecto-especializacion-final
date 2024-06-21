@@ -11,9 +11,9 @@ module dff(
   output logic k_TREADY,
   output logic b_TREADY,
   output logic o_TVALID,
+  output logic r_enable,
   output logic a_enable,
-  output logic b_enable,
-  output logic r_enable);
+  output logic b_enable);
 
   typedef enum logic [3:0] {S0, S1, S2, S3, S4, S5} statetype;
   statetype state, nextstate;
