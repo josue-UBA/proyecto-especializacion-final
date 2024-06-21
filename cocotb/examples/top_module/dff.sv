@@ -1,6 +1,10 @@
-module top_module (
-  input logic clk_i,
-  input logic srst_i,
+// This file is public domain, it can be freely copied without restrictions.
+// SPDX-License-Identifier: CC0-1.0
+
+`timescale 1us/1us
+module dff (
+  input logic clk,
+  input logic reset,
   input logic enable_i,
   input logic new_i,
   input logic i_TVALID,
@@ -19,7 +23,7 @@ module top_module (
 );
 
   // Interconexiones entre los módulos
-  logic r1_enable, r2_enable, m_enable;
+  wire r1_enable, r2_enable, m_enable;
 
   // Instanciación del módulo dff
   control_unit cu (
