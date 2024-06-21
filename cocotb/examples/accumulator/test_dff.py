@@ -36,7 +36,7 @@ async def dff_simple_test(dut):
     )
     # assert LogicArray(dut.o_TDATA.value) == initial
     # Set initial input value to prevent it from floating
-    reset = 0
+    reset = 1
     r2_enable = 1
     r1_enable = 1
     m_enable = 0
@@ -69,7 +69,7 @@ async def dff_simple_test(dut):
     )
     expected_val = 0  # Matches initial input value
     for i in range(100):
-        reset = 1
+        reset = 0
         m_enable = random.randint(0,1)
         i_TDATA = random.randint(1,5)
         k_TDATA = random.randint(1,5)

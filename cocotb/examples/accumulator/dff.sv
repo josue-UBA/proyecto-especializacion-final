@@ -17,12 +17,12 @@ module dff (
 wire [7:0]b,mult;
 reg [7:0]c,a;
 
-always @(posedge clk or negedge reset)
-  if(!reset) a <= 0;
+always @(posedge clk or posedge reset)
+  if(reset) a <= 0;
   else if(r1_enable) a <= mult;
 
-always@(posedge clk or negedge reset)
-  if(!reset) o_TDATA <= 0;
+always@(posedge clk or posedge reset)
+  if(reset) o_TDATA <= 0;
   else if(r2_enable)o_TDATA <= b;
 
 always @(m_enable or o_TDATA or b_TDATA) begin
