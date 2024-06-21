@@ -30,8 +30,6 @@ class Accumulator:
             self.mult = k_TDATA * i_TDATA
             self.state = "S1"
 
-        return self.o_TDATA
-
 # Ejemplo de uso
 accumulator = Accumulator()
 

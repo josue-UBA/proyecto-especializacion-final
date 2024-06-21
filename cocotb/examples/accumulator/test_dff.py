@@ -69,24 +69,8 @@ async def dff_simple_test(dut):
         dut.m_enable.value = m_enable
         dut.reset.value = 1
         await RisingEdge(dut.clk)
-        expected = accumulator.accumulate(k_TDATA,i_TDATA,b_TDATA,m_enable)
-        assert dut.o_TDATA.value == expected, f"output q was incorrect on the {i}th cycle"
-        
-        print("================================")
-        print('input')
-        
-        print("k_TDATA:", k_TDATA)
-        print("i_TDATA:", i_TDATA)
-        print("b_TDATA:", b_TDATA)
-        print("m_enable:", m_enable)
-        print('output hardware')
-        print("o_TDATA:",dut.o_TDATA.value)
-        print('output sofware')
-        print("o_TDATA:",expected)
-
-
-        print("================================")
-        
+        accumulator.accumulate(k_TDATA,i_TDATA,b_TDATA,m_enable)
+        assert dut.o_TDATA.value == accumulator.o_TDATA, f"output q was incorrect on the {i}th cycle"        
         
         expected_val = k_TDATA * i_TDATA  # Save random value for next RisingEdge
 
