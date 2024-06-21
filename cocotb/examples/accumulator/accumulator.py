@@ -12,6 +12,9 @@ class Accumulator:
 
     def accumulate(
             self,
+            reset,
+            r2_enable,
+            r1_enable,
             m_enable,
             i_TDATA,
             k_TDATA,
