@@ -19,7 +19,7 @@ make
 ```
 - test complete module 
 ```bash
-cd PATH/TO/REPOSITORY/cocotb/examples/top_module
+cd PATH/TO/REPOSITORY/cocotb/examples/core
 make
 ```
 
