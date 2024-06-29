@@ -10,7 +10,7 @@ class Accumulator:
         # output
         self.o_TDATA = 0
 
-    def accumulate(
+    def clock(
             self,
             reset,
             r2_enable,

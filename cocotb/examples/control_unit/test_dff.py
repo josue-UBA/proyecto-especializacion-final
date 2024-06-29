@@ -54,7 +54,7 @@ async def dff_simple_test(dut):
 
     # Synchronize with the clock. This will regisiter the initial `d` value
     await RisingEdge(dut.clk)
-    controlUnit.transition(
+    controlUnit.clock(
         reset,
         i_TVALID,
         k_TVALID,
@@ -79,7 +79,7 @@ async def dff_simple_test(dut):
         dut.new_i.value = new_i
 
         await RisingEdge(dut.clk)
-        controlUnit.transition(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i)
+        controlUnit.clock(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i)
         assert dut.i_TREADY.value == controlUnit.i_TREADY, f"output i_TREADY was incorrect on the {i}th cycle"
         assert dut.k_TREADY.value == controlUnit.k_TREADY, f"output k_TREADY was incorrect on the {i}th cycle"
         assert dut.b_TREADY.value == controlUnit.b_TREADY, f"output b_TREADY was incorrect on the {i}th cycle"
@@ -90,7 +90,7 @@ async def dff_simple_test(dut):
 
     # Check the final input on the next clock
     await RisingEdge(dut.clk)
-    controlUnit.transition(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i)
+    controlUnit.clock(reset, i_TVALID, k_TVALID, b_TVALID, o_TREADY, new_i)
     assert dut.i_TREADY.value == controlUnit.i_TREADY, f"output i_TREADY was incorrect on the last cycle"
     assert dut.k_TREADY.value == controlUnit.k_TREADY, f"output k_TREADY was incorrect on the last cycle"
     assert dut.b_TREADY.value == controlUnit.b_TREADY, f"output b_TREADY was incorrect on the last cycle"

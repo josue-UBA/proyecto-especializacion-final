@@ -23,7 +23,7 @@ class ControlUnit:
         self.r2_enable = 0
         self.m_enable = 0
 
-    def transition(self, 
+    def clock(self, 
         reset, 
         i_TVALID, 
         k_TVALID, 

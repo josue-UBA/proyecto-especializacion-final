@@ -58,7 +58,7 @@ async def dff_simple_test(dut):
 
     # Synchronize with the clock. This will regisiter the initial `d` value
     await RisingEdge(dut.clk)
-    accumulator.accumulate(
+    accumulator.clock(
         reset,
         r2_enable,
         r1_enable,
@@ -82,7 +82,7 @@ async def dff_simple_test(dut):
         dut.k_TDATA.value = k_TDATA
         dut.b_TDATA.value = b_TDATA
         await RisingEdge(dut.clk)
-        accumulator.accumulate(
+        accumulator.clock(
             reset,
             r2_enable,
             r1_enable,
