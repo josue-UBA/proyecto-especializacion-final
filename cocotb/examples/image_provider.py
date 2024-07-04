@@ -31,9 +31,9 @@ class Provider:
     '''
 
     def __init__(self,dim_z, dim_y, dim_x):
-        self.dim_z = dim_z
-        self.dim_y = dim_y
-        self.dim_x = dim_x
+        self.dim_z = dim_z -1
+        self.dim_y = dim_y -1
+        self.dim_x = dim_x -1
         self.matrix = [[[random.randint(0,9) for _ in range(self.dim_x)] for _ in range(self.dim_y)] for _ in range(self.dim_z)]
         self.ind_x = 0
         self.ind_y = 0
@@ -43,35 +43,48 @@ class Provider:
         self.state_1 = 1
         self.state_2 = 2
         self.state_3 = 3
+        self.state_4 = 4
+
+        self.enable = 0
     
     def clock(self):
         if self.state == self.state_0:
-            self.ind_x = self.ind_x + 1
-            if self.ind_x < self.dim_x:
-                self.state = self.state_0
-            else:
+            if self.enable == 1:
                 self.state = self.state_1
+            else:
+                self.state = self.state_0
+
 
         elif self.state == self.state_1:
             self.ind_x = 0
-            self.ind_y = self.ind_y + 1
-            if self.ind_y < self.dim_y:
-                self.state = self.state_0
-            else:
-                self.state = self.state_2
-
-        elif self.state == self.state_2 :
             self.ind_y = 0
-            self.ind_z = self.ind_z + 1
-            if self.ind_z < self.dim_z:
-                self.state = self.state_0
-            else:
-                self.state = self.state_3
-
-        elif self.state == self.state_3:
             self.ind_z = 0
 
-        
+            self.state = self.state_4
+
+        elif self.state == self.state_2:
+            self.ind_x = 0
+            self.ind_y = self.ind_y + 1
+            self.state = self.state_4
+
+        elif self.state == self.state_3:
+            self.ind_x = 0
+            self.ind_y = 0
+            self.ind_z = self.ind_z + 1
+            self.state = self.state_4
+            
+
+        elif self.state == self.state_4:
+            self.ind_x = self.ind_x + 1
+            if self.ind_x == self.dim_x and self.ind_y == self.dim_y and self.ind_z == self.dim_z:
+                self.state = self.state_1
+            elif self.ind_x == self.dim_x and self.ind_y != self.dim_y:
+                self.state = self.state_2
+            elif self.ind_x != self.dim_x and self.ind_y != self.dim_y:
+                self.state = self.state_4
+            elif self.ind_x == self.dim_x and self.ind_y == self.dim_y and self.ind_z != self.dim_z:
+                self.state = self.state_3
+
     def show_indexes(self):
         print(self.ind_x, self.ind_y, self.ind_z)
 
@@ -121,7 +134,7 @@ class ImageProvider(Provider):
 provider = Provider(2,3,3) 
 
 
-
-for i in range(40):
+provider.enable = 1
+for i in range(300):
     provider.clock()
     provider.show_indexes()
