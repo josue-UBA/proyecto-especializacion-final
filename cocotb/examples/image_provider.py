@@ -30,50 +30,50 @@ class Provider:
 
     '''
 
-    def __init__(self,dimension_z, dimension_y, dimension_x):
-        self.dimension_z = dimension_z
-        self.dimension_y = dimension_y
-        self.dimension_x = dimension_x
-        self.matrix = [[[random.randint(0,9) for _ in range(self.dimension_x)] for _ in range(self.dimension_y)] for _ in range(self.dimension_z)]
-        self.index_x = 0
-        self.index_y = 0
-        self.index_z = 0
+    def __init__(self,dim_z, dim_y, dim_x):
+        self.dim_z = dim_z
+        self.dim_y = dim_y
+        self.dim_x = dim_x
+        self.matrix = [[[random.randint(0,9) for _ in range(self.dim_x)] for _ in range(self.dim_y)] for _ in range(self.dim_z)]
+        self.ind_x = 0
+        self.ind_y = 0
+        self.ind_z = 0
         self.state = 0
         self.state_0 = 0
         self.state_1 = 1
         self.state_2 = 2
-        self.state_2 = 3
+        self.state_3 = 3
     
     def clock(self):
         if self.state == self.state_0:
-            self.index_x = self.index_x + 1
-            if self.index_x < self.dimension_x:
+            self.ind_x = self.ind_x + 1
+            if self.ind_x < self.dim_x:
                 self.state = self.state_0
             else:
                 self.state = self.state_1
 
         elif self.state == self.state_1:
-            self.index_x = 0
-            self.index_y = self.index_y + 1
-            if self.index_y < self.dimension_y:
+            self.ind_x = 0
+            self.ind_y = self.ind_y + 1
+            if self.ind_y < self.dim_y:
                 self.state = self.state_0
             else:
                 self.state = self.state_2
 
         elif self.state == self.state_2 :
-            self.index_y = 0
-            self.index_z = self.index_z + 1
-            if self.index_z < self.dimension_z:
+            self.ind_y = 0
+            self.ind_z = self.ind_z + 1
+            if self.ind_z < self.dim_z:
                 self.state = self.state_0
             else:
                 self.state = self.state_3
 
         elif self.state == self.state_3:
-            self.index_z = 0
+            self.ind_z = 0
 
         
     def show_indexes(self):
-        print(self.index_x, self.index_y, self.index_z)
+        print(self.ind_x, self.ind_y, self.ind_z)
 
     def information(self):
         for i in self.matrix:
@@ -84,9 +84,9 @@ class Provider:
 
         print(f"a[z][y][x]")
         for i in range(3):
-            x = random.randint(0,self.dimension_x-1)
-            y = random.randint(0,self.dimension_y-1)
-            z = random.randint(0,self.dimension_z-1)
+            x = random.randint(0,self.dim_x-1)
+            y = random.randint(0,self.dim_y-1)
+            z = random.randint(0,self.dim_z-1)
             print(f"a[{z}][{y}][{x}]",self.matrix[z][y][x])
 
 
@@ -99,36 +99,29 @@ class ImageProvider(Provider):
         self.kernel_x = kernel_x
         self.kernel_y = kernel_y
 
+        self.phase_x = 0
+        self.phase_y = 0
+
+
+
+
+
 
     def generate_output(self):
         output = []
-        for i in range(self.dimension_x-self.kernel_x+1):
+        for i in range(self.dim_x-self.kernel_x+1):
             aux_list = []
-            for j in range(self.dimension_y-self.kernel_y+1):
+            for j in range(self.dim_y-self.kernel_y+1):
                 a = [i,j]#conv_with_shift(i,j)
                 print()
                 aux_list.append(a)
             output.append(aux_list)
 
             
-provider = Provider() 
+provider = Provider(2,3,3) 
 
 
-# core = Core([filter_1,filter_2,filter_2])
-# print(core.operation(core.filters[0],core.filters[1]))
 
-
-# kernel_provider1 = Provider(4,3,3)
-# kernel_provider2 = Provider(4,3,3)
-# kernel_provider3 = Provider(2,2,2)
-# kernel_provider1.information()
-
-image_provider = ImageProvider(3,4,4)
-image_provider.generate_output()
-
-# print('filter 1')
-# filter_1.information()
-# print()
-# print()
-# print('filter 2')
-# filter_2.information()
+for i in range(40):
+    provider.clock()
+    provider.show_indexes()
