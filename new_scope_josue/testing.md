@@ -43,3 +43,10 @@ sys.path.append(ruta_modulo)
 % ====================================== SUB-SECTION
 % ============================================================================ SECTION
 
+
+
+https://wavedrom.com/tutorial.html
+https://docs.amd.com/r/en-US/pg256-sdfec-integrated-block/AXI4-Stream-Interface
+https://docs.amd.com/r/en-US/pg109-xfft/Basic-Handshake
+
+file:///C:/Users/ASUS/Downloads/IHI0051B_amba_axi_stream_protocol_spec.pdf
