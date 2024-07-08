@@ -4,18 +4,21 @@
 import os
 import random
 from pathlib import Path
-
+import cocotb
 import sys
+
+ruta_modulo = os.path.abspath(os.path.join(os.path.dirname(__file__), '..','hardware_on_python'))
+sys.path.append(ruta_modulo)
+from control_unit import controlUnit
+
 ruta_modulo = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 sys.path.append(ruta_modulo)
-
-
-import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
 from cocotb.types import LogicArray
 from cocotb_tools.runner import get_runner
-from control_unit import controlUnit
+
+
 LANGUAGE = os.environ["TOPLEVEL_LANG"].lower().strip()
 
 

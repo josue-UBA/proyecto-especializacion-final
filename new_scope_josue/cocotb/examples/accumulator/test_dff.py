@@ -4,21 +4,22 @@
 import os
 import random
 from pathlib import Path
-
-
+import cocotb
 import sys
+
+ruta_modulo = os.path.abspath(os.path.join(os.path.dirname(__file__), '..','hardware_on_python'))
+sys.path.append(ruta_modulo)
+from accumulator import accumulator
+
 ruta_modulo = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 sys.path.append(ruta_modulo)
-
-
-import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge
 from cocotb.types import LogicArray
 from cocotb_tools.runner import get_runner
 
+
 LANGUAGE = os.environ["TOPLEVEL_LANG"].lower().strip()
-from accumulator import accumulator
 
 @cocotb.test()
 async def dff_simple_test(dut):
