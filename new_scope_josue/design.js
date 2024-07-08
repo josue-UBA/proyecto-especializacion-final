@@ -1,6 +1,5 @@
 (() => {
-    test_1 = true
-    test_2 = false
+    const test =1
     return {
 
 
@@ -11,17 +10,17 @@
 
         "signal": [
             {
-                "node": ".A...........B...........C"
+                "node": ".A...........B........C"
             },
             {
                 "name": "clk",
-                "wave": "P........................"
+                "wave": "P....................."
             },
             [
                 "image provider",
                 {
                     "name": "TVALID >",
-                    "wave": "01........................",
+                    "wave": "01....................",
                     "node": ".h"
                 },
                 {
@@ -36,7 +35,7 @@
                 },
                 {
                     "name": "TLAST >",
-                    "wave": "0...........10...........10.",
+                    "wave": "0...........10........",
                     "node": "............a"
                 }
             ],
@@ -45,7 +44,7 @@
                 "kernel provider",
                 {
                     "name": "TVALID >",
-                    "wave": "0.1........................",
+                    "wave": "0.1...................",
                     "node": "..i"
                 },
                 {
@@ -60,7 +59,7 @@
                 },
                 {
                     "name": "TLAST >",
-                    "wave": "0...........10...........10.",
+                    "wave": "0...........10........",
                     "node": "............c"
                 }
             ],
@@ -69,17 +68,17 @@
                 "bias provider",
                 {
                     "name": "TVALID >",
-                    "wave": "0..1.0.......10.............",
+                    "wave": "0..1.0.......10.......",
                     "node": "...m",
                 },
                 {
                     "name": "TREADY <",
-                    "wave": "0...10.......10............",
+                    "wave": "0...10.......10.......",
                     "node": "....lp",
                 },
                 {
                     "name": "TDATA >",
-                    "wave": "x..3.3........3.............",
+                    "wave": "x..3.3........3.......",
                     "data": "bias<sub>0</sub> bias<sub>1</sub> bias<sub>2</sub>"
                 }
             ],
@@ -105,19 +104,19 @@
                     "internal signals",
                     {
                         "name": "mul",
-                        "wave": "x5...555555555555555555",
-                        "node": ".....n",
+                        "wave": "x5...55555555555555555",
                         "data": "D<sub>0</sub>1 D<sub>0</sub>2 D<sub>0</sub>3 D<sub>0</sub>4 D<sub>0</sub>5 D<sub>0</sub>6 D<sub>0</sub>7 D<sub>0</sub>8 D<sub>0</sub>9 D<sub>1</sub>1 D<sub>1</sub>2 D<sub>1</sub>3 D<sub>1</sub>4 D<sub>1</sub>5 D<sub>1</sub>6 D<sub>1</sub>7 D<sub>1</sub>8 D<sub>1</sub>9"
                     },
                     {
                         "name": "a",
-                        "wave": "x....555555555555555555",
+                        "wave": "x....55555555555555555",
                         "data": "D<sub>0</sub>1 D<sub>0</sub>2 D<sub>0</sub>3 D<sub>0</sub>4 D<sub>0</sub>5 D<sub>0</sub>6 D<sub>0</sub>7 D<sub>0</sub>8 D<sub>0</sub>9 D<sub>1</sub>1 D<sub>1</sub>2 D<sub>1</sub>3 D<sub>1</sub>4 D<sub>1</sub>5 D<sub>1</sub>6 D<sub>1</sub>7 D<sub>1</sub>8 D<sub>1</sub>9"
                     },
                     {
                         "name": "state",
+                        "node": ".....n.......a",
                         "wave": "7...777777777777777",
-                        "data": "S0 S1 S2 S2 S2 S2 S2 S2 S2 S2 S3 S4"
+                        "data": "S0 S1 S2 S2 S2 S2 S2 S2 S2 S2 S3 S4 S2 S2 S2"
                     },
                     {
                         "name": "m_enable",
@@ -131,8 +130,7 @@
             "title": "ss"
         },
         "edge": [
-            "a-~>b",
-            "c-~>d",
+            "c-~>a",
             "h-~>j",
             "i-~>j",
             "m-~>j",
