@@ -11,7 +11,7 @@ pip3 install -r requirements
 ```bash
 cd PATH/TO/REPOSITORY/cocotb/examples/accumulator
 make
-```
+```v
 - test control unit 
 ```bash
 cd PATH/TO/REPOSITORY/cocotb/examples/control_unit
@@ -37,16 +37,20 @@ sys.path.append(ruta_modulo)
 ```
 
 
-
-
+# over leaf
+```
 % =================== SUB-SUB-SECTION
 % ====================================== SUB-SECTION
 % ============================================================================ SECTION
+```
 
+# state diagram
+- go to https://wavedrom.com/tutorial.html and just copy the data from `time_diagram_1.js`. 
 
+![alt text](image.png)
 
-https://wavedrom.com/tutorial.html
-https://docs.amd.com/r/en-US/pg256-sdfec-integrated-block/AXI4-Stream-Interface
-https://docs.amd.com/r/en-US/pg109-xfft/Basic-Handshake
-
-file:///C:/Users/ASUS/Downloads/IHI0051B_amba_axi_stream_protocol_spec.pdf
+# source
+- https://wavedrom.com/tutorial.html
+- https://docs.amd.com/r/en-US/pg256-sdfec-integrated-block/AXI4-Stream-Interface
+- https://docs.amd.com/r/en-US/pg109-xfft/Basic-Handshake
+- file:///C:/Users/ASUS/Downloads/IHI0051B_amba_axi_stream_protocol_spec.pdf
