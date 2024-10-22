@@ -3,15 +3,15 @@
 - install dependancies
 ```bash
 cd PATH/TO/REPOSITORY/cocotb
-python3 -m venv venv
-source ./venv/bin/activate
-pip3 install -r requirements
+python3 -m venv cocotb_env
+source ./cocotb_env/bin/activate
+pip install -r requirements
 ```
 - test accumulator
 ```bash
 cd PATH/TO/REPOSITORY/cocotb/examples/accumulator
 make
-```v
+```
 - test control unit 
 ```bash
 cd PATH/TO/REPOSITORY/cocotb/examples/control_unit
