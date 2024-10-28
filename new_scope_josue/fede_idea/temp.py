@@ -1,17 +1,44 @@
-mult1 = [
-    {"num_width": 2, "phase": 8, "label": "a"},
-    {"num_width": 2, "phase": 0, "label": "b"},
-]
-
-mult2 = [
-    {"num_width": 2, "phase": 13, "label": "c"},
-    {"num_width": 2, "phase": 0, "label": "c"},
+configurations = [
+    {
+        "name": "int4",
+        "mult1": [
+            {"num_width": 4, "phase": 0, "label": "a"},
+            {"num_width": 4, "phase": 22, "label": "b"},
+        ],
+        "mult2": [
+            {"num_width": 4, "phase": 0, "label": "c"},
+            {"num_width": 4, "phase": 11, "label": "d"},
+        ],
+    },
+    {
+        "name": "int8",
+        "mult1": [
+            {"num_width": 8, "phase": 0, "label": "a"},
+            {"num_width": 8, "phase": 18, "label": "b"},
+        ],
+        "mult2": [
+            {"num_width": 8, "phase": 0, "label": "c"},
+        ],
+    },
+    {
+        "name": "int5",
+        "mult1": [
+            {"num_width": 5, "phase": 0, "label": "a"},
+            {"num_width": 5, "phase": 24, "label": "b"},
+        ],
+        "mult2": [
+            {"num_width": 5, "phase": 0, "label": "c"},
+            {"num_width": 5, "phase": 12, "label": "c"},
+        ],
+    },
 ]
 
 prod = []
 
-for i in mult1:
-    for j in mult2:
+config = 1
+
+for i in configurations[config]["mult1"]:
+    for j in configurations[config]["mult2"]:
         new_phase = i["phase"] + j["phase"]
         new_max_width = i["num_width"] + j["num_width"]
         prod.append(
@@ -35,17 +62,20 @@ max_length = max(len(s) for s in strings)
 
 
 def fill_buses():
-    for i in mult1:
+    for i in configurations[config]["mult1"]:
         for j in range(i["num_width"]):
             A_bus[i["phase"] + j] = "■"
 
-    for i in mult2:
+    for i in configurations[config]["mult2"]:
         for j in range(i["num_width"]):
             B_bus[i["phase"] + j] = "■"
 
     for i in prod:
         for j in range(i["num_width"]):
-            O_bus[i["phase"] + j] = "■"
+            if "■" in O_bus[i["phase"] + j]:
+                O_bus[i["phase"] + j] = "\033[31m■\033[0m"
+            else:
+                O_bus[i["phase"] + j] = "■"
 
 
 def print_buses():
@@ -54,6 +84,7 @@ def print_buses():
     text_B = f"{' '.join(B_bus[::-1])} B - {len(B_bus)} bits"
     text_C = f"{' '.join(C_bus[::-1])} C - {len(C_bus)} bits"
     text_O = f"{' '.join(O_bus[::-1])} B - {len(O_bus)} bits"
+    print(configurations[config]["name"])
     print(f"{text_A:>150}")
     print("\t\t\t\t\t\t\t\t\t\t\t\t+")
     print(f"{text_D:>150}")
