@@ -22,7 +22,7 @@ if sum_result > max_value_a:
     sum_result = max_value_a
 
 # Representación binaria de la suma
-print("Suma (binario):", format(sum_result, f'0{bus_a_width}b'))
+print("Suma (binario):", format(sum_result, f"0{bus_a_width}b"))
 
 # Realiza la multiplicación con el tercer bus y verifica la saturación
 mult_result = sum_result * bus_c
@@ -31,4 +31,4 @@ if mult_result > max_output_value:
     mult_result = max_output_value
 
 # Representación binaria del resultado final
-print("Resultado final (binario):", format(mult_result, f'0{output_width}b'))
+print("Resultado final (binario):", format(mult_result, f"0{output_width}b"))
