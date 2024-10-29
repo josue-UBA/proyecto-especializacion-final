@@ -2,40 +2,52 @@ configurations = [
     {
         "name": "int4",
         "mult1": [
-            {"num_width": 4, "phase": 0, "label": "a"},
-            {"num_width": 4, "phase": 22, "label": "b"},
+            {"bus": "A", "num_width": 4, "phase": 0, "label": "a"},
+            {"bus": "D", "num_width": 4, "phase": 22, "label": "b"},
         ],
         "mult2": [
-            {"num_width": 4, "phase": 0, "label": "c"},
-            {"num_width": 4, "phase": 11, "label": "d"},
+            {"bus": "B", "num_width": 4, "phase": 0, "label": "c"},
+            {"bus": "B", "num_width": 4, "phase": 11, "label": "d"},
         ],
     },
     {
         "name": "int8",
         "mult1": [
-            {"num_width": 8, "phase": 0, "label": "a"},
-            {"num_width": 8, "phase": 18, "label": "b"},
+            {"bus": "D", "num_width": 8, "phase": 0, "label": "a"},
+            {"bus": "A", "num_width": 8, "phase": 18, "label": "b"},
         ],
         "mult2": [
-            {"num_width": 8, "phase": 0, "label": "c"},
+            {"bus": "B", "num_width": 8, "phase": 0, "label": "c"},
         ],
     },
     {
         "name": "int5",
         "mult1": [
-            {"num_width": 5, "phase": 0, "label": "a"},
-            {"num_width": 5, "phase": 24, "label": "b"},
+            {"bus": "A", "num_width": 5, "phase": 24, "label": "a"},
+            {"bus": "D", "num_width": 5, "phase": 0, "label": "b"},
         ],
         "mult2": [
-            {"num_width": 5, "phase": 0, "label": "c"},
-            {"num_width": 5, "phase": 12, "label": "c"},
+            {"bus": "B", "num_width": 5, "phase": 0, "label": "c"},
+            {"bus": "B", "num_width": 5, "phase": 12, "label": "d"},
+        ],
+    },
+    {
+        "name": "intX",
+        "mult1": [
+            {"bus": "A", "num_width": 2, "phase": 24, "label": "a"},
+            {"bus": "A", "num_width": 2, "phase": 12, "label": "b"},
+            {"bus": "D", "num_width": 2, "phase": 0, "label": "b"},
+        ],
+        "mult2": [
+            {"bus": "B", "num_width": 2, "phase": 0, "label": "c"},
+            {"bus": "B", "num_width": 2, "phase": 6, "label": "d"},
         ],
     },
 ]
 
 prod = []
 
-config = 1
+config = 3
 
 for i in configurations[config]["mult1"]:
     for j in configurations[config]["mult2"]:
@@ -48,9 +60,9 @@ for i in configurations[config]["mult1"]:
                 "label": f'{i["label"]}{j["label"]}',
             }
         )
-        # print(f'name: {i["label"]}{j["label"]} - new phase:{new_phase}')
 
 
+# fill with empty squares
 A_bus = ["□" for i in range(0, 30)]
 D_bus = ["□" for i in range(0, 27)]
 B_bus = ["□" for i in range(0, 18)]
@@ -63,8 +75,12 @@ max_length = max(len(s) for s in strings)
 
 def fill_buses():
     for i in configurations[config]["mult1"]:
-        for j in range(i["num_width"]):
-            A_bus[i["phase"] + j] = "■"
+        if i["bus"] == "A":
+            for j in range(i["num_width"]):
+                A_bus[i["phase"] + j] = "■"
+        else:
+            for j in range(i["num_width"]):
+                D_bus[i["phase"] + j] = "■"
 
     for i in configurations[config]["mult2"]:
         for j in range(i["num_width"]):
