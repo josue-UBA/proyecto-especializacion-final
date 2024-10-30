@@ -1,4 +1,34 @@
-# deploy
+
+# - Exploracion de posibles configuraciones para el DSP
+partiendo de la idea que el DSP tiene la siguiente configuracion
+$((A+D)*B)+C$, donde la primera suma es el `preadder` y la segunda el `postadder`
+
+![alt text](image-1.png)
+
+se infiere que es posible poner multiplicacion de polinomios tal que se puede obtener una expresion como la siguiente
+$$
+(a 2^{u} + b 2^{v} + c 2^{w})(d 2^{x} + e 2^{y} + f 2^{z}) = a d 2^{u+x} + a e 2^{u+y} + a f 2^{u+z} + b d 2^{v+x} + b e 2^{v+y} + b f 2^{v+z} + c d 2^{w+x} + c e 2^{w+y} + c f 2^{w+z}
+$$
+
+para encontrar las distintas posibles configuraciones, se tiene que editar el archivo `configurations.py` y luego ejecutar
+```bash 
+python3 temp.py int7_23 
+```
+donde `int7_23` es el nobre de la configuracion encontrada en el archivo `configurations.py`
+
+![alt text](image-2.png)
+
+## -- int8
+
+![alt text](image-3.png)
+## -- int4
+
+![alt text](image-4.png)
+
+## -- int5
+
+![alt text](image-5.png)
+# - deploy
 
 - install dependancies
 ```bash
