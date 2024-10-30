@@ -3,7 +3,7 @@ import sys
 
 def obj_to_decimal(obj):
     phase = pow(2, obj["phase"])
-    num = pow(2, obj["num_width"] - (1 if obj["signed"] else 0)) - 1
+    num = obj["number"]
     return phase * num
 
 
@@ -14,11 +14,11 @@ def obj_to_decimal(obj):
 #     return full_bus
 
 
-def objs_to_strings(mult):
-    strings = []
-    for i in mult:
-        strings.append(decimal_to_string(obj_to_decimal(i)))
-    return strings
+# def objs_to_strings(mult):
+#     strings = []
+#     for i in mult:
+#         strings.append(decimal_to_string(obj_to_decimal(i)))
+#     return strings
 
 
 def decimal_to_string(num):
@@ -35,23 +35,30 @@ def strings_to_bus(strings, bus):
     # asumo que se comienza por el menor
     aux = []
     for string in ordered_strings:
-        for i in string[len(string) - len(aux) :: -1]:
+        for i in string[len(string) - len(aux) - 1 :: -1]:
             if i not in "S" or i not in "s":
                 aux.append(i)
             else:
                 break
 
+    info = ""
+
     if bus == "A":
         aux = aux + ["□" for _ in range(30 - len(aux))]
+        info = " A - 30 bits"
     elif bus == "D":
         aux = aux + ["□" for _ in range(27 - len(aux))]
+        info = " D - 27 bits"
     elif bus == "B":
         aux = aux + ["□" for _ in range(18 - len(aux))]
+        info = " B - 18 bits"
     elif bus == "C":
         aux = aux + ["□" for _ in range(48 - len(aux))]
+        info = " C - 48 bits"
     elif bus == "O":
         aux = aux + ["□" for _ in range(48 - len(aux))]
-    return " ".join(aux[::-1])
+        info = " O - 48 bits"
+    return f'{" ".join(aux[::-1])} {info}'
 
 
 # Verifica si se pasó un argumento
@@ -68,79 +75,206 @@ if len(sys.argv) > 1:
                     "phase": 0,
                     "label": "a",
                     "signed": True,
-                },  # obj
-                {"bus": "D", "num_width": 4, "phase": 22, "label": "b", "signed": True},
+                    "number": 7,
+                },
+                {
+                    "bus": "D",
+                    "num_width": 4,
+                    "phase": 22,
+                    "label": "b",
+                    "signed": True,
+                    "number": 7,
+                },
             ],
             "mult2": [
-                {"bus": "B", "num_width": 4, "phase": 0, "label": "c", "signed": True},
-                {"bus": "B", "num_width": 4, "phase": 11, "label": "d", "signed": True},
+                {
+                    "bus": "B",
+                    "num_width": 4,
+                    "phase": 0,
+                    "label": "c",
+                    "signed": True,
+                    "number": 7,
+                },
+                {
+                    "bus": "B",
+                    "num_width": 4,
+                    "phase": 11,
+                    "label": "d",
+                    "signed": True,
+                    "number": 7,
+                },
             ],
         },
         {
             "name": "int8",
             "mult1": [
-                {"bus": "D", "num_width": 8, "phase": 0, "label": "a", "signed": True},
-                {"bus": "A", "num_width": 8, "phase": 18, "label": "b", "signed": True},
+                {
+                    "bus": "D",
+                    "num_width": 8,
+                    "phase": 0,
+                    "label": "a",
+                    "signed": True,
+                    "number": 127,
+                },
+                {
+                    "bus": "A",
+                    "num_width": 8,
+                    "phase": 18,
+                    "label": "b",
+                    "signed": True,
+                    "number": 127,
+                },
             ],
             "mult2": [
-                {"bus": "B", "num_width": 8, "phase": 0, "label": "c", "signed": True},
+                {
+                    "bus": "B",
+                    "num_width": 8,
+                    "phase": 0,
+                    "label": "c",
+                    "signed": True,
+                    "number": 127,
+                },
             ],
         },
         {
             "name": "int5",
             "mult1": [
-                {"bus": "A", "num_width": 5, "phase": 24, "label": "a", "signed": True},
-                {"bus": "D", "num_width": 5, "phase": 0, "label": "b", "signed": True},
+                {
+                    "bus": "A",
+                    "num_width": 5,
+                    "phase": 24,
+                    "label": "a",
+                    "signed": True,
+                    "number": 15,
+                },
+                {
+                    "bus": "D",
+                    "num_width": 5,
+                    "phase": 0,
+                    "label": "b",
+                    "signed": True,
+                    "number": 15,
+                },
             ],
             "mult2": [
-                {"bus": "B", "num_width": 5, "phase": 0, "label": "c", "signed": True},
-                {"bus": "B", "num_width": 5, "phase": 12, "label": "d", "signed": True},
+                {
+                    "bus": "B",
+                    "num_width": 5,
+                    "phase": 0,
+                    "label": "c",
+                    "signed": True,
+                    "number": 15,
+                },
+                {
+                    "bus": "B",
+                    "num_width": 5,
+                    "phase": 12,
+                    "label": "d",
+                    "signed": True,
+                    "number": 15,
+                },
             ],
         },
         {
-            "name": "intX",
+            "name": "int2",
             "mult1": [
-                {"bus": "A", "num_width": 2, "phase": 24, "label": "a", "signed": True},
-                {"bus": "A", "num_width": 2, "phase": 12, "label": "b", "signed": True},
-                {"bus": "D", "num_width": 2, "phase": 0, "label": "b", "signed": True},
+                {
+                    "bus": "A",
+                    "num_width": 2,
+                    "phase": 24,
+                    "label": "a",
+                    "signed": True,
+                    "number": 1,
+                },
+                {
+                    "bus": "A",
+                    "num_width": 2,
+                    "phase": 12,
+                    "label": "b",
+                    "signed": True,
+                    "number": 1,
+                },
+                {
+                    "bus": "D",
+                    "num_width": 2,
+                    "phase": 0,
+                    "label": "b",
+                    "signed": True,
+                    "number": 1,
+                },
             ],
             "mult2": [
-                {"bus": "B", "num_width": 2, "phase": 0, "label": "c", "signed": True},
-                {"bus": "B", "num_width": 2, "phase": 6, "label": "d", "signed": True},
+                {
+                    "bus": "B",
+                    "num_width": 2,
+                    "phase": 0,
+                    "label": "c",
+                    "signed": True,
+                    "number": 1,
+                },
+                {
+                    "bus": "B",
+                    "num_width": 2,
+                    "phase": 6,
+                    "label": "d",
+                    "signed": True,
+                    "number": 1,
+                },
             ],
         },
     ]
     if sys.argv[1] in [i["name"] for i in configurations]:
         con = [i for i in configurations if i["name"] == sys.argv[1]][0]
 
-        AA_objects = [i for i in con["mult1"] if i["bus"] == "A"]
-        DD_objects = [i for i in con["mult1"] if i["bus"] == "D"]
-        BB_objects = con["mult2"]
-
-        AA_strings = objs_to_strings(AA_objects)
-        DD_strings = objs_to_strings(DD_objects)
-        BB_strings = objs_to_strings(BB_objects)
+        AA_strings = [
+            decimal_to_string(obj_to_decimal(i))
+            for i in con["mult1"]
+            if i["bus"] == "A"
+        ]
+        DD_strings = [
+            decimal_to_string(obj_to_decimal(i))
+            for i in con["mult1"]
+            if i["bus"] == "D"
+        ]
+        BB_strings = [decimal_to_string(obj_to_decimal(i)) for i in con["mult2"]]
 
         AA_bus = strings_to_bus(AA_strings, "A")
         DD_bus = strings_to_bus(DD_strings, "D")
         BB_bus = strings_to_bus(BB_strings, "B")
         CC_bus = strings_to_bus([], "C")
-        OO_bus = strings_to_bus([], "O")
+        # OO_bus = strings_to_bus([], "O")
 
-        print(f"{AA_bus:>138} A - 30 bits")
+        prod2 = []
+        for i in con["mult1"]:
+            for j in con["mult2"]:
+                prod2.append(
+                    {
+                        "num_width": len(bin(i["number"] * j["number"])) - 2,
+                        "phase": i["phase"] + j["phase"],
+                        "label": f'{i["label"]}{j["label"]}',
+                        "number": i["number"] * j["number"],
+                    }
+                )
+
+        O_strings = [decimal_to_string(obj_to_decimal(i)) for i in prod2]
+
+        OO_bus = strings_to_bus(O_strings, "O")
+
+        print(f"{AA_bus:>140}")
         print("\t\t\t\t\t\t\t\t\t\t\t\t+")
-        print(f"{DD_bus:>138} D - 27 bits")
+        print(f"{DD_bus:>140}")
         print("\t\t\t\t\t\t\t\t\t\t\t\tx")
-        print(f"{BB_bus:>138} B - 18 bits")
+        print(f"{BB_bus:>140}")
         print("\t\t\t\t\t\t\t\t\t\t\t\t+")
-        print(f"{CC_bus:>138} C - 48 bits")
+        print(f"{CC_bus:>140}")
         print("\t\t\t\t\t\t\t\t\t\t\t\t=")
-        print(f"{OO_bus:>138} O - 48 bits")
+        print(f"{OO_bus:>140}")
         print()
         print()
         print()
         prod = []
 
+        # delete
         for i in con["mult1"]:
             for j in con["mult2"]:
                 new_phase = i["phase"] + j["phase"]
