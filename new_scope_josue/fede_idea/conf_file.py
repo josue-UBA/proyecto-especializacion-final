@@ -39,7 +39,7 @@ configurations = [
         ],
     },
     {
-        "name": "int8",
+        "name": "int8_18",
         "mult1": [
             {
                 "bus": "D",
@@ -53,6 +53,99 @@ configurations = [
                 "bus": "A",
                 "num_width": 8,
                 "phase": 18,
+                "label": "b",
+                "signed": True,
+                "number": 127,
+            },
+        ],
+        "mult2": [
+            {
+                "bus": "B",
+                "num_width": 8,
+                "phase": 0,
+                "label": "c",
+                "signed": True,
+                "number": 127,
+            },
+        ],
+    },
+    {
+        "name": "int8_19",
+        "mult1": [
+            {
+                "bus": "D",
+                "num_width": 8,
+                "phase": 0,
+                "label": "a",
+                "signed": True,
+                "number": 127,
+            },
+            {
+                "bus": "A",
+                "num_width": 8,
+                "phase": 19,
+                "label": "b",
+                "signed": True,
+                "number": 127,
+            },
+        ],
+        "mult2": [
+            {
+                "bus": "B",
+                "num_width": 8,
+                "phase": 0,
+                "label": "c",
+                "signed": True,
+                "number": 127,
+            },
+        ],
+    },
+    {
+        "name": "int8_21",
+        "mult1": [
+            {
+                "bus": "D",
+                "num_width": 8,
+                "phase": 0,
+                "label": "a",
+                "signed": True,
+                "number": 127,
+            },
+            {
+                "bus": "A",
+                "num_width": 8,
+                "phase": 21,
+                "label": "b",
+                "signed": True,
+                "number": 127,
+            },
+        ],
+        "mult2": [
+            {
+                "bus": "B",
+                "num_width": 8,
+                "phase": 0,
+                "label": "c",
+                "signed": True,
+                "number": 127,
+            },
+        ],
+    },
+        {
+        "name": "int8_20",
+        "mult1": [
+            {
+                "bus": "D",
+                "num_width": 8,
+                "phase": 0,
+                "label": "a",
+                "signed": True,
+                "number": 127,
+            },
+            {
+                "bus": "A",
+                "num_width": 8,
+                "phase": 20,
                 "label": "b",
                 "signed": True,
                 "number": 127,

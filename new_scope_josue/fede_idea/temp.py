@@ -107,6 +107,10 @@ if len(sys.argv) > 1:
         print(f"{CC_bus:>150}")
         print("\t\t\t\t\t\t\t\t\t\t\t\t=")
 
+        guia1 = "3 3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1                               "
+        guia2 = "2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1             "
+        print(f"{guia1:>150}")
+        print(f"{guia2:>150}")
         base = [obj_to_decimal(i) for i in prod2]
         for i in range(1, 100):
             O_strings = [decimal_to_string(j * i) for j in base]
