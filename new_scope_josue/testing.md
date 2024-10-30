@@ -86,10 +86,11 @@ donde `int7_23` es el nobre de la configuracion encontrada en el archivo `config
 ![alt text](images/image.png)
 
 # - source
-- https://wavedrom.com/tutorial.html
-- file:///C:/Users/ASUS/Downloads/IHI0051B_amba_axi_stream_protocol_spec.pdf
+- [wavedrom](https://wavedrom.com/tutorial.html)
+- [axistreamprotocolspec](https://es.slideshare.net/slideshow/ihi0051bambaaxistreamprotocolspecpdf/264642408)
 ## -- AMD
 - [AXI4-Stream-Interface](https://docs.amd.com/r/en-US/pg256-sdfec-integrated-block/AXI4-Stream-Interface)
 - [Basic-Handshake](https://docs.amd.com/r/en-US/pg109-xfft/Basic-Handshake)
 - [deep-learning-int8](https://docs.amd.com/v/u/en-US/wp486-deep-learning-int8)
 - [4bit-optimization](https://docs.amd.com/v/u/en-US/wp521-4bit-optimization)
+- [DSP48E1](https://docs.amd.com/v/u/en-US/ug479_7Series_DSP48E1)

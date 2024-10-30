@@ -131,7 +131,7 @@ configurations = [
             },
         ],
     },
-        {
+    {
         "name": "int8_20",
         "mult1": [
             {
