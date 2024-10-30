@@ -1,4 +1,5 @@
 import sys
+from conf_file import configurations
 
 
 def obj_to_decimal(obj):
@@ -65,164 +66,6 @@ def strings_to_bus(strings, bus):
 if len(sys.argv) > 1:
     arg = sys.argv[1]
 
-    configurations = [
-        {
-            "name": "int4",
-            "mult1": [
-                {
-                    "bus": "A",
-                    "num_width": 4,
-                    "phase": 0,
-                    "label": "a",
-                    "signed": True,
-                    "number": 7,
-                },
-                {
-                    "bus": "D",
-                    "num_width": 4,
-                    "phase": 22,
-                    "label": "b",
-                    "signed": True,
-                    "number": 7,
-                },
-            ],
-            "mult2": [
-                {
-                    "bus": "B",
-                    "num_width": 4,
-                    "phase": 0,
-                    "label": "c",
-                    "signed": True,
-                    "number": 7,
-                },
-                {
-                    "bus": "B",
-                    "num_width": 4,
-                    "phase": 11,
-                    "label": "d",
-                    "signed": True,
-                    "number": 7,
-                },
-            ],
-        },
-        {
-            "name": "int8",
-            "mult1": [
-                {
-                    "bus": "D",
-                    "num_width": 8,
-                    "phase": 0,
-                    "label": "a",
-                    "signed": True,
-                    "number": 127,
-                },
-                {
-                    "bus": "A",
-                    "num_width": 8,
-                    "phase": 18,
-                    "label": "b",
-                    "signed": True,
-                    "number": 127,
-                },
-            ],
-            "mult2": [
-                {
-                    "bus": "B",
-                    "num_width": 8,
-                    "phase": 0,
-                    "label": "c",
-                    "signed": True,
-                    "number": 127,
-                },
-            ],
-        },
-        {
-            "name": "int5",
-            "mult1": [
-                {
-                    "bus": "A",
-                    "num_width": 5,
-                    "phase": 24,
-                    "label": "a",
-                    "signed": True,
-                    "number": 15,
-                },
-                {
-                    "bus": "D",
-                    "num_width": 5,
-                    "phase": 0,
-                    "label": "b",
-                    "signed": True,
-                    "number": 15,
-                },
-            ],
-            "mult2": [
-                {
-                    "bus": "B",
-                    "num_width": 5,
-                    "phase": 0,
-                    "label": "c",
-                    "signed": True,
-                    "number": 15,
-                },
-                {
-                    "bus": "B",
-                    "num_width": 5,
-                    "phase": 12,
-                    "label": "d",
-                    "signed": True,
-                    "number": 15,
-                },
-            ],
-        },
-        {
-            "name": "int2",
-            "mult1": [
-                {
-                    "bus": "A",
-                    "num_width": 2,
-                    "phase": 24,
-                    "label": "a",
-                    "signed": True,
-                    "number": 1,
-                },
-                {
-                    "bus": "A",
-                    "num_width": 2,
-                    "phase": 12,
-                    "label": "b",
-                    "signed": True,
-                    "number": 1,
-                },
-                {
-                    "bus": "D",
-                    "num_width": 2,
-                    "phase": 0,
-                    "label": "b",
-                    "signed": True,
-                    "number": 1,
-                },
-            ],
-            "mult2": [
-                {
-                    "bus": "B",
-                    "num_width": 2,
-                    "phase": 0,
-                    "label": "c",
-                    "signed": True,
-                    "number": 1,
-                },
-                {
-                    "bus": "B",
-                    "num_width": 2,
-                    "phase": 6,
-                    "label": "d",
-                    "signed": True,
-                    "number": 1,
-                },
-            ],
-        },
-    ]
     if sys.argv[1] in [i["name"] for i in configurations]:
         con = [i for i in configurations if i["name"] == sys.argv[1]][0]
 
@@ -242,7 +85,6 @@ if len(sys.argv) > 1:
         DD_bus = strings_to_bus(DD_strings, "D")
         BB_bus = strings_to_bus(BB_strings, "B")
         CC_bus = strings_to_bus([], "C")
-        # OO_bus = strings_to_bus([], "O")
 
         prod2 = []
         for i in con["mult1"]:
@@ -256,19 +98,22 @@ if len(sys.argv) > 1:
                     }
                 )
 
-        O_strings = [decimal_to_string(obj_to_decimal(i)) for i in prod2]
-
-        OO_bus = strings_to_bus(O_strings, "O")
-
-        print(f"{AA_bus:>140}")
+        print(f"{AA_bus:>150}")
         print("\t\t\t\t\t\t\t\t\t\t\t\t+")
-        print(f"{DD_bus:>140}")
+        print(f"{DD_bus:>150}")
         print("\t\t\t\t\t\t\t\t\t\t\t\tx")
-        print(f"{BB_bus:>140}")
+        print(f"{BB_bus:>150}")
         print("\t\t\t\t\t\t\t\t\t\t\t\t+")
-        print(f"{CC_bus:>140}")
+        print(f"{CC_bus:>150}")
         print("\t\t\t\t\t\t\t\t\t\t\t\t=")
-        print(f"{OO_bus:>140}")
+
+        base = [obj_to_decimal(i) for i in prod2]
+        for i in range(1, 100):
+            O_strings = [decimal_to_string(j * i) for j in base]
+            OO_bus = strings_to_bus(O_strings, "O")
+            OO_bus = f"iteration{i-1} {OO_bus}"
+            print(f"{OO_bus:>150}")
+
         print()
         print()
         print()

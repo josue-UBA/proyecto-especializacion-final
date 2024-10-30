@@ -1,0 +1,7 @@
+configuration name,list of values in A bus,list of values in D bus,list of values in B bus,list of offsets in A bus,list of offsets in D bus,list of offsets in B bus,max number of accumulations,initial window,
+int4,4,4,"4,4",0,22,"0,11",19,4,
+int8,8,8,8,18,0,0,7,3,
+int5,5,5,"5,5",24,0,"0,12",8,3,
+int2,"2,2",2,"2,2","12,24",0,"0,6",30,2,
+int7_22,7,7,7,22,0,0,527,6,
+int7_23,7,7,7,23,0,0,1055,3,
