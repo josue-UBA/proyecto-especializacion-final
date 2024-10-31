@@ -63,6 +63,9 @@ def strings_to_bus(strings, bus):
 
 
 def print_analysis(con, AA_bus, DD_bus, BB_bus, CC_bus, buses):
+    print("==============================================")
+    print(f'{con["name"]}')
+    print("==============================================\n")
 
     guia1 = (
         "3 3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1                               "
@@ -73,7 +76,6 @@ def print_analysis(con, AA_bus, DD_bus, BB_bus, CC_bus, buses):
     print(f"{guia1:>150}")
     print(f"{guia2:>150}")
 
-    print(f'{con["name"]}')
     print(f"{AA_bus:>150}")
     print("\t\t\t\t\t\t\t\t\t\t\t\t+")
     print(f"{DD_bus:>150}")
@@ -140,30 +142,36 @@ if len(sys.argv) > 1:
         ]
         BB_strings = [decimal_to_string(obj_to_decimal(i)) for i in con["mult2"]]
 
-        AA_bus = strings_to_bus(AA_strings, "A")
-        DD_bus = strings_to_bus(DD_strings, "D")
-        BB_bus = strings_to_bus(BB_strings, "B")
-        CC_bus = strings_to_bus([], "C")
+        A_bus = strings_to_bus(AA_strings, "A")
+        D_bus = strings_to_bus(DD_strings, "D")
+        B_bus = strings_to_bus(BB_strings, "B")
+        C_bus = strings_to_bus([], "C")
 
         prod2 = []
         for i in con["mult1"]:
             for j in con["mult2"]:
+                num_width = len(bin(i["number"] * j["number"])) - 1
+                phase = i["phase"] + j["phase"]
                 prod2.append(
                     {
-                        "num_width": len(bin(i["number"] * j["number"])) - 1,
-                        "phase": i["phase"] + j["phase"],
+                        "bus": "O",
+                        "num_width": num_width,
+                        "phase": phase,
                         "label": f'{i["label"]}{j["label"]}',
                         "number": i["number"] * j["number"],
+                        "MSB": phase + num_width,
+                        "LSB": phase + 1,
                     }
                 )
         buses = []
         base = [obj_to_decimal(i) for i in prod2]
         for i in range(1, 10):
             O_strings = [decimal_to_string(j * i) for j in base]
-            OO_bus = strings_to_bus(O_strings, "O")
-            buses.append(OO_bus)
+            O_bus = strings_to_bus(O_strings, "O")
+            buses.append(O_bus)
 
-        print_analysis(con, AA_bus, DD_bus, BB_bus, CC_bus, buses)
+        print_analysis(con, A_bus, D_bus, B_bus, C_bus, buses)
+        print("finish")
 
     else:
         print("configuration not found")
