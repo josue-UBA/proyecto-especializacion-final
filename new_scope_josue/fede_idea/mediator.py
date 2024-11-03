@@ -69,8 +69,8 @@ if len(sys.argv) > 1:
         )
 
     else:
-        print("configuration not found")
+        frontend.print_log("configuration not found")
 
 
 else:
-    print("No se ha proporcionado ningún argumento.")
+    frontend.print_log("No se ha proporcionado ningún argumento.")

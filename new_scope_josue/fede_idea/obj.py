@@ -84,10 +84,16 @@ def check_overlap(objs):
             """
 
             # case 1
-            if obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"] and obj2["MSB_position"] < obj1["MSB_position"]:
+            if (
+                obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"]
+                and obj2["MSB_position"] < obj1["MSB_position"]
+            ):
                 return {"overlap": True, "log": f"case 1"}
             # case 2
-            if obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"] and obj1["LSB_position"] < obj2["LSB_position"]:
+            if (
+                obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"]
+                and obj1["LSB_position"] < obj2["LSB_position"]
+            ):
                 return {"overlap": True, "log": f"case 2"}
             # case 3
             if (

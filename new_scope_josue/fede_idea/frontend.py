@@ -1,5 +1,10 @@
 import conf_file
 
+
+def print_log(log):
+    print(log)
+
+
 def print_analysis(name, A_bus, D_bus, B_bus, C_bus, buses, log, O_base_objs):
 
     print("==============================================")
@@ -20,7 +25,9 @@ def print_analysis(name, A_bus, D_bus, B_bus, C_bus, buses, log, O_base_objs):
     print(f"{C_bus:>{conf_file.LEFT_SPACE}}")
     print("\t\t\t\t\t\t\t\t\t\t\t\t=")
 
-    a = [i["LSB_position"] for i in O_base_objs] + [i["LSB_position"] - 1 for i in O_base_objs]
+    a = [i["LSB_position"] for i in O_base_objs] + [
+        i["LSB_position"] - 1 for i in O_base_objs
+    ]
     b = [
         "|" if i in a else "-" for i in range(1, conf_file.buses_metadata["O"]["width"])
     ] + ["|"]
