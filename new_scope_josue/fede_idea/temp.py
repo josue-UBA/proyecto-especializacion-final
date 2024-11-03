@@ -24,10 +24,7 @@ def obj_to_decimal(obj):
 
 def decimal_to_string(num):
     transrm = " ".join(["■" if i == "1" else "□" for i in list(bin(num).split("b")[1])])
-    if "-" in bin(num):
-        return "S " + transrm
-
-    return "s " + transrm
+    return transrm
 
 
 def strings_to_bus(strings, bus):
@@ -62,9 +59,10 @@ def strings_to_bus(strings, bus):
     return f'{" ".join(aux[::-1])} {info}'
 
 
-def print_analysis(con, AA_bus, DD_bus, BB_bus, CC_bus, buses):
+def print_analysis(name, A_bus, D_bus, B_bus, C_bus, buses, log, O_base_objs):
+
     print("==============================================")
-    print(f'{con["name"]}')
+    print(f"{name}")
     print("==============================================\n")
 
     guia1 = (
@@ -76,51 +74,117 @@ def print_analysis(con, AA_bus, DD_bus, BB_bus, CC_bus, buses):
     print(f"{guia1:>150}")
     print(f"{guia2:>150}")
 
-    print(f"{AA_bus:>150}")
+    print(f"{A_bus:>150}")
     print("\t\t\t\t\t\t\t\t\t\t\t\t+")
-    print(f"{DD_bus:>150}")
+    print(f"{D_bus:>150}")
     print("\t\t\t\t\t\t\t\t\t\t\t\tx")
-    print(f"{BB_bus:>150}")
+    print(f"{B_bus:>150}")
     print("\t\t\t\t\t\t\t\t\t\t\t\t+")
-    print(f"{CC_bus:>150}")
+    print(f"{C_bus:>150}")
     print("\t\t\t\t\t\t\t\t\t\t\t\t=")
 
-    for i, n in enumerate(buses):
-        itera = f"iteration {i} {n}"
+    a = [i["LSB"] for i in O_base_objs] + [i["LSB"] - 1 for i in O_base_objs]
+    b = ["|" if i in a else "-" for i in range(1, 49)]
+    c = " ".join(b)[::-1]
+    print(f"{c:>137}")
+    for n, i in enumerate(buses):
+        itera = f"iteration {n} {i}"
         print(f"{itera:>150}")
-
     print()
-    print()
-    print()
-    prod = []
+    print(log)
 
-    # delete
-    for i in con["mult1"]:
-        for j in con["mult2"]:
-            new_phase = i["phase"] + j["phase"]
-            new_max_width = i["num_width"] + j["num_width"]
-            prod.append(
-                {
-                    "num_width": new_max_width,
-                    "phase": new_phase,
-                    "label": f'{i["label"]}{j["label"]}',
-                }
-            )
 
-    # fill with empty squares
+def obj_times_obj(a_obj, b_obj):
+    bus = "O"
+    number = a_obj["number"] * b_obj["number"]
+    phase = a_obj["phase"] + b_obj["phase"]
+    label = f'{a_obj["label"]}{b_obj["label"]}'
+    MSB = len(bin(number)) - 2 + phase
+    LSB = phase + 1
+    return {
+        "bus": bus,
+        "number": number,
+        "phase": phase,
+        "label": label,
+        "MSB": MSB,
+        "LSB": LSB,
+    }
 
-    O_bus = ["□" for i in range(0, 48)]
 
-    for i in prod:
-        for j in range(i["num_width"]):
-            if "■" in O_bus[i["phase"] + j]:
-                O_bus[i["phase"] + j] = "\033[31m■\033[0m"
-            else:
-                O_bus[i["phase"] + j] = "■"
+def obj_plus_obj(a_obj, b_obj):
 
-    text_O = f"{' '.join(O_bus[::-1])}  O - {len(O_bus)} bits"
+    if not a_obj and not b_obj:
+        return print("no data!")
+    if not a_obj:
+        return b_obj
+    if not b_obj:
+        return a_obj
 
-    print(f"{text_O:>150}")
+    """
+    only sum obj that have the same phase
+    """
+    if a_obj["phase"] == b_obj["phase"]:
+        bus = "O"
+        number = a_obj["number"] + b_obj["number"]
+        phase = a_obj["phase"]  # any phase of the objects
+        label = f'{a_obj["label"]} + {b_obj["label"]}'
+        MSB = len(bin(number)) - 1 + phase
+        LSB = phase + 1
+        return {
+            "bus": bus,
+            "number": number,
+            "phase": phase,
+            "label": label,
+            "MSB": MSB,
+            "LSB": LSB,
+        }
+    else:
+        print("objs doesn't have the same phase")
+
+
+def check_overlap(objs):
+
+    for n, obj1 in enumerate(objs):
+        for obj2 in objs[n + 1 :]:
+            """
+            case 1
+                |-------|       obj1
+            |-------|           obj2
+
+            case 2
+                |-------|       obj1
+                    |-------|   obj2
+
+            case 3
+                |-------|       obj1
+            |---------------|   obj2
+
+            case 4
+            |---------------|   obj1
+                |-------|       obj2
+
+            """
+
+            # case 1
+            if obj2["LSB"] < obj1["LSB"] < obj2["MSB"] and obj2["MSB"] < obj1["MSB"]:
+                return {"overlap": True, "log": f"case 1"}
+            # case 2
+            if obj2["LSB"] < obj1["MSB"] < obj2["MSB"] and obj1["LSB"] < obj2["LSB"]:
+                return {"overlap": True, "log": f"case 2"}
+            # case 3
+            if (
+                obj2["LSB"] < obj1["LSB"] < obj2["MSB"]
+                and obj2["LSB"] < obj1["MSB"] < obj2["MSB"]
+            ):
+                return {"overlap": True, "log": f"case 3"}
+            # case 4
+            if (
+                obj1["LSB"] < obj2["LSB"] < obj1["MSB"]
+                and obj1["LSB"] < obj2["MSB"] < obj1["MSB"]
+            ):
+                return {"overlap": True, "log": f"case 4"}
+
+    return {"overlap": False, "log": f"no overlap"}
 
 
 # Verifica si se pasó un argumento
@@ -128,50 +192,52 @@ if len(sys.argv) > 1:
     arg = sys.argv[1]
 
     if sys.argv[1] in [i["name"] for i in configurations]:
+
+        # select configuration
         con = [i for i in configurations if i["name"] == sys.argv[1]][0]
 
-        AA_strings = [
+        # generate A, D, B, and C buses
+        A_strings = [
             decimal_to_string(obj_to_decimal(i))
             for i in con["mult1"]
             if i["bus"] == "A"
         ]
-        DD_strings = [
+        D_strings = [
             decimal_to_string(obj_to_decimal(i))
             for i in con["mult1"]
             if i["bus"] == "D"
         ]
-        BB_strings = [decimal_to_string(obj_to_decimal(i)) for i in con["mult2"]]
+        B_strings = [decimal_to_string(obj_to_decimal(i)) for i in con["mult2"]]
 
-        A_bus = strings_to_bus(AA_strings, "A")
-        D_bus = strings_to_bus(DD_strings, "D")
-        B_bus = strings_to_bus(BB_strings, "B")
+        A_bus = strings_to_bus(A_strings, "A")
+        D_bus = strings_to_bus(D_strings, "D")
+        B_bus = strings_to_bus(B_strings, "B")
         C_bus = strings_to_bus([], "C")
 
-        prod2 = []
+        # ---
+        O_base_objs = []
         for i in con["mult1"]:
             for j in con["mult2"]:
-                num_width = len(bin(i["number"] * j["number"])) - 1
-                phase = i["phase"] + j["phase"]
-                prod2.append(
-                    {
-                        "bus": "O",
-                        "num_width": num_width,
-                        "phase": phase,
-                        "label": f'{i["label"]}{j["label"]}',
-                        "number": i["number"] * j["number"],
-                        "MSB": phase + num_width,
-                        "LSB": phase + 1,
-                    }
-                )
-        buses = []
-        base = [obj_to_decimal(i) for i in prod2]
-        for i in range(1, 10):
-            O_strings = [decimal_to_string(j * i) for j in base]
-            O_bus = strings_to_bus(O_strings, "O")
-            buses.append(O_bus)
+                O_base_objs.append(obj_times_obj(i, j))
 
-        print_analysis(con, A_bus, D_bus, B_bus, C_bus, buses)
-        print("finish")
+        buses = []
+        O_objs = [{} for i in range(len(O_base_objs))]
+        for i in range(500):
+            O_objs = [obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
+
+            buses.append(
+                strings_to_bus(
+                    [decimal_to_string(obj_to_decimal(i)) for i in O_objs], "O"
+                )
+            )
+            log = check_overlap(O_objs)["log"]
+            overlap = check_overlap(O_objs)["overlap"]
+            if overlap:
+                print(check_overlap(O_objs)["log"])
+                break
+
+        # print process
+        print_analysis(con["name"], A_bus, D_bus, B_bus, C_bus, buses, log, O_base_objs)
 
     else:
         print("configuration not found")
