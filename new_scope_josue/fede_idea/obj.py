@@ -6,15 +6,15 @@ def obj_times_obj(a_obj, b_obj):
     number = a_obj["number"] * b_obj["number"]
     phase = a_obj["phase"] + b_obj["phase"]
     label = f'{a_obj["label"]}{b_obj["label"]}'
-    MSB = len(bin(number)) - 2 + phase
-    LSB = phase + 1
+    MSB_position = len(bin(number)) - 2 + phase
+    LSB_position = phase + 1
     return {
         "bus": bus,
         "number": number,
         "phase": phase,
         "label": label,
-        "MSB": MSB,
-        "LSB": LSB,
+        "MSB_position": MSB_position,
+        "LSB_position": LSB_position,
     }
 
 
@@ -35,15 +35,15 @@ def obj_plus_obj(a_obj, b_obj):
         number = a_obj["number"] + b_obj["number"]
         phase = a_obj["phase"]  # any phase of the objects
         label = f'{a_obj["label"]} + {b_obj["label"]}'
-        MSB = len(bin(number)) - 2 + phase
-        LSB = phase + 1
+        MSB_position = len(bin(number)) - 2 + phase
+        LSB_position = phase + 1
         return {
             "bus": bus,
             "number": number,
             "phase": phase,
             "label": label,
-            "MSB": MSB,
-            "LSB": LSB,
+            "MSB_position": MSB_position,
+            "LSB_position": LSB_position,
         }
     else:
         print("objs doesn't have the same phase")
@@ -51,7 +51,7 @@ def obj_plus_obj(a_obj, b_obj):
 
 def check_overlap(objs):
     for obj in objs:
-        if conf_file.buses_metadata["O"]["width"] < obj["MSB"]:
+        if conf_file.buses_metadata["O"]["width"] < obj["MSB_position"]:
             return {"overlap": True, "log": f"greatter that bus O"}
 
     for n, obj1 in enumerate(objs):
@@ -84,30 +84,30 @@ def check_overlap(objs):
             """
 
             # case 1
-            if obj2["LSB"] < obj1["LSB"] < obj2["MSB"] and obj2["MSB"] < obj1["MSB"]:
+            if obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"] and obj2["MSB_position"] < obj1["MSB_position"]:
                 return {"overlap": True, "log": f"case 1"}
             # case 2
-            if obj2["LSB"] < obj1["MSB"] < obj2["MSB"] and obj1["LSB"] < obj2["LSB"]:
+            if obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"] and obj1["LSB_position"] < obj2["LSB_position"]:
                 return {"overlap": True, "log": f"case 2"}
             # case 3
             if (
-                obj2["LSB"] < obj1["LSB"] < obj2["MSB"]
-                and obj2["LSB"] < obj1["MSB"] < obj2["MSB"]
+                obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"]
+                and obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"]
             ):
                 return {"overlap": True, "log": f"case 3"}
             # case 4
             if (
-                obj1["LSB"] < obj2["LSB"] < obj1["MSB"]
-                and obj1["LSB"] < obj2["MSB"] < obj1["MSB"]
+                obj1["LSB_position"] < obj2["LSB_position"] < obj1["MSB_position"]
+                and obj1["LSB_position"] < obj2["MSB_position"] < obj1["MSB_position"]
             ):
                 return {"overlap": True, "log": f"case 4"}
 
             # case 5
-            if obj1["MSB"] == obj2["LSB"]:
+            if obj1["MSB_position"] == obj2["LSB_position"]:
                 return {"overlap": True, "log": f"case 5"}
 
             # case 6
-            if obj1["LSB"] == obj2["MSB"]:
+            if obj1["LSB_position"] == obj2["MSB_position"]:
                 return {"overlap": True, "log": f"case 6"}
 
     return {"overlap": False, "log": f"no overlap"}
