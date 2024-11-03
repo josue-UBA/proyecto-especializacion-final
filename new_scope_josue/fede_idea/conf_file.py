@@ -6,6 +6,16 @@ EIGHT_BITS_WIDTH = 8
 FIVE_BITS_WIDTH = 5
 SEVEN_BITS_WIDTH = 7
 
+
+buses_metadata = {
+    "A": {"width": 30},
+    "D": {"width": 27},
+    "B": {"width": 18},
+    "C": {"width": 48},
+    "O": {"width": 48},
+}
+
+
 configurations = [
     {
         "name": "int4",
@@ -19,7 +29,7 @@ configurations = [
                 "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
             },
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": FOUR_BITS_WIDTH,
                 "phase": 22,
                 "label": "b",
@@ -50,7 +60,7 @@ configurations = [
         "name": "int8_18",
         "mult1": [
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": EIGHT_BITS_WIDTH,
                 "phase": 0,
                 "label": "a",
@@ -60,7 +70,7 @@ configurations = [
             {
                 "bus": "A",
                 "num_width": EIGHT_BITS_WIDTH,
-                "phase": 18,
+                "phase": 30,
                 "label": "b",
                 "signed": False,
                 "number": int(math.pow(2, EIGHT_BITS_WIDTH)) - 1,
@@ -81,7 +91,7 @@ configurations = [
         "name": "int8_19",
         "mult1": [
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": EIGHT_BITS_WIDTH,
                 "phase": 0,
                 "label": "a",
@@ -112,7 +122,7 @@ configurations = [
         "name": "int8_21",
         "mult1": [
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": EIGHT_BITS_WIDTH,
                 "phase": 0,
                 "label": "a",
@@ -143,7 +153,7 @@ configurations = [
         "name": "int8_20",
         "mult1": [
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": EIGHT_BITS_WIDTH,
                 "phase": 0,
                 "label": "a",
@@ -182,7 +192,7 @@ configurations = [
                 "number": int(math.pow(2, FIVE_BITS_WIDTH)) - 1,
             },
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": FIVE_BITS_WIDTH,
                 "phase": 0,
                 "label": "b",
@@ -229,7 +239,7 @@ configurations = [
                 "number": int(math.pow(2, TWO_BITS_WITH)) - 1,
             },
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": TWO_BITS_WITH,
                 "phase": 0,
                 "label": "b",
@@ -268,7 +278,7 @@ configurations = [
                 "number": int(math.pow(2, SEVEN_BITS_WIDTH)) - 1,
             },
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": SEVEN_BITS_WIDTH,
                 "phase": 0,
                 "label": "b",
@@ -299,7 +309,7 @@ configurations = [
                 "number": int(math.pow(2, SEVEN_BITS_WIDTH)) - 1,
             },
             {
-                "bus": "D",
+                "bus": "A",
                 "num_width": SEVEN_BITS_WIDTH,
                 "phase": 0,
                 "label": "b",
