@@ -1,3 +1,6 @@
+import conf_file
+
+
 def obj_times_obj(a_obj, b_obj):
     bus = "O"
     number = a_obj["number"] * b_obj["number"]
@@ -32,7 +35,7 @@ def obj_plus_obj(a_obj, b_obj):
         number = a_obj["number"] + b_obj["number"]
         phase = a_obj["phase"]  # any phase of the objects
         label = f'{a_obj["label"]} + {b_obj["label"]}'
-        MSB = len(bin(number)) - 1 + phase
+        MSB = len(bin(number)) - 2 + phase
         LSB = phase + 1
         return {
             "bus": bus,
@@ -47,6 +50,9 @@ def obj_plus_obj(a_obj, b_obj):
 
 
 def check_overlap(objs):
+    for obj in objs:
+        if conf_file.buses_metadata["O"]["width"] < obj["MSB"]:
+            return {"overlap": True, "log": f"greatter that bus O"}
 
     for n, obj1 in enumerate(objs):
         for obj2 in objs[n + 1 :]:
@@ -66,6 +72,14 @@ def check_overlap(objs):
             case 4
             |---------------|   obj1
                 |-------|       obj2
+
+            case 5
+            |-------|           obj1
+                    |-------|   obj2
+
+            case 6
+                    |-------|   obj1
+            |-------|           obj2
 
             """
 
@@ -87,5 +101,13 @@ def check_overlap(objs):
                 and obj1["LSB"] < obj2["MSB"] < obj1["MSB"]
             ):
                 return {"overlap": True, "log": f"case 4"}
+
+            # case 5
+            if obj1["MSB"] == obj2["LSB"]:
+                return {"overlap": True, "log": f"case 5"}
+
+            # case 6
+            if obj1["LSB"] == obj2["MSB"]:
+                return {"overlap": True, "log": f"case 6"}
 
     return {"overlap": False, "log": f"no overlap"}

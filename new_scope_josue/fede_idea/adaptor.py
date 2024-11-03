@@ -1,3 +1,6 @@
+import conf_file
+
+
 def obj_to_decimal(obj):
     phase = pow(2, obj["phase"])
     num = obj["number"]
@@ -21,21 +24,7 @@ def strings_to_bus(strings, bus):
             else:
                 break
 
-    info = ""
+    aux = aux + ["□" for _ in range(conf_file.buses_metadata[bus]["width"] - len(aux))]
+    info = f' {bus} - {conf_file.buses_metadata[bus]["width"]} bits'
 
-    if bus == "A":
-        aux = aux + ["□" for _ in range(30 - len(aux))]
-        info = " A - 30 bits"
-    elif bus == "D":
-        aux = aux + ["□" for _ in range(27 - len(aux))]
-        info = " D - 27 bits"
-    elif bus == "B":
-        aux = aux + ["□" for _ in range(18 - len(aux))]
-        info = " B - 18 bits"
-    elif bus == "C":
-        aux = aux + ["□" for _ in range(48 - len(aux))]
-        info = " C - 48 bits"
-    elif bus == "O":
-        aux = aux + ["□" for _ in range(48 - len(aux))]
-        info = " O - 48 bits"
     return f'{" ".join(aux[::-1])} {info}'

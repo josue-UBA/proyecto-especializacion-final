@@ -70,7 +70,7 @@ configurations = [
             {
                 "bus": "A",
                 "num_width": EIGHT_BITS_WIDTH,
-                "phase": 30,
+                "phase": 18,
                 "label": "b",
                 "signed": False,
                 "number": int(math.pow(2, EIGHT_BITS_WIDTH)) - 1,
