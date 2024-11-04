@@ -9,34 +9,37 @@ import frontend
 # Verifica si se pasó un argumento
 def analyze_configuration(con):
 
-    # generate A, D, B, and C buses
+    # bus A ----------------------------------------
     A_strings = [
         adaptor.decimal_to_string(adaptor.obj_to_decimal(i))
         for i in con["mult1"]
         if i["bus"] == "A"
     ]
+    A_bus = adaptor.strings_to_bus(A_strings, "A")
+
+    # check if not overflow in bus A
+    if obj.check_overflow(con["mult1"], "A")["overflow"]:
+        return {"log": obj.check_overflow(con["mult1"], "A")["log"], "status": "error"}
+
+    # bus D ----------------------------------------
     D_strings = [
         adaptor.decimal_to_string(adaptor.obj_to_decimal(i))
         for i in con["mult1"]
         if i["bus"] == "D"
     ]
+    # should be empty if we are only working with positive numbers
+    D_bus = adaptor.strings_to_bus(D_strings, "D")
+
+    # bus B ----------------------------------------
     B_strings = [
         adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult2"]
     ]
-
-    A_bus = adaptor.strings_to_bus(A_strings, "A")
-    D_bus = adaptor.strings_to_bus(
-        D_strings, "D"
-    )  # should be empty if we are only working with positive numbers
     B_bus = adaptor.strings_to_bus(B_strings, "B")
+
+    # bus C ----------------------------------------
     C_bus = adaptor.strings_to_bus([], "C")
 
-    # check if not overflow in bus A
-    if obj.check_overflow(con["mult1"], "A")["overflow"]:
-        frontend.print_log(obj.check_overflow(con["mult1"], "A")["log"])
-        return
-
-    # generate O objs
+    # bus O ----------------------------------------
     O_base_objs = []
     for i in con["mult1"]:
         for j in con["mult2"]:
@@ -49,15 +52,27 @@ def analyze_configuration(con):
     for i in range(600):
         O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
-        if obj.check_overflow(O_objs, "O")["overflow"]:
-            break
-
         buses.append(
             adaptor.strings_to_bus(
                 [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in O_objs],
                 "O",
             )
         )
+
+        if obj.check_overflow(O_objs, "O")["overflow"]:
+            return {
+                "data": {
+                    "name": con["name"],
+                    "A_bus": A_bus,
+                    "D_bus": D_bus,
+                    "B_bus": B_bus,
+                    "C_bus": C_bus,
+                    "buses": buses[:-1],
+                    "O_base_objs": O_base_objs,
+                },
+                "log": obj.check_overflow(O_objs, "O")["log"],
+                "status": "good",
+            }
 
     # print process
     return {
@@ -75,6 +90,7 @@ def analyze_configuration(con):
     }
 
 
+# use the config_file.py
 def start_analysis():
     if len(sys.argv) > 1:
         arg = sys.argv[1]
@@ -91,9 +107,7 @@ def start_analysis():
             frontend.print_log({"log": "Configuration not found.", "status": "error"})
 
     else:
-        frontend.print_log(
-            {"log": "No argument provided.", "status": "error"}
-        )
+        frontend.print_log({"log": "No argument provided.", "status": "error"})
 
 
 def create_configuration(width, number_of_words, window, bus):
@@ -145,10 +159,40 @@ def create_configuration(width, number_of_words, window, bus):
     return aux_objs
 
 
-# start_analysis()
-we = create_configuration(4, 3, 9, "A")
+def find_optimus_configuration():
+    i = 0
+    width = 6
+    number_of_words = 8
+    for _ in range(12):
+        A_objs = create_configuration(
+            width=width, number_of_words=number_of_words, window=i, bus="A"
+        )
 
-s = adaptor.strings_to_bus(
-    [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in we], "A"
-)
-print(s)
+        s = adaptor.strings_to_bus(
+            [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in A_objs], "A"
+        )
+        if len(A_objs) <= 1:
+            return
+
+        i = i + 1
+
+        configuration = {
+            "name": "int8_18",
+            "mult1": A_objs,
+            "mult2": [
+                {
+                    "signed": False,
+                    "num_width": width,
+                    "bus": "B",
+                    "number": int(math.pow(2, width)) - 1,
+                    "phase": 0,
+                    "label": "c",
+                    "MSB_position": 0,
+                    "LSB position": 0,
+                }
+            ],
+        }
+        frontend.print_analysis(analyze_configuration(configuration))
+
+
+asd()
