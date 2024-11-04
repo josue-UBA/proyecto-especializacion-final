@@ -31,19 +31,27 @@ def analyze_configuration(con):
     B_bus = adaptor.strings_to_bus(B_strings, "B")
     C_bus = adaptor.strings_to_bus([], "C")
 
-    # ---
+    # check if not overflow in bus A
+    if obj.check_overflow(con["mult1"], "A")["overflow"]:
+        frontend.print_log(obj.check_overflow(con["mult1"], "A")["log"])
+        return
+
+    # generate O objs
     O_base_objs = []
     for i in con["mult1"]:
         for j in con["mult2"]:
             O_base_objs.append(obj.obj_times_obj(i, j))
 
-    buses = []
     O_objs = [{} for i in range(len(O_base_objs))]
+
+    # start accumulative sum
+    buses = []
     for i in range(600):
         O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
-        if obj.check_overflow(O_objs)["overflow"]:
+        if obj.check_overflow(O_objs, "O")["overflow"]:
             break
+
         buses.append(
             adaptor.strings_to_bus(
                 [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in O_objs],
@@ -63,7 +71,7 @@ def analyze_configuration(con):
                 "buses": buses,
                 "O_base_objs": O_base_objs,
             },
-            "log": obj.check_overflow(O_objs)["log"],
+            "log": obj.check_overflow(O_objs, "O")["log"],
             "status": "good",
         }
     )
@@ -90,41 +98,59 @@ def start_analysis():
         )
 
 
-def create_configuration(phase):
-    num_width = 8
+def create_configuration(width, number_of_words, window, bus):
+    """
 
-    return {
-        "name": "int8",
-        "mult1": [
+    width: 5
+    |---|
+    xxxxx
+
+    phase: 11
+         <---------|
+    xxxxx------xxxxx
+
+    window: 6
+         |----|
+    xxxxx------xxxxx
+
+    """
+
+    aux_objs = []
+
+    for i in range(number_of_words):
+        # added
+        signed = False
+        num_width = width
+
+        # clasic
+        bus = bus
+        number = int(math.pow(2, num_width)) - 1
+        phase = (window + num_width) * i
+        label = f"{bus.lower()}{i}"
+        MSB_position = len(bin(number)) - 2 + phase
+        LSB_position = phase + 1
+
+        aux_objs.append(
             {
-                "bus": "A",
-                "num_width": num_width,
-                "phase": 0,
-                "label": "a",
-                "signed": False,
-                "number": int(math.pow(2, num_width)) - 1,
-            },
-            {
-                "bus": "A",
-                "num_width": num_width,
+                "bus": bus,
+                "number": number,
                 "phase": phase,
-                "label": "b",
-                "signed": False,
-                "number": int(math.pow(2, num_width)) - 1,
-            },
-        ],
-        "mult2": [
-            {
-                "bus": "B",
-                "num_width": num_width,
-                "phase": 0,
-                "label": "c",
-                "signed": False,
-                "number": int(math.pow(2, num_width)) - 1,
-            },
-        ],
-    }
+                "label": label,
+                "MSB_position": MSB_position,
+                "LSB_position": LSB_position,
+            }
+        )
+
+        if obj.check_overflow(aux_objs, bus)["overflow"]:
+            return aux_objs[:-1]
+
+    return aux_objs
 
 
 # start_analysis()
-analyze_configuration(create_configuration(30))
+we = create_configuration(4, 3, 9, "A")
+
+s = adaptor.strings_to_bus(
+    [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in we], "A"
+)
+print(s)
