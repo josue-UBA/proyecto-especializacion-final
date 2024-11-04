@@ -60,21 +60,19 @@ def analyze_configuration(con):
         )
 
     # print process
-    frontend.print_analysis(
-        {
-            "data": {
-                "name": con["name"],
-                "A_bus": A_bus,
-                "D_bus": D_bus,
-                "B_bus": B_bus,
-                "C_bus": C_bus,
-                "buses": buses,
-                "O_base_objs": O_base_objs,
-            },
-            "log": obj.check_overflow(O_objs, "O")["log"],
-            "status": "good",
-        }
-    )
+    return {
+        "data": {
+            "name": con["name"],
+            "A_bus": A_bus,
+            "D_bus": D_bus,
+            "B_bus": B_bus,
+            "C_bus": C_bus,
+            "buses": buses,
+            "O_base_objs": O_base_objs,
+        },
+        "log": obj.check_overflow(O_objs, "O")["log"],
+        "status": "good",
+    }
 
 
 def start_analysis():
@@ -87,14 +85,14 @@ def start_analysis():
             configuration = [
                 i for i in conf_file.configurations if i["name"] == sys.argv[1]
             ][0]
-            analyze_configuration(configuration)
+            frontend.print_analysis(analyze_configuration(configuration))
 
         else:
-            frontend.print_log({"log": "configuration not found", "status": "error"})
+            frontend.print_log({"log": "Configuration not found.", "status": "error"})
 
     else:
         frontend.print_log(
-            {"log": "No se ha proporcionado ningún argumento.", "status": "error"}
+            {"log": "No argument provided.", "status": "error"}
         )
 
 
