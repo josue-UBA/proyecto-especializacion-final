@@ -50,6 +50,9 @@ def obj_plus_obj(a_obj, b_obj):
 
 
 def check_overlap(objs):
+
+    # you are only checking overlap in bus O, requires analysis over buses A,D,B,C
+    # rename to overflow
     for obj in objs:
         if conf_file.buses_metadata["O"]["width"] < obj["MSB_position"]:
             return {"overlap": True, "log": f"greatter that bus O"}

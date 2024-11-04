@@ -39,7 +39,7 @@ def analyze_configuration(con):
 
     buses = []
     O_objs = [{} for i in range(len(O_base_objs))]
-    for i in range(20):
+    for i in range(600):
         O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
         if obj.check_overlap(O_objs)["overlap"]:
@@ -71,14 +71,76 @@ def start_analysis():
         if sys.argv[1] in [i["name"] for i in conf_file.configurations]:
 
             # select configuration
-            con = [i for i in conf_file.configurations if i["name"] == sys.argv[1]][0]
-            analyze_configuration(con)
+            configuration = [
+                i for i in conf_file.configurations if i["name"] == sys.argv[1]
+            ][0]
+            analyze_configuration(configuration)
 
         else:
             frontend.print_log({"log": "configuration not found"})
 
     else:
         frontend.print_log({"log": "No se ha proporcionado ningún argumento."})
+
+
+def create_configuration(name, FOUR_BITS_WIDTH):
+    aux = []
+    bus = "A"
+    conf_file.buses_metadata[bus]["width"]
+
+
+    for i in range(3):
+        aux.append(
+            {
+                "bus": bus,
+                "num_width": FOUR_BITS_WIDTH,
+                "phase": 0,
+                "label": "a",
+                "signed": False,
+                "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
+            }
+        )
+    return (
+        {
+            "name": name,
+            "mult1": [
+                {
+                    "bus": "A",
+                    "num_width": FOUR_BITS_WIDTH,
+                    "phase": 0,
+                    "label": "a",
+                    "signed": False,
+                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
+                },
+                {
+                    "bus": "A",
+                    "num_width": FOUR_BITS_WIDTH,
+                    "phase": 22,
+                    "label": "b",
+                    "signed": False,
+                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
+                },
+            ],
+            "mult2": [
+                {
+                    "bus": "B",
+                    "num_width": FOUR_BITS_WIDTH,
+                    "phase": 0,
+                    "label": "c",
+                    "signed": False,
+                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
+                },
+                {
+                    "bus": "B",
+                    "num_width": FOUR_BITS_WIDTH,
+                    "phase": 11,
+                    "label": "d",
+                    "signed": False,
+                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
+                },
+            ],
+        },
+    )
 
 
 start_analysis()
