@@ -53,14 +53,19 @@ def analyze_configuration(con):
 
     # print process
     frontend.print_analysis(
-        con["name"],
-        A_bus,
-        D_bus,
-        B_bus,
-        C_bus,
-        buses,
-        obj.check_overlap(O_objs)["log"],
-        O_base_objs,
+        {
+            "data": {
+                "name": con["name"],
+                "A_bus": A_bus,
+                "D_bus": D_bus,
+                "B_bus": B_bus,
+                "C_bus": C_bus,
+                "buses": buses,
+                "O_base_objs": O_base_objs,
+            },
+            "log": obj.check_overlap(O_objs)["log"],
+            "status": "good",
+        }
     )
 
 
@@ -77,70 +82,49 @@ def start_analysis():
             analyze_configuration(configuration)
 
         else:
-            frontend.print_log({"log": "configuration not found"})
+            frontend.print_log({"log": "configuration not found", "status": "error"})
 
     else:
-        frontend.print_log({"log": "No se ha proporcionado ningún argumento."})
+        frontend.print_log(
+            {"log": "No se ha proporcionado ningún argumento.", "status": "error"}
+        )
 
 
-def create_configuration(name, FOUR_BITS_WIDTH):
-    aux = []
-    bus = "A"
-    conf_file.buses_metadata[bus]["width"]
+def create_configuration(phase):
+    num_width = 8
 
-
-    for i in range(3):
-        aux.append(
+    return {
+        "name": "int8",
+        "mult1": [
             {
-                "bus": bus,
-                "num_width": FOUR_BITS_WIDTH,
+                "bus": "A",
+                "num_width": num_width,
                 "phase": 0,
                 "label": "a",
                 "signed": False,
-                "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
-            }
-        )
-    return (
-        {
-            "name": name,
-            "mult1": [
-                {
-                    "bus": "A",
-                    "num_width": FOUR_BITS_WIDTH,
-                    "phase": 0,
-                    "label": "a",
-                    "signed": False,
-                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
-                },
-                {
-                    "bus": "A",
-                    "num_width": FOUR_BITS_WIDTH,
-                    "phase": 22,
-                    "label": "b",
-                    "signed": False,
-                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
-                },
-            ],
-            "mult2": [
-                {
-                    "bus": "B",
-                    "num_width": FOUR_BITS_WIDTH,
-                    "phase": 0,
-                    "label": "c",
-                    "signed": False,
-                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
-                },
-                {
-                    "bus": "B",
-                    "num_width": FOUR_BITS_WIDTH,
-                    "phase": 11,
-                    "label": "d",
-                    "signed": False,
-                    "number": int(math.pow(2, FOUR_BITS_WIDTH)) - 1,
-                },
-            ],
-        },
-    )
+                "number": int(math.pow(2, num_width)) - 1,
+            },
+            {
+                "bus": "A",
+                "num_width": num_width,
+                "phase": phase,
+                "label": "b",
+                "signed": False,
+                "number": int(math.pow(2, num_width)) - 1,
+            },
+        ],
+        "mult2": [
+            {
+                "bus": "B",
+                "num_width": num_width,
+                "phase": 0,
+                "label": "c",
+                "signed": False,
+                "number": int(math.pow(2, num_width)) - 1,
+            },
+        ],
+    }
 
 
-start_analysis()
+# start_analysis()
+analyze_configuration(create_configuration(36))
