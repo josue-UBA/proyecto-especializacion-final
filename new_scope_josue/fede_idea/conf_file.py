@@ -6,12 +6,12 @@ EIGHT_BITS_WIDTH = 8
 FIVE_BITS_WIDTH = 5
 SEVEN_BITS_WIDTH = 7
 
-LEFT_SPACE = 121
+LEFT_SPACE = 125
 
 
 buses_metadata = {
     "A": {"width": 30},
-    "D": {"width": 27},
+    "D": {"width": 25},
     "B": {"width": 18},
     "C": {"width": 48},
     "O": {"width": 48},
