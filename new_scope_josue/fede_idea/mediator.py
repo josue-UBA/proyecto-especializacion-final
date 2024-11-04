@@ -42,7 +42,7 @@ def analyze_configuration(con):
     for i in range(600):
         O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
-        if obj.check_overlap(O_objs)["overlap"]:
+        if obj.check_overflow(O_objs)["overflow"]:
             break
         buses.append(
             adaptor.strings_to_bus(
@@ -63,7 +63,7 @@ def analyze_configuration(con):
                 "buses": buses,
                 "O_base_objs": O_base_objs,
             },
-            "log": obj.check_overlap(O_objs)["log"],
+            "log": obj.check_overflow(O_objs)["log"],
             "status": "good",
         }
     )
@@ -127,4 +127,4 @@ def create_configuration(phase):
 
 
 # start_analysis()
-analyze_configuration(create_configuration(36))
+analyze_configuration(create_configuration(30))

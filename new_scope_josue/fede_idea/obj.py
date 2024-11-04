@@ -49,13 +49,13 @@ def obj_plus_obj(a_obj, b_obj):
         print("objs doesn't have the same phase")
 
 
-def check_overlap(objs):
+def check_overflow(objs):
 
-    # you are only checking overlap in bus O, requires analysis over buses A,D,B,C
+    # you are only checking overflow in bus O, requires analysis over buses A,D,B,C
     # rename to overflow
     for obj in objs:
         if conf_file.buses_metadata["O"]["width"] < obj["MSB_position"]:
-            return {"overlap": True, "log": f"greatter that bus O"}
+            return {"overflow": True, "log": f"greatter that bus O"}
 
     for n, obj1 in enumerate(objs):
         for obj2 in objs[n + 1 :]:
@@ -105,32 +105,32 @@ def check_overlap(objs):
                 obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"]
                 and obj2["MSB_position"] < obj1["MSB_position"]
             ):
-                return {"overlap": True, "log": f"case 1"}
+                return {"overflow": True, "log": f"case 1"}
             # case 2
             if (
                 obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"]
                 and obj1["LSB_position"] < obj2["LSB_position"]
             ):
-                return {"overlap": True, "log": f"case 2"}
+                return {"overflow": True, "log": f"case 2"}
             # case 3
             if (
                 obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"]
                 and obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"]
             ):
-                return {"overlap": True, "log": f"case 3"}
+                return {"overflow": True, "log": f"case 3"}
             # case 4
             if (
                 obj1["LSB_position"] < obj2["LSB_position"] < obj1["MSB_position"]
                 and obj1["LSB_position"] < obj2["MSB_position"] < obj1["MSB_position"]
             ):
-                return {"overlap": True, "log": f"case 4"}
+                return {"overflow": True, "log": f"case 4"}
 
             # case 5
             if obj1["MSB_position"] == obj2["LSB_position"]:
-                return {"overlap": True, "log": f"case 5"}
+                return {"overflow": True, "log": f"case 5"}
 
             # case 6
             if obj1["LSB_position"] == obj2["MSB_position"]:
-                return {"overlap": True, "log": f"case 6"}
+                return {"overflow": True, "log": f"case 6"}
 
-    return {"overlap": False, "log": f"no overlap"}
+    return {"overflow": False, "log": f"no overflow"}
