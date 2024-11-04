@@ -57,30 +57,44 @@ def check_overlap(objs):
     for n, obj1 in enumerate(objs):
         for obj2 in objs[n + 1 :]:
             """
+            L = LSB
+            M = MSB
+
             case 1
                 |-------|       obj1
-            |-------|           obj2
+                M       L
+                    |-------|   obj2
+                    M       L
 
             case 2
                 |-------|       obj1
-                    |-------|   obj2
+                M       L
+            |-------|           obj2
+            M       L
 
             case 3
                 |-------|       obj1
+                M       L
             |---------------|   obj2
+            M               L
 
             case 4
             |---------------|   obj1
+            M               L
                 |-------|       obj2
+                M       L
 
             case 5
-            |-------|           obj1
-                    |-------|   obj2
+                    |-------|   obj1
+                    M       L
+            |-------|           obj2
+            M       L
 
             case 6
-                    |-------|   obj1
-            |-------|           obj2
-
+            |-------|           obj1
+            M       L
+                    |-------|   obj2
+                    M       L
             """
 
             # case 1
