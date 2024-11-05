@@ -1,0 +1,26 @@
+name,A_words,B_words,A_phases,B_phases,A_window,max_number_of_accumulation,log
+word width: 3 | phase: 3 | bus A window: 0,10,1,"[0, 3, 6, 9, 12, 15, 18, 21, 24, 27]",0,0,-1,Overflow in bus O: case 2
+word width: 3 | phase: 4 | bus A window: 1,7,1,"[0, 4, 8, 12, 16, 20, 24]",0,1,-1,Overflow in bus O: case 2
+word width: 3 | phase: 5 | bus A window: 2,6,1,"[0, 5, 10, 15, 20, 25]",0,2,-1,Overflow in bus O: case 5
+word width: 3 | phase: 6 | bus A window: 3,5,1,"[0, 6, 12, 18, 24]",0,3,0,Overflow in bus O: case 5
+word width: 3 | phase: 7 | bus A window: 4,4,1,"[0, 7, 14, 21]",0,4,1,Overflow in bus O: case 5
+word width: 3 | phase: 8 | bus A window: 5,4,1,"[0, 8, 16, 24]",0,5,4,Overflow in bus O: case 5
+word width: 3 | phase: 9 | bus A window: 6,4,1,"[0, 9, 18, 27]",0,6,9,Overflow in bus O: case 5
+word width: 3 | phase: 10 | bus A window: 7,3,1,"[0, 10, 20]",0,7,19,Overflow in bus O: case 5
+word width: 3 | phase: 11 | bus A window: 8,3,1,"[0, 11, 22]",0,8,40,Overflow in bus O: case 5
+word width: 3 | phase: 12 | bus A window: 9,3,1,"[0, 12, 24]",0,9,82,Overflow in bus O: case 5
+word width: 3 | phase: 13 | bus A window: 10,3,1,"[0, 13, 26]",0,10,166,Overflow in bus O: case 5
+word width: 3 | phase: 14 | bus A window: 11,2,1,"[0, 14]",0,11,333,Overflow in bus O: case 5
+word width: 3 | phase: 15 | bus A window: 12,2,1,"[0, 15]",0,12,667,Overflow in bus O: case 5
+word width: 3 | phase: 16 | bus A window: 13,2,1,"[0, 16]",0,13,1336,Overflow in bus O: case 5
+word width: 3 | phase: 17 | bus A window: 14,2,1,"[0, 17]",0,14,2673,Overflow in bus O: case 5
+word width: 3 | phase: 18 | bus A window: 15,2,1,"[0, 18]",0,15,5348,Overflow in bus O: case 5
+word width: 3 | phase: 19 | bus A window: 16,2,1,"[0, 19]",0,16,10698,Overflow in bus O: case 5
+word width: 3 | phase: 20 | bus A window: 17,2,1,"[0, 20]",0,17,21398,Overflow in bus O: case 5
+word width: 3 | phase: 21 | bus A window: 18,2,1,"[0, 21]",0,18,42798,Overflow in bus O: case 5
+word width: 3 | phase: 22 | bus A window: 19,2,1,"[0, 22]",0,19,85597,Overflow in bus O: case 5
+word width: 3 | phase: 23 | bus A window: 20,2,1,"[0, 23]",0,20,99998,no overflow found on bus O No overflow in bus O
+word width: 3 | phase: 24 | bus A window: 21,2,1,"[0, 24]",0,21,99998,no overflow found on bus O No overflow in bus O
+word width: 3 | phase: 25 | bus A window: 22,2,1,"[0, 25]",0,22,99998,no overflow found on bus O No overflow in bus O
+word width: 3 | phase: 26 | bus A window: 23,2,1,"[0, 26]",0,23,85597,Overflow in bus O: greatter that bus O width
+word width: 3 | phase: 27 | bus A window: 24,2,1,"[0, 27]",0,24,42798,Overflow in bus O: greatter that bus O width

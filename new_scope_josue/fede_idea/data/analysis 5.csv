@@ -1,0 +1,22 @@
+name,A_words,B_words,A_phases,B_phases,A_window,max_number_of_accumulation,log
+word width: 5 | phase: 5 | bus A window: 0,6,1,"[0, 5, 10, 15, 20, 25]",0,0,-1,Overflow in bus O: case 2
+word width: 5 | phase: 6 | bus A window: 1,5,1,"[0, 6, 12, 18, 24]",0,1,-1,Overflow in bus O: case 2
+word width: 5 | phase: 7 | bus A window: 2,4,1,"[0, 7, 14, 21]",0,2,-1,Overflow in bus O: case 2
+word width: 5 | phase: 8 | bus A window: 3,4,1,"[0, 8, 16, 24]",0,3,-1,Overflow in bus O: case 2
+word width: 5 | phase: 9 | bus A window: 4,3,1,"[0, 9, 18]",0,4,-1,Overflow in bus O: case 5
+word width: 5 | phase: 10 | bus A window: 5,3,1,"[0, 10, 20]",0,5,0,Overflow in bus O: case 5
+word width: 5 | phase: 11 | bus A window: 6,3,1,"[0, 11, 22]",0,6,1,Overflow in bus O: case 5
+word width: 5 | phase: 12 | bus A window: 7,3,1,"[0, 12, 24]",0,7,3,Overflow in bus O: case 5
+word width: 5 | phase: 13 | bus A window: 8,2,1,"[0, 13]",0,8,7,Overflow in bus O: case 5
+word width: 5 | phase: 14 | bus A window: 9,2,1,"[0, 14]",0,9,16,Overflow in bus O: case 5
+word width: 5 | phase: 15 | bus A window: 10,2,1,"[0, 15]",0,10,33,Overflow in bus O: case 5
+word width: 5 | phase: 16 | bus A window: 11,2,1,"[0, 16]",0,11,67,Overflow in bus O: case 5
+word width: 5 | phase: 17 | bus A window: 12,2,1,"[0, 17]",0,12,135,Overflow in bus O: case 5
+word width: 5 | phase: 18 | bus A window: 13,2,1,"[0, 18]",0,13,271,Overflow in bus O: case 5
+word width: 5 | phase: 19 | bus A window: 14,2,1,"[0, 19]",0,14,544,Overflow in bus O: case 5
+word width: 5 | phase: 20 | bus A window: 15,2,1,"[0, 20]",0,15,1090,Overflow in bus O: case 5
+word width: 5 | phase: 21 | bus A window: 16,2,1,"[0, 21]",0,16,2181,Overflow in bus O: case 5
+word width: 5 | phase: 22 | bus A window: 17,2,1,"[0, 22]",0,17,4363,Overflow in bus O: case 5
+word width: 5 | phase: 23 | bus A window: 18,2,1,"[0, 23]",0,18,8728,Overflow in bus O: case 5
+word width: 5 | phase: 24 | bus A window: 19,2,1,"[0, 24]",0,19,17457,Overflow in bus O: greatter that bus O width
+word width: 5 | phase: 25 | bus A window: 20,2,1,"[0, 25]",0,20,8728,Overflow in bus O: greatter that bus O width
