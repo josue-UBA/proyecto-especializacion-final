@@ -11,11 +11,7 @@ import pandas as pd
 def analyze_configuration(con):
 
     # bus A ----------------------------------------
-    A_strings = [
-        adaptor.decimal_to_string(adaptor.obj_to_decimal(i))
-        for i in con["mult1"]
-        if i["bus"] == "A"
-    ]
+    A_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult1"] if i["bus"] == "A"]
     A_bus = adaptor.strings_to_bus(A_strings, "A")
 
     # check if not overflow in bus A
@@ -23,18 +19,12 @@ def analyze_configuration(con):
         return {"log": obj.check_overflow(con["mult1"], "A")["log"], "status": "error"}
 
     # bus D ----------------------------------------
-    D_strings = [
-        adaptor.decimal_to_string(adaptor.obj_to_decimal(i))
-        for i in con["mult1"]
-        if i["bus"] == "D"
-    ]
+    D_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult1"] if i["bus"] == "D"]
     # should be empty if we are only working with positive numbers
     D_bus = adaptor.strings_to_bus(D_strings, "D")
 
     # bus B ----------------------------------------
-    B_strings = [
-        adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult2"]
-    ]
+    B_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult2"]]
     B_bus = adaptor.strings_to_bus(B_strings, "B")
 
     # bus C ----------------------------------------
@@ -99,9 +89,7 @@ def start_analysis():
         if sys.argv[1] in [i["name"] for i in conf_file.configurations]:
 
             # select configuration
-            configuration = [
-                i for i in conf_file.configurations if i["name"] == sys.argv[1]
-            ][0]
+            configuration = [i for i in conf_file.configurations if i["name"] == sys.argv[1]][0]
             frontend.print_analysis(analyze_configuration(configuration))
 
         else:
@@ -178,9 +166,7 @@ def find_optimus_configuration():
     width = 6
     number_of_words = 100  # max posible
     for _ in range(30):
-        A_objs = create_objs_for_bus(
-            width=width, number_of_words=number_of_words, window=i, bus="A"
-        )
+        A_objs = create_objs_for_bus(width=width, number_of_words=number_of_words, window=i, bus="A")
 
         if len(A_objs) <= 1:
             break
@@ -202,18 +188,12 @@ def find_optimus_configuration():
         }
 
         data = analyze_configuration(configuration)
-        data["data"][
-            "name"
-        ] = f"word width: {width} | phase: {i+width} | bus A window: {i}"
+        data["data"]["name"] = f"word width: {width} | phase: {i+width} | bus A window: {i}"
 
-        to_dataframe["name"].append(
-            f"word width: {width} | phase: {i+width} | bus A window: {i}"
-        )
+        to_dataframe["name"].append(f"word width: {width} | phase: {i+width} | bus A window: {i}")
         to_dataframe["A_words"].append(len(configuration["mult1"]))
         to_dataframe["B_words"].append(len(configuration["mult2"]))
-        to_dataframe["A_phases"].append(
-            [(i + width) * j for j in range(len(configuration["mult1"]))]
-        )
+        to_dataframe["A_phases"].append([(i + width) * j for j in range(len(configuration["mult1"]))])
         to_dataframe["B_phases"].append(0)
         to_dataframe["A_window"].append(i)
         to_dataframe["max_number_of_accumulation"].append(data["data"]["iteration"])

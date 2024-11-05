@@ -18,12 +18,8 @@ def print_analysis(q):
     log = q["log"]
     status = q["status"]
 
-    a = [i["LSB_position"] for i in O_base_objs] + [
-        i["LSB_position"] - 1 for i in O_base_objs
-    ]
-    b = [
-        "|" if i in a else "-" for i in range(1, conf_file.buses_metadata["O"]["width"])
-    ] + ["|"]
+    a = [i["LSB_position"] for i in O_base_objs] + [i["LSB_position"] - 1 for i in O_base_objs]
+    b = ["|" if i in a else "-" for i in range(1, conf_file.buses_metadata["O"]["width"])] + ["|"]
     c = " ".join(b)[::-1]
 
     # Only string that grow dinamically use ":>"
