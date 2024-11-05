@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.3">
   <diagram name="Página-1" id="gQT6w9QHkvldpJlVvD48">
-    <mxGraphModel dx="3701" dy="1756" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3766" dy="1935" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2576,6 +2576,60 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="2370" y="2770" as="sourcePoint" />
             <mxPoint x="2840" y="2770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-1" value="&lt;div&gt;&lt;a href=&quot;https://0x04.net/~mwk/xidocs/ug/ug579-ultrascale-dsp.pdf&quot;&gt;UltraScale Architecture&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;DSP Slice&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="2400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-2" value="&lt;div&gt;&lt;a href=&quot;https://docs.amd.com/v/u/en-US/ug479_7Series_DSP48E1&quot;&gt;7 Series DSP48E1 Slice&lt;/a&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="2400" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-9" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NgJgRQOwVsSHdrAISsBn-3" target="NgJgRQOwVsSHdrAISsBn-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-3" value="&lt;div&gt;&lt;a href=&quot;https://docs.amd.com/v/u/en-US/wp486-deep-learning-int8&quot;&gt;Deep Learning&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;with INT8 Optimization&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;on Xilinx Devices&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="2280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-4" value="&lt;div&gt;&lt;a href=&quot;https://docs.amd.com/v/u/en-US/wp521-4bit-optimization&quot;&gt;Convolutional Neural Network with&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;INT4 Optimization on Xilinx Devices&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="2200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-6" value="&lt;div&gt;&lt;a href=&quot;https://docs.amd.com/v/u/en-US/wp490-embedded-vision-int8&quot;&gt;Embedded Vision&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;with INT8 Optimization&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;on Xilinx Devices&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="2330" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-7" value="&lt;div&gt;&lt;a href=&quot;https://arxiv.org/pdf/1712.05877&quot;&gt;Quantization and Training of Neural Networks for Efficient&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Integer-Arithmetic-Only Inference&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="2230" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-8" value="&lt;div&gt;&lt;a href=&quot;https://arxiv.org/pdf/1903.08066&quot;&gt;TRAINED QUANTIZATION THRESHOLDS FOR ACCURATE AND EFFICIENT&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;FIXED-POINT INFERENCE OF DEEP NEURAL NETWORKS&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="2100" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NgJgRQOwVsSHdrAISsBn-8" target="NgJgRQOwVsSHdrAISsBn-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1330" y="2356" as="sourcePoint" />
+            <mxPoint x="1420" y="2364" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NgJgRQOwVsSHdrAISsBn-7" target="NgJgRQOwVsSHdrAISsBn-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1340" y="2366" as="sourcePoint" />
+            <mxPoint x="1430" y="2374" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NgJgRQOwVsSHdrAISsBn-3" target="NgJgRQOwVsSHdrAISsBn-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1420" y="2324" as="sourcePoint" />
+            <mxPoint x="1510" y="2316" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NgJgRQOwVsSHdrAISsBn-2" target="NgJgRQOwVsSHdrAISsBn-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1190" y="2308" as="sourcePoint" />
+            <mxPoint x="1300" y="2322" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NgJgRQOwVsSHdrAISsBn-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NgJgRQOwVsSHdrAISsBn-1" target="NgJgRQOwVsSHdrAISsBn-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1200" y="2318" as="sourcePoint" />
+            <mxPoint x="1310" y="2332" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
