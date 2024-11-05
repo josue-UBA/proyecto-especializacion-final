@@ -4,6 +4,7 @@ import conf_file
 import obj
 import adaptor
 import frontend
+import pandas as pd
 
 
 # Verifica si se pasó un argumento
@@ -49,7 +50,7 @@ def analyze_configuration(con):
 
     # start accumulative sum
     buses = []
-    for i in range(600):
+    for k in range(100000):
         O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
         buses.append(
@@ -62,13 +63,13 @@ def analyze_configuration(con):
         if obj.check_overflow(O_objs, "O")["overflow"]:
             return {
                 "data": {
-                    "name": con["name"],
                     "A_bus": A_bus,
                     "D_bus": D_bus,
                     "B_bus": B_bus,
                     "C_bus": C_bus,
                     "buses": buses[:-1],
                     "O_base_objs": O_base_objs,
+                    "iteration": k - 1,
                 },
                 "log": obj.check_overflow(O_objs, "O")["log"],
                 "status": "good",
@@ -77,16 +78,16 @@ def analyze_configuration(con):
     # print process
     return {
         "data": {
-            "name": con["name"],
             "A_bus": A_bus,
             "D_bus": D_bus,
             "B_bus": B_bus,
             "C_bus": C_bus,
             "buses": buses,
             "O_base_objs": O_base_objs,
+            "iteration": k - 1,
         },
-        "log": obj.check_overflow(O_objs, "O")["log"],
-        "status": "good",
+        "log": f'no overflow found on bus O {obj.check_overflow(O_objs, "O")["log"]}',
+        "status": "error",
     }
 
 
@@ -110,7 +111,7 @@ def start_analysis():
         frontend.print_log({"log": "No argument provided.", "status": "error"})
 
 
-def create_configuration(width, number_of_words, window, bus):
+def create_objs_for_bus(width, number_of_words, window, bus):
     """
 
     width: 5
@@ -159,25 +160,32 @@ def create_configuration(width, number_of_words, window, bus):
     return aux_objs
 
 
+# migrate to new file: program_logic
 def find_optimus_configuration():
+
+    to_dataframe = {
+        "name": [],
+        "A_words": [],
+        "B_words": [],
+        "A_phases": [],
+        "B_phases": [],
+        "A_window": [],
+        "max_number_of_accumulation": [],
+        "log": [],
+    }
+
     i = 0
     width = 6
-    number_of_words = 8
-    for _ in range(12):
-        A_objs = create_configuration(
+    number_of_words = 100  # max posible
+    for _ in range(30):
+        A_objs = create_objs_for_bus(
             width=width, number_of_words=number_of_words, window=i, bus="A"
         )
 
-        s = adaptor.strings_to_bus(
-            [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in A_objs], "A"
-        )
         if len(A_objs) <= 1:
-            return
-
-        i = i + 1
+            break
 
         configuration = {
-            "name": "int8_18",
             "mult1": A_objs,
             "mult2": [
                 {
@@ -186,13 +194,39 @@ def find_optimus_configuration():
                     "bus": "B",
                     "number": int(math.pow(2, width)) - 1,
                     "phase": 0,
-                    "label": "c",
+                    "label": "b0",
                     "MSB_position": 0,
                     "LSB position": 0,
                 }
             ],
         }
-        frontend.print_analysis(analyze_configuration(configuration))
+
+        data = analyze_configuration(configuration)
+        data["data"][
+            "name"
+        ] = f"word width: {width} | phase: {i+width} | bus A window: {i}"
+
+        to_dataframe["name"].append(
+            f"word width: {width} | phase: {i+width} | bus A window: {i}"
+        )
+        to_dataframe["A_words"].append(len(configuration["mult1"]))
+        to_dataframe["B_words"].append(len(configuration["mult2"]))
+        to_dataframe["A_phases"].append(
+            [(i + width) * j for j in range(len(configuration["mult1"]))]
+        )
+        to_dataframe["B_phases"].append(0)
+        to_dataframe["A_window"].append(i)
+        to_dataframe["max_number_of_accumulation"].append(data["data"]["iteration"])
+        to_dataframe["log"].append(data["log"])
+
+        # data["data"]["O_window"]
+
+        # frontend.print_analysis(data)
+
+        i = i + 1
+    pd.DataFrame(data=to_dataframe).to_csv(f"./data/analysis {width}.csv", index=False)
+
+    print({"log": "ok!", "type": "success"})
 
 
-asd()
+find_optimus_configuration()

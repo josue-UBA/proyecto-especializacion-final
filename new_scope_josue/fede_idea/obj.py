@@ -5,7 +5,7 @@ def obj_times_obj(a_obj, b_obj):
     bus = "O"
     number = a_obj["number"] * b_obj["number"]
     phase = a_obj["phase"] + b_obj["phase"]
-    label = f'{a_obj["label"]}{b_obj["label"]}'
+    label = f'{a_obj["label"]}x{b_obj["label"]}'
     MSB_position = len(bin(number)) - 2 + phase
     LSB_position = phase + 1
     return {

@@ -14,6 +14,7 @@ def print_analysis(q):
     C_bus = q["data"]["C_bus"]
     buses = q["data"]["buses"]
     O_base_objs = q["data"]["O_base_objs"]
+    iteration = q["data"]["iteration"]
     log = q["log"]
     status = q["status"]
 
@@ -50,6 +51,7 @@ range of numb => {c}
 ------------------------
 overflow occurs: {log}
 status: {status}
+max number of possible accumulations: {iteration} accumulations
 ------------------------
 
 """
