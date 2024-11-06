@@ -81,7 +81,7 @@ def analyze_configuration(configuration):
             "O_base_objs": O_base_objs,
             "iteration": f"+{max_accumulations}",
         },
-        "log": f'more than {max_accumulations} accumulations',
+        "log": f"more than {max_accumulations} accumulations",
         "status": "error",
     }
 
@@ -105,34 +105,40 @@ def analyze_configuration_user():
 
 
 # migrate to new file: program_logic
-def analyze_configurations_user():
+def analyze_configurations_user(width):
 
     to_dataframe = {
         "name": [],
+        "width": [],
         "A_words": [],
         "B_words": [],
+        "total_words": [],
         "A_phases": [],
         "B_phases": [],
         "A_window": [],
+        "B_window": [],
         "max_number_of_accumulation": [],
         "reason_for_stopping_the_accumulation": [],
     }
 
-    width = 5
     configurations = factory.create_list_of_configurations(width)
 
-    for window, configuration in enumerate(configurations):
+    for configuration in configurations:
 
         data = analyze_configuration(configuration)
 
-        to_dataframe["name"].append(configuration["name"])
-        to_dataframe["A_words"].append(len(configuration["mult1"]))
-        to_dataframe["B_words"].append(len(configuration["mult2"]))
-        to_dataframe["A_phases"].append([(window + width) * j for j in range(len(configuration["mult1"]))])
-        to_dataframe["B_phases"].append(0)
-        to_dataframe["A_window"].append(window)
-        to_dataframe["max_number_of_accumulation"].append(data["data"]["iteration"])
-        to_dataframe["reason_for_stopping_the_accumulation"].append(data["log"])
+        if data["data"]["iteration"] not in [-1, 0]:
+            to_dataframe["name"].append(configuration["name"])
+            to_dataframe["width"].append(width)
+            to_dataframe["A_words"].append(len(configuration["mult1"]))
+            to_dataframe["B_words"].append(len(configuration["mult2"]))
+            to_dataframe["total_words"].append(len(configuration["mult1"]) + len(configuration["mult2"]))
+            to_dataframe["A_phases"].append([(configuration["A_window"] + width) * j for j in range(len(configuration["mult1"]))])
+            to_dataframe["B_phases"].append([(configuration["B_window"] + width) * j for j in range(len(configuration["mult2"]))])
+            to_dataframe["A_window"].append(configuration["A_window"])
+            to_dataframe["B_window"].append(configuration["B_window"])
+            to_dataframe["max_number_of_accumulation"].append(data["data"]["iteration"])
+            to_dataframe["reason_for_stopping_the_accumulation"].append(data["log"])
 
         # data["data"]["O_window"]
 
@@ -143,4 +149,5 @@ def analyze_configurations_user():
     print({"log": "ok!", "type": "success"})
 
 
-analyze_configurations_user()
+for i in [2, 3, 4, 5, 6, 7, 8]:
+    analyze_configurations_user(i)

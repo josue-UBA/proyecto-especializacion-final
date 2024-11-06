@@ -61,6 +61,15 @@ def check_overflow(objs, bus):
                 }
         return {"overflow": False, "log": f"No overflow in bus {bus}"}
 
+    if bus == "B":
+        for obj in objs:
+            if conf_file.buses_metadata[bus]["width"] < obj["MSB_position"]:
+                return {
+                    "overflow": True,
+                    "log": f"Overflow in bus {bus}: A word is located outside the bus {bus}",
+                }
+        return {"overflow": False, "log": f"No overflow in bus {bus}"}
+
     if bus == "O":
         for obj in objs:
             if conf_file.buses_metadata[bus]["width"] < obj["MSB_position"]:
@@ -158,6 +167,9 @@ def check_overflow(objs, bus):
 
                 # case 7, 8, or 9
                 if obj1["LSB_position"] == obj2["LSB_position"] or obj1["MSB_position"] == obj2["MSB_position"]:
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 7, 8 or 9 - words have the same LSB position, MSB position, or both"}
+                    return {
+                        "overflow": True,
+                        "log": f"Overflow in bus {bus}: case 7, 8 or 9 - words have the same LSB position, MSB position, or both",
+                    }
 
         return {"overflow": False, "log": f"No overflow in bus {bus}"}
