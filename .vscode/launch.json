@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Current File with Arguments",
+            "name": "Debug mediator file",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/new_scope_josue/fede_idea/mediator.py",
             "console": "integratedTerminal",
             "args": [
-                "${command:pickArgs}"
+                "int4"
             ]
         }
     ]
