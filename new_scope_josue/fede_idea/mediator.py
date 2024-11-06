@@ -1,10 +1,10 @@
-import math
 import sys
+import pandas as pd
+
 import conf_file
 import obj
 import adaptor
 import frontend
-import pandas as pd
 import factory
 
 
@@ -83,7 +83,7 @@ def analyze_configuration(configuration):
 
 
 # use the config_file.py
-def start_analysis():
+def analyze_configuration_user():
     if len(sys.argv) > 1:
         arg = sys.argv[1]
 
@@ -101,7 +101,7 @@ def start_analysis():
 
 
 # migrate to new file: program_logic
-def find_optimus_configuration():
+def analyze_configurations_user():
 
     to_dataframe = {
         "name": [],
@@ -139,4 +139,4 @@ def find_optimus_configuration():
     print({"log": "ok!", "type": "success"})
 
 
-find_optimus_configuration()
+analyze_configurations_user()
