@@ -1,24 +1,24 @@
-name,A_words,B_words,A_phases,B_phases,A_window,max_number_of_accumulation,log
-word width: 4 | phase: 4 | bus A window: 0,7,1,"[0, 4, 8, 12, 16, 20, 24]",0,0,-1,Overflow in bus O: case 2
-word width: 4 | phase: 5 | bus A window: 1,6,1,"[0, 5, 10, 15, 20, 25]",0,1,-1,Overflow in bus O: case 2
-word width: 4 | phase: 6 | bus A window: 2,5,1,"[0, 6, 12, 18, 24]",0,2,-1,Overflow in bus O: case 2
-word width: 4 | phase: 7 | bus A window: 3,4,1,"[0, 7, 14, 21]",0,3,-1,Overflow in bus O: case 5
-word width: 4 | phase: 8 | bus A window: 4,4,1,"[0, 8, 16, 24]",0,4,0,Overflow in bus O: case 5
-word width: 4 | phase: 9 | bus A window: 5,3,1,"[0, 9, 18]",0,5,1,Overflow in bus O: case 5
-word width: 4 | phase: 10 | bus A window: 6,3,1,"[0, 10, 20]",0,6,3,Overflow in bus O: case 5
-word width: 4 | phase: 11 | bus A window: 7,3,1,"[0, 11, 22]",0,7,8,Overflow in bus O: case 5
-word width: 4 | phase: 12 | bus A window: 8,3,1,"[0, 12, 24]",0,8,17,Overflow in bus O: case 5
-word width: 4 | phase: 13 | bus A window: 9,3,1,"[0, 13, 26]",0,9,35,Overflow in bus O: case 5
-word width: 4 | phase: 14 | bus A window: 10,2,1,"[0, 14]",0,10,71,Overflow in bus O: case 5
-word width: 4 | phase: 15 | bus A window: 11,2,1,"[0, 15]",0,11,144,Overflow in bus O: case 5
-word width: 4 | phase: 16 | bus A window: 12,2,1,"[0, 16]",0,12,290,Overflow in bus O: case 5
-word width: 4 | phase: 17 | bus A window: 13,2,1,"[0, 17]",0,13,581,Overflow in bus O: case 5
-word width: 4 | phase: 18 | bus A window: 14,2,1,"[0, 18]",0,14,1164,Overflow in bus O: case 5
-word width: 4 | phase: 19 | bus A window: 15,2,1,"[0, 19]",0,15,2329,Overflow in bus O: case 5
-word width: 4 | phase: 20 | bus A window: 16,2,1,"[0, 20]",0,16,4659,Overflow in bus O: case 5
-word width: 4 | phase: 21 | bus A window: 17,2,1,"[0, 21]",0,17,9319,Overflow in bus O: case 5
-word width: 4 | phase: 22 | bus A window: 18,2,1,"[0, 22]",0,18,18640,Overflow in bus O: case 5
-word width: 4 | phase: 23 | bus A window: 19,2,1,"[0, 23]",0,19,37281,Overflow in bus O: case 5
-word width: 4 | phase: 24 | bus A window: 20,2,1,"[0, 24]",0,20,74564,Overflow in bus O: greatter that bus O width
-word width: 4 | phase: 25 | bus A window: 21,2,1,"[0, 25]",0,21,37281,Overflow in bus O: greatter that bus O width
-word width: 4 | phase: 26 | bus A window: 22,2,1,"[0, 26]",0,22,18640,Overflow in bus O: greatter that bus O width
+name,A_words,B_words,A_phases,B_phases,A_window,max_number_of_accumulation,reason_for_stopping_the_accumulation
+word width: 4 | phase: 4 | bus A window: 0,7,1,"[0, 4, 8, 12, 16, 20, 24]",0,0,-1,Overflow in bus O: case 2 - complete overflow
+word width: 4 | phase: 5 | bus A window: 1,6,1,"[0, 5, 10, 15, 20, 25]",0,1,-1,Overflow in bus O: case 2 - complete overflow
+word width: 4 | phase: 6 | bus A window: 2,5,1,"[0, 6, 12, 18, 24]",0,2,-1,Overflow in bus O: case 2 - complete overflow
+word width: 4 | phase: 7 | bus A window: 3,4,1,"[0, 7, 14, 21]",0,3,-1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 8 | bus A window: 4,4,1,"[0, 8, 16, 24]",0,4,0,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 9 | bus A window: 5,3,1,"[0, 9, 18]",0,5,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 10 | bus A window: 6,3,1,"[0, 10, 20]",0,6,3,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 11 | bus A window: 7,3,1,"[0, 11, 22]",0,7,8,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 12 | bus A window: 8,3,1,"[0, 12, 24]",0,8,17,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 13 | bus A window: 9,3,1,"[0, 13, 26]",0,9,35,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 14 | bus A window: 10,2,1,"[0, 14]",0,10,71,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 15 | bus A window: 11,2,1,"[0, 15]",0,11,144,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 16 | bus A window: 12,2,1,"[0, 16]",0,12,290,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 17 | bus A window: 13,2,1,"[0, 17]",0,13,581,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 18 | bus A window: 14,2,1,"[0, 18]",0,14,1164,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 19 | bus A window: 15,2,1,"[0, 19]",0,15,2329,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 20 | bus A window: 16,2,1,"[0, 20]",0,16,4659,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 21 | bus A window: 17,2,1,"[0, 21]",0,17,9319,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 4 | phase: 22 | bus A window: 18,2,1,"[0, 22]",0,18,+10000,more than 10000 accumulations
+word width: 4 | phase: 23 | bus A window: 19,2,1,"[0, 23]",0,19,+10000,more than 10000 accumulations
+word width: 4 | phase: 24 | bus A window: 20,2,1,"[0, 24]",0,20,+10000,more than 10000 accumulations
+word width: 4 | phase: 25 | bus A window: 21,2,1,"[0, 25]",0,21,+10000,more than 10000 accumulations
+word width: 4 | phase: 26 | bus A window: 22,2,1,"[0, 26]",0,22,+10000,more than 10000 accumulations
