@@ -9,23 +9,23 @@ import factory
 
 
 # Verifica si se pasó un argumento
-def analyze_configuration(con):
+def analyze_configuration(configuration):
 
     # bus A ----------------------------------------
-    A_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult1"] if i["bus"] == "A"]
+    A_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in configuration["mult1"] if i["bus"] == "A"]
     A_bus = adaptor.strings_to_bus(A_strings, "A")
 
     # check if not overflow in bus A
-    if obj.check_overflow(con["mult1"], "A")["overflow"]:
-        return {"log": obj.check_overflow(con["mult1"], "A")["log"], "status": "error"}
+    if obj.check_overflow(configuration["mult1"], "A")["overflow"]:
+        return {"log": obj.check_overflow(configuration["mult1"], "A")["log"], "status": "error"}
 
     # bus D ----------------------------------------
-    D_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult1"] if i["bus"] == "D"]
+    D_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in configuration["mult1"] if i["bus"] == "D"]
     # should be empty if we are only working with positive numbers
     D_bus = adaptor.strings_to_bus(D_strings, "D")
 
     # bus B ----------------------------------------
-    B_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult2"]]
+    B_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in configuration["mult2"]]
     B_bus = adaptor.strings_to_bus(B_strings, "B")
 
     # bus C ----------------------------------------
@@ -33,8 +33,8 @@ def analyze_configuration(con):
 
     # bus O ----------------------------------------
     O_base_objs = []
-    for i in con["mult1"]:
-        for j in con["mult2"]:
+    for i in configuration["mult1"]:
+        for j in configuration["mult2"]:
             O_base_objs.append(obj.obj_times_obj(i, j))
 
     O_objs = [{} for i in range(len(O_base_objs))]
