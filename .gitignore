@@ -38,8 +38,9 @@ carpeta_fede/project_1/project_1.gen/
 carpeta_fede/project_1/project_1.xpr
 
 /carpeta_josue/cocotb/
-carpeta_josue/quickstart/__pycache__/test_my_design.cpython-310.pyc
+carpeta_josue/quickstart/__pycache__/
 carpeta_josue/quickstart/sim_build/sim.vvp
 carpeta_josue/quickstart/results.xml
 
 cocotb_env
+new_scope_josue/fede_idea/__pycache__/
