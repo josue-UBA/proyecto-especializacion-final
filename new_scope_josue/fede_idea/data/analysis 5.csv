@@ -1,0 +1,28 @@
+name,width,A_words,B_words,total_words,A_phases,B_phases,A_window,B_window,max_number_of_accumulation,reason_for_stopping_the_accumulation
+word width: 5 | bus A window: 6 | bus B window: 9,5,3,1,4,"[0, 11, 22]",[0],6,9,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 7 | bus B window: 9,5,3,1,4,"[0, 12, 24]",[0],7,9,3,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 8 | bus B window: 9,5,2,1,3,"[0, 13]",[0],8,9,7,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 9 | bus B window: 9,5,2,1,3,"[0, 14]",[0],9,9,16,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 10 | bus B window: 9,5,2,1,3,"[0, 15]",[0],10,9,33,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 11 | bus B window: 9,5,2,1,3,"[0, 16]",[0],11,9,67,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 12 | bus B window: 9,5,2,1,3,"[0, 17]",[0],12,9,135,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 13 | bus B window: 9,5,2,1,3,"[0, 18]",[0],13,9,271,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 14 | bus B window: 9,5,2,1,3,"[0, 19]",[0],14,9,544,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 15 | bus B window: 9,5,2,1,3,"[0, 20]",[0],15,9,1090,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 16 | bus B window: 9,5,2,1,3,"[0, 21]",[0],16,9,2181,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 17 | bus B window: 6,5,2,2,4,"[0, 22]","[0, 11]",17,6,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 17 | bus B window: 9,5,2,1,3,"[0, 22]",[0],17,9,4363,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 18 | bus B window: 6,5,2,2,4,"[0, 23]","[0, 11]",18,6,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 18 | bus B window: 7,5,2,2,4,"[0, 23]","[0, 12]",18,7,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 18 | bus B window: 9,5,2,1,3,"[0, 23]",[0],18,9,8728,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 19 | bus B window: 6,5,2,2,4,"[0, 24]","[0, 11]",19,6,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 19 | bus B window: 7,5,2,2,4,"[0, 24]","[0, 12]",19,7,3,Overflow in bus O: A word is located outside the bus O
+word width: 5 | bus A window: 19 | bus B window: 8,5,2,2,4,"[0, 24]","[0, 13]",19,8,1,Overflow in bus O: A word is located outside the bus O
+word width: 5 | bus A window: 19 | bus B window: 9,5,2,1,3,"[0, 24]",[0],19,9,+10000,more than 10000 accumulations
+word width: 5 | bus A window: 20 | bus B window: 6,5,2,2,4,"[0, 25]","[0, 11]",20,6,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 20 | bus B window: 7,5,2,2,4,"[0, 25]","[0, 12]",20,7,1,Overflow in bus O: A word is located outside the bus O
+word width: 5 | bus A window: 20 | bus B window: 9,5,2,1,3,"[0, 25]",[0],20,9,8728,Overflow in bus O: A word is located outside the bus O
+word width: 5 | bus A window: 21 | bus B window: 6,5,1,2,3,[0],"[0, 11]",21,6,1,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 21 | bus B window: 7,5,1,2,3,[0],"[0, 12]",21,7,3,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 21 | bus B window: 8,5,1,2,3,[0],"[0, 13]",21,8,7,Overflow in bus O: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other
+word width: 5 | bus A window: 21 | bus B window: 9,5,1,1,2,[0],[0],21,9,+10000,more than 10000 accumulations

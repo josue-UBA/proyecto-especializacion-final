@@ -14,15 +14,12 @@ def print_analysis(q):
     C_bus = q["data"]["C_bus"]
     buses = q["data"]["buses"]
     O_base_objs = q["data"]["O_base_objs"]
+    iteration = q["data"]["iteration"]
     log = q["log"]
     status = q["status"]
 
-    a = [i["LSB_position"] for i in O_base_objs] + [
-        i["LSB_position"] - 1 for i in O_base_objs
-    ]
-    b = [
-        "|" if i in a else "-" for i in range(1, conf_file.buses_metadata["O"]["width"])
-    ] + ["|"]
+    a = [i["LSB_position"] for i in O_base_objs] + [i["LSB_position"] - 1 for i in O_base_objs]
+    b = ["|" if i in a else "-" for i in range(1, conf_file.buses_metadata["O"]["width"])] + ["|"]
     c = " ".join(b)[::-1]
 
     # Only string that grow dinamically use ":>"
@@ -50,6 +47,7 @@ range of numb => {c}
 ------------------------
 overflow occurs: {log}
 status: {status}
+max number of possible accumulations: {iteration} accumulations
 ------------------------
 
 """

@@ -5,7 +5,7 @@ def obj_times_obj(a_obj, b_obj):
     bus = "O"
     number = a_obj["number"] * b_obj["number"]
     phase = a_obj["phase"] + b_obj["phase"]
-    label = f'{a_obj["label"]}{b_obj["label"]}'
+    label = f'{a_obj["label"]}x{b_obj["label"]}'
     MSB_position = len(bin(number)) - 2 + phase
     LSB_position = phase + 1
     return {
@@ -57,7 +57,16 @@ def check_overflow(objs, bus):
             if conf_file.buses_metadata[bus]["width"] < obj["MSB_position"]:
                 return {
                     "overflow": True,
-                    "log": f"Overflow in bus {bus}: greatter that bus {bus} width",
+                    "log": f"Overflow in bus {bus}: A word is located outside the bus {bus}",
+                }
+        return {"overflow": False, "log": f"No overflow in bus {bus}"}
+
+    if bus == "B":
+        for obj in objs:
+            if conf_file.buses_metadata[bus]["width"] < obj["MSB_position"]:
+                return {
+                    "overflow": True,
+                    "log": f"Overflow in bus {bus}: A word is located outside the bus {bus}",
                 }
         return {"overflow": False, "log": f"No overflow in bus {bus}"}
 
@@ -66,7 +75,7 @@ def check_overflow(objs, bus):
             if conf_file.buses_metadata[bus]["width"] < obj["MSB_position"]:
                 return {
                     "overflow": True,
-                    "log": f"Overflow in bus {bus}: greatter that bus {bus} width",
+                    "log": f"Overflow in bus {bus}: A word is located outside the bus {bus}",
                 }
 
         for n, obj1 in enumerate(objs):
@@ -110,43 +119,57 @@ def check_overflow(objs, bus):
                 M       L
                         |-------|   obj2
                         M       L
+
+                case 7
+                |-------|           obj1
+                M       L
+                |-------|           obj2
+                M       L
+
+                case 8
+                |-------|           obj1
+                M       L
+                |---------------|   obj2
+                M               L
+
+                case 9
+                        |-------|   obj1
+                        M       L
+                |---------------|   obj2
+                M               L
                 """
 
                 # case 1
-                if (
-                    obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"]
-                    and obj2["MSB_position"] < obj1["MSB_position"]
-                ):
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 1"}
+                if obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"] and obj2["MSB_position"] < obj1["MSB_position"]:
+                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 1- complete overflow"}
                 # case 2
-                if (
-                    obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"]
-                    and obj1["LSB_position"] < obj2["LSB_position"]
-                ):
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 2"}
+                if obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"] and obj1["LSB_position"] < obj2["LSB_position"]:
+                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 2 - complete overflow"}
                 # case 3
                 if (
                     obj2["LSB_position"] < obj1["LSB_position"] < obj2["MSB_position"]
-                    and obj2["LSB_position"]
-                    < obj1["MSB_position"]
-                    < obj2["MSB_position"]
+                    and obj2["LSB_position"] < obj1["MSB_position"] < obj2["MSB_position"]
                 ):
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 3"}
+                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 3 - a word is completely inside the other"}
                 # case 4
                 if (
                     obj1["LSB_position"] < obj2["LSB_position"] < obj1["MSB_position"]
-                    and obj1["LSB_position"]
-                    < obj2["MSB_position"]
-                    < obj1["MSB_position"]
+                    and obj1["LSB_position"] < obj2["MSB_position"] < obj1["MSB_position"]
                 ):
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 4"}
+                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 4 - a word is completely inside the other"}
 
-                # case 5
-                if obj1["MSB_position"] == obj2["LSB_position"]:
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 5"}
+                # case 5 or 6
+                if obj1["MSB_position"] == obj2["LSB_position"] or obj1["LSB_position"] == obj2["MSB_position"]:
+                    return {
+                        "overflow": True,
+                        "log": f"Overflow in bus {bus}: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other",
+                    }
 
-                # case 6
-                if obj1["LSB_position"] == obj2["MSB_position"]:
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 6"}
+                # case 7, 8, or 9
+                if obj1["LSB_position"] == obj2["LSB_position"] or obj1["MSB_position"] == obj2["MSB_position"]:
+                    return {
+                        "overflow": True,
+                        "log": f"Overflow in bus {bus}: case 7, 8 or 9 - words have the same LSB position, MSB position, or both",
+                    }
 
         return {"overflow": False, "log": f"No overflow in bus {bus}"}

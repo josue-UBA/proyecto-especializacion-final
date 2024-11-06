@@ -1,56 +1,50 @@
-import math
 import sys
+import pandas as pd
+
 import conf_file
 import obj
 import adaptor
 import frontend
+import factory
 
 
 # Verifica si se pasó un argumento
-def analyze_configuration(con):
+def analyze_configuration(configuration):
 
-    # generate A, D, B, and C buses
-    A_strings = [
-        adaptor.decimal_to_string(adaptor.obj_to_decimal(i))
-        for i in con["mult1"]
-        if i["bus"] == "A"
-    ]
-    D_strings = [
-        adaptor.decimal_to_string(adaptor.obj_to_decimal(i))
-        for i in con["mult1"]
-        if i["bus"] == "D"
-    ]
-    B_strings = [
-        adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in con["mult2"]
-    ]
-
+    # bus A ----------------------------------------
+    A_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in configuration["mult1"] if i["bus"] == "A"]
     A_bus = adaptor.strings_to_bus(A_strings, "A")
-    D_bus = adaptor.strings_to_bus(
-        D_strings, "D"
-    )  # should be empty if we are only working with positive numbers
-    B_bus = adaptor.strings_to_bus(B_strings, "B")
-    C_bus = adaptor.strings_to_bus([], "C")
 
     # check if not overflow in bus A
-    if obj.check_overflow(con["mult1"], "A")["overflow"]:
-        frontend.print_log(obj.check_overflow(con["mult1"], "A")["log"])
-        return
+    if obj.check_overflow(configuration["mult1"], "A")["overflow"]:
+        return {"log": obj.check_overflow(configuration["mult1"], "A")["log"], "status": "error"}
 
-    # generate O objs
+    # bus D ----------------------------------------
+    D_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in configuration["mult1"] if i["bus"] == "D"]
+    # should be empty if we are only working with positive numbers
+    D_bus = adaptor.strings_to_bus(D_strings, "D")
+
+    # bus B ----------------------------------------
+    B_strings = [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in configuration["mult2"]]
+    B_bus = adaptor.strings_to_bus(B_strings, "B")
+
+    # bus C ----------------------------------------
+    C_bus = adaptor.strings_to_bus([], "C")
+
+    # bus O ----------------------------------------
     O_base_objs = []
-    for i in con["mult1"]:
-        for j in con["mult2"]:
+    for i in configuration["mult1"]:
+        for j in configuration["mult2"]:
             O_base_objs.append(obj.obj_times_obj(i, j))
 
     O_objs = [{} for i in range(len(O_base_objs))]
 
     # start accumulative sum
     buses = []
-    for i in range(600):
-        O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
-        if obj.check_overflow(O_objs, "O")["overflow"]:
-            break
+    max_accumulations = 10000
+    for k in range(max_accumulations):
+        O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
         buses.append(
             adaptor.strings_to_bus(
@@ -59,96 +53,101 @@ def analyze_configuration(con):
             )
         )
 
+        if obj.check_overflow(O_objs, "O")["overflow"]:
+            return {
+                "data": {
+                    "name": configuration["name"],
+                    "A_bus": A_bus,
+                    "D_bus": D_bus,
+                    "B_bus": B_bus,
+                    "C_bus": C_bus,
+                    "buses": buses[:-1],
+                    "O_base_objs": O_base_objs,
+                    "iteration": k - 1,
+                },
+                "log": obj.check_overflow(O_objs, "O")["log"],
+                "status": "good",
+            }
+
     # print process
     return {
         "data": {
-            "name": con["name"],
+            "name": configuration["name"],
             "A_bus": A_bus,
             "D_bus": D_bus,
             "B_bus": B_bus,
             "C_bus": C_bus,
             "buses": buses,
             "O_base_objs": O_base_objs,
+            "iteration": f"+{max_accumulations}",
         },
-        "log": obj.check_overflow(O_objs, "O")["log"],
-        "status": "good",
+        "log": f"more than {max_accumulations} accumulations",
+        "status": "error",
     }
 
 
-def start_analysis():
+# use the config_file.py
+def analyze_configuration_user():
     if len(sys.argv) > 1:
         arg = sys.argv[1]
 
         if sys.argv[1] in [i["name"] for i in conf_file.configurations]:
 
             # select configuration
-            configuration = [
-                i for i in conf_file.configurations if i["name"] == sys.argv[1]
-            ][0]
+            configuration = [i for i in conf_file.configurations if i["name"] == sys.argv[1]][0]
             frontend.print_analysis(analyze_configuration(configuration))
 
         else:
             frontend.print_log({"log": "Configuration not found.", "status": "error"})
 
     else:
-        frontend.print_log(
-            {"log": "No argument provided.", "status": "error"}
-        )
+        frontend.print_log({"log": "No argument provided.", "status": "error"})
 
 
-def create_configuration(width, number_of_words, window, bus):
-    """
+# migrate to new file: program_logic
+def analyze_configurations_user(width):
 
-    width: 5
-    |---|
-    xxxxx
+    to_dataframe = {
+        "name": [],
+        "width": [],
+        "A_words": [],
+        "B_words": [],
+        "total_words": [],
+        "A_phases": [],
+        "B_phases": [],
+        "A_window": [],
+        "B_window": [],
+        "max_number_of_accumulation": [],
+        "reason_for_stopping_the_accumulation": [],
+    }
 
-    phase: 11
-         <---------|
-    xxxxx------xxxxx
+    configurations = factory.create_list_of_configurations(width)
 
-    window: 6
-         |----|
-    xxxxx------xxxxx
+    for configuration in configurations:
 
-    """
+        data = analyze_configuration(configuration)
 
-    aux_objs = []
+        if data["data"]["iteration"] not in [-1, 0]:
+            to_dataframe["name"].append(configuration["name"])
+            to_dataframe["width"].append(width)
+            to_dataframe["A_words"].append(len(configuration["mult1"]))
+            to_dataframe["B_words"].append(len(configuration["mult2"]))
+            to_dataframe["total_words"].append(len(configuration["mult1"]) + len(configuration["mult2"]))
+            to_dataframe["A_phases"].append([(configuration["A_window"] + width) * j for j in range(len(configuration["mult1"]))])
+            to_dataframe["B_phases"].append([(configuration["B_window"] + width) * j for j in range(len(configuration["mult2"]))])
+            to_dataframe["A_window"].append(configuration["A_window"])
+            to_dataframe["B_window"].append(configuration["B_window"])
+            to_dataframe["max_number_of_accumulation"].append(data["data"]["iteration"])
+            to_dataframe["reason_for_stopping_the_accumulation"].append(data["log"])
 
-    for i in range(number_of_words):
-        # added
-        signed = False
-        num_width = width
+        # data["data"]["O_window"]
 
-        # clasic
-        bus = bus
-        number = int(math.pow(2, num_width)) - 1
-        phase = (window + num_width) * i
-        label = f"{bus.lower()}{i}"
-        MSB_position = len(bin(number)) - 2 + phase
-        LSB_position = phase + 1
+        # frontend.print_analysis(data)
 
-        aux_objs.append(
-            {
-                "bus": bus,
-                "number": number,
-                "phase": phase,
-                "label": label,
-                "MSB_position": MSB_position,
-                "LSB_position": LSB_position,
-            }
-        )
+    pd.DataFrame(data=to_dataframe).to_csv(f"./data/analysis {width}.csv", index=False)
 
-        if obj.check_overflow(aux_objs, bus)["overflow"]:
-            return aux_objs[:-1]
-
-    return aux_objs
+    print({"log": "ok!", "type": "success"})
 
 
-# start_analysis()
-we = create_configuration(4, 3, 9, "A")
-
-s = adaptor.strings_to_bus(
-    [adaptor.decimal_to_string(adaptor.obj_to_decimal(i)) for i in we], "A"
-)
-print(s)
+for i in [2, 3, 4, 5, 6, 7, 8]:
+    analyze_configurations_user(i)
