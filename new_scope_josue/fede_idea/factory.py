@@ -57,28 +57,35 @@ def create_list_of_configurations(width):
 
     number_of_words = 100  # max posible
     configurations = []
-    for window in range(30):
+    window = 0
+
+    while True:
         A_objs = create_list_of_objs(width=width, number_of_words=number_of_words, window=window, bus="A")
 
+        # at least there must be two objs in a bus
         if len(A_objs) <= 1:
             break
 
+        B_objs = [
+            {
+                "signed": False,
+                "num_width": width,
+                "bus": "B",
+                "number": int(math.pow(2, width)) - 1,
+                "phase": 0,
+                "label": "b0",
+                "MSB_position": 0,
+                "LSB position": 0,
+            }
+        ]
         configurations.append(
             {
+                "name": f"word width: {width} | phase: {window+width} | bus A window: {window}",
                 "mult1": A_objs,
-                "mult2": [
-                    {
-                        "signed": False,
-                        "num_width": width,
-                        "bus": "B",
-                        "number": int(math.pow(2, width)) - 1,
-                        "phase": 0,
-                        "label": "b0",
-                        "MSB_position": 0,
-                        "LSB position": 0,
-                    }
-                ],
+                "mult2": B_objs,
             }
         )
+
+        window = window + 1
 
     return configurations

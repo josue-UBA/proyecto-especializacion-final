@@ -41,7 +41,9 @@ def analyze_configuration(configuration):
 
     # start accumulative sum
     buses = []
-    for k in range(100000):
+
+    max_accumulations = 10000
+    for k in range(max_accumulations):
         O_objs = [obj.obj_plus_obj(i, j) for i, j in zip(O_objs, O_base_objs)]
 
         buses.append(
@@ -54,6 +56,7 @@ def analyze_configuration(configuration):
         if obj.check_overflow(O_objs, "O")["overflow"]:
             return {
                 "data": {
+                    "name": configuration["name"],
                     "A_bus": A_bus,
                     "D_bus": D_bus,
                     "B_bus": B_bus,
@@ -69,15 +72,16 @@ def analyze_configuration(configuration):
     # print process
     return {
         "data": {
+            "name": configuration["name"],
             "A_bus": A_bus,
             "D_bus": D_bus,
             "B_bus": B_bus,
             "C_bus": C_bus,
             "buses": buses,
             "O_base_objs": O_base_objs,
-            "iteration": k - 1,
+            "iteration": f"+{max_accumulations}",
         },
-        "log": f'no overflow found on bus O {obj.check_overflow(O_objs, "O")["log"]}',
+        "log": f'more than {max_accumulations} accumulations',
         "status": "error",
     }
 
@@ -111,24 +115,24 @@ def analyze_configurations_user():
         "B_phases": [],
         "A_window": [],
         "max_number_of_accumulation": [],
-        "log": [],
+        "reason_for_stopping_the_accumulation": [],
     }
 
-    width = 3
+    width = 5
     configurations = factory.create_list_of_configurations(width)
 
     for window, configuration in enumerate(configurations):
 
         data = analyze_configuration(configuration)
 
-        to_dataframe["name"].append(f"word width: {width} | phase: {window+width} | bus A window: {window}")
+        to_dataframe["name"].append(configuration["name"])
         to_dataframe["A_words"].append(len(configuration["mult1"]))
         to_dataframe["B_words"].append(len(configuration["mult2"]))
         to_dataframe["A_phases"].append([(window + width) * j for j in range(len(configuration["mult1"]))])
         to_dataframe["B_phases"].append(0)
         to_dataframe["A_window"].append(window)
         to_dataframe["max_number_of_accumulation"].append(data["data"]["iteration"])
-        to_dataframe["log"].append(data["log"])
+        to_dataframe["reason_for_stopping_the_accumulation"].append(data["log"])
 
         # data["data"]["O_window"]
 

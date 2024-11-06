@@ -57,7 +57,7 @@ def check_overflow(objs, bus):
             if conf_file.buses_metadata[bus]["width"] < obj["MSB_position"]:
                 return {
                     "overflow": True,
-                    "log": f"Overflow in bus {bus}: greatter that bus {bus} width",
+                    "log": f"Overflow in bus {bus}: A word is located outside the bus {bus}",
                 }
         return {"overflow": False, "log": f"No overflow in bus {bus}"}
 
@@ -66,7 +66,7 @@ def check_overflow(objs, bus):
             if conf_file.buses_metadata[bus]["width"] < obj["MSB_position"]:
                 return {
                     "overflow": True,
-                    "log": f"Overflow in bus {bus}: greatter that bus {bus} width",
+                    "log": f"Overflow in bus {bus}: A word is located outside the bus {bus}",
                 }
 
         for n, obj1 in enumerate(objs):
@@ -153,11 +153,11 @@ def check_overflow(objs, bus):
                 if obj1["MSB_position"] == obj2["LSB_position"] or obj1["LSB_position"] == obj2["MSB_position"]:
                     return {
                         "overflow": True,
-                        "log": f"Overflow in bus {bus}: case 5 - the LSB position of one word is the same of the MSB position of the other",
+                        "log": f"Overflow in bus {bus}: case 5 or 6 - the LSB position of one word is the same of the MSB position of the other",
                     }
 
                 # case 7, 8, or 9
                 if obj1["LSB_position"] == obj2["LSB_position"] or obj1["MSB_position"] == obj2["MSB_position"]:
-                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 7 - words have the same LSB position, MSB position, or both"}
+                    return {"overflow": True, "log": f"Overflow in bus {bus}: case 7, 8 or 9 - words have the same LSB position, MSB position, or both"}
 
         return {"overflow": False, "log": f"No overflow in bus {bus}"}
