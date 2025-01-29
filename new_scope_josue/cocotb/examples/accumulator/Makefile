@@ -12,4 +12,5 @@ endif
 MODULE = test_dff
 TOPLEVEL = dff
 
+WAVES = 1
 include $(shell cocotb-config --makefiles)/Makefile.sim

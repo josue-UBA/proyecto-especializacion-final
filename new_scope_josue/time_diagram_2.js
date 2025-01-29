@@ -24,7 +24,7 @@
                 },
                 {
                     "name": "TREADY <",
-                    "wave": "0...1..............",
+                    "wave": "0...1...0........",
                 },
                 {
                     "name": "TLAST >",
@@ -32,7 +32,7 @@
                 },
                 {
                     "name": "TDATA >",
-                    "wave": "x3...33333333333333333",
+                    "wave": "x3...3333..333333333333",
                     "data": "D<sub>0</sub>1 D<sub>0</sub>2 D<sub>0</sub>3 D<sub>0</sub>4 D<sub>0</sub>5 D<sub>0</sub>6 D<sub>0</sub>7 D<sub>0</sub>8 D<sub>0</sub>9 D<sub>1</sub>1 D<sub>1</sub>2 D<sub>1</sub>3 D<sub>1</sub>4 D<sub>1</sub>5 D<sub>1</sub>6 D<sub>1</sub>7 D<sub>1</sub>8 D<sub>1</sub>9"
                 }
             ],
@@ -45,7 +45,7 @@
                 },
                 {
                     "name": "TREADY <",
-                    "wave": "0...1.................",
+                    "wave": "0...1...0.........",
                 },
                 {
                     "name": "TLAST >",
@@ -53,14 +53,14 @@
                 },
                 {
                     "name": "TDATA >",
-                    "wave": "x.3..33333333333333333",
+                    "wave": "x.3..3333..333333333333",
                     "data": "D<sub>0</sub>1 D<sub>0</sub>2 D<sub>0</sub>3 D<sub>0</sub>4 D<sub>0</sub>5 D<sub>0</sub>6 D<sub>0</sub>7 D<sub>0</sub>8 D<sub>0</sub>9 D<sub>1</sub>1 D<sub>1</sub>2 D<sub>1</sub>3 D<sub>1</sub>4 D<sub>1</sub>5 D<sub>1</sub>6 D<sub>1</sub>7 D<sub>1</sub>8 D<sub>1</sub>9"
                 }
             ],
             {},
             [
                 "bias provider",
-                {
+["master",                {
                     "name": "TVALID >",
                     "wave": "0..1.0.......10.......",
                 },
@@ -73,11 +73,11 @@
                     "wave": "x..3.3........3.......",
                     "data": "bias<sub>0</sub> bias<sub>1</sub> bias<sub>2</sub>"
                 }
-            ],
+]            ],
             {},
             [
                 "core",
-                {
+                ["master",{
                     "name": "TVALID >",
                     "wave": "0.............10.",
                 },
@@ -89,29 +89,34 @@
                     "name": "TDATA >",
                     "wave": "x.............3x",
                     "data": "ACC"
-                },
+                }],
                 [
                     "internal signals",
                     {
                         "name": "mul",
-                        "wave": "x5...55555555555555555",
+                        "wave": "x5...5555..5555555555555",
                         "data": "D<sub>0</sub>1 D<sub>0</sub>2 D<sub>0</sub>3 D<sub>0</sub>4 D<sub>0</sub>5 D<sub>0</sub>6 D<sub>0</sub>7 D<sub>0</sub>8 D<sub>0</sub>9 D<sub>1</sub>1 D<sub>1</sub>2 D<sub>1</sub>3 D<sub>1</sub>4 D<sub>1</sub>5 D<sub>1</sub>6 D<sub>1</sub>7 D<sub>1</sub>8 D<sub>1</sub>9"
                     },
                     {
                         "name": "a",
-                        "wave": "x....55555555555555555",
+                        "wave": "x....5555..5555555555555",
                         "data": "D<sub>0</sub>1 D<sub>0</sub>2 D<sub>0</sub>3 D<sub>0</sub>4 D<sub>0</sub>5 D<sub>0</sub>6 D<sub>0</sub>7 D<sub>0</sub>8 D<sub>0</sub>9 D<sub>1</sub>1 D<sub>1</sub>2 D<sub>1</sub>3 D<sub>1</sub>4 D<sub>1</sub>5 D<sub>1</sub>6 D<sub>1</sub>7 D<sub>1</sub>8 D<sub>1</sub>9"
                     },
                     {
                         "name": "state",
-                        "wave": "7...777777777777777",
-                        "data": "S0 S1 S2 S2 S2 S2 S2 S2 S2 S2 S3 S4 S2 S2 S2"
+                        "wave": "7...77..7..7....777777777",
+                        "data": "S0 S1 S2 S3  S2 S3 S4 S2 S2 S2"
                     },
                     {
                         "name": "m_enable",
                         "wave": "0...10.......10."
                     }
-                ]
+                ],
+           {
+                        "name": "enable_i",
+                        "wave": "01.....0..1.........",
+                    }
+          
             ],
         ],
         "config": {
